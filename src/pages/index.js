@@ -12,7 +12,7 @@ const IndexPage = () => (
     <p>This is just some test and initialization for Juice's website :DD</p>
     <Image />
     <div style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>Hi</div>
-    <Link to="/page-2/">Just a test link</Link>
+    <Link to="/about/">Just a test link</Link>
     <div style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
       Some more text just so that I know I can get the hang of how this is
       supposed to be styled!

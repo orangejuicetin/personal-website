@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Josefin+Slab&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
 html {
   font-family: Open Sans, sans-serif;
@@ -16,7 +18,10 @@ aside,
 details,
 figcaption,
 figure,
-footer,
+footer {
+  font-family: "Jost", sans-serif;
+  font-style: italic;
+}
 header,
 main,
 menu,
@@ -64,15 +69,15 @@ dfn {
   font-style: italic;
 }
 h1 {
+  font-family: "Quicksand", sans-serif;
   font-size: 2em;
-  margin: 0.67em 0;
 }
 
 .juicetinTitle {
-  /* font-family: "Press Start 2p", cursive; */
-  /* font-size: 30px; */
-  font-family: "Josefin Slab", serif;
-  font-size: 45px;
+  font-family: "Press Start 2p", cursive;
+  font-size: 30px;
+  /* font-family: "Josefin Slab", serif;
+  font-size: 45px; */
   margin: 0;
 }
 

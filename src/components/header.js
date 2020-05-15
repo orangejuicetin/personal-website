@@ -13,13 +13,13 @@ const Header = ({ siteTitle }) => (
       style={{
         margin: `0 auto`,
         padding: `1.45rem 1.0875rem`,
+        textAlign: `center`,
       }}
     >
       <h1 className="juicetinTitle">
         <Link
           to="/"
           style={{
-            fontFamily: `Press Start 2P`,
             color: `white`,
             textDecoration: `none`,
           }}
