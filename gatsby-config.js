@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Orange Juicetin 🍊`,
+    title: `Orange Juicetin`,
     description: `A place to chill, share, and show my work :))`,
     author: `@orangejuicetin`,
   },
@@ -15,6 +15,15 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-plugin-web-font-loader`,
+      options: {
+        google: {
+          families: [`Press Start 2P`, "cursive"],
+        },
+      },
+    },
+
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
