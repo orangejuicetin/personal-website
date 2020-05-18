@@ -16,15 +16,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-web-font-loader`,
-      options: {
-        google: {
-          families: [`Press Start 2P`, "cursive"],
-        },
-      },
-    },
-
-    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `orange_logo`,
