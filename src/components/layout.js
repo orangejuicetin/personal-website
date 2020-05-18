@@ -27,19 +27,11 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle="Justin Choi" />
       <MenuBar />
-      <div
-        style={{
-          margin: `0 auto`,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, made with {`<3`} by {` `}
-          <a href="https://github.com/orangejuicetin">orangejuicetin</a>
-        </footer>
-      </div>
+      <section>{children}</section>
+      <footer>
+        © {new Date().getFullYear()}, made with {`<3`} by {` `}
+        <a href="https://github.com/orangejuicetin">orangejuicetin</a>
+      </footer>
     </>
   )
 }

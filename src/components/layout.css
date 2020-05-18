@@ -3,6 +3,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Jost:wght@300&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
 
+/* classes  */
+.juicetinTitle {
+  font-family: "Press Start 2p", cursive;
+  font-size: 30px;
+  /* font-family: "Josefin Slab", serif;
+  font-size: 45px; */
+  margin: 0;
+}
+
+/* ----------------------------- */
+
 html {
   font-family: Open Sans, sans-serif;
   -ms-text-size-adjust: 100%;
@@ -26,7 +37,10 @@ header,
 main,
 menu,
 nav,
-section,
+section {
+  display: flex;
+  flex-direction: column-reverse;
+}
 summary {
   display: block;
 }
@@ -71,14 +85,6 @@ dfn {
 h1 {
   font-family: "Quicksand", sans-serif;
   font-size: 2em;
-}
-
-.juicetinTitle {
-  font-family: "Press Start 2p", cursive;
-  font-size: 30px;
-  /* font-family: "Josefin Slab", serif;
-  font-size: 45px; */
-  margin: 0;
 }
 
 mark {
