@@ -2,10 +2,12 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
+import { LIGHT_ORANGE, BLACK, WHITE } from "./constants/colors"
+
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `#6bb3f2`,
+      background: `${WHITE}`,
       marginBottom: `1.45rem`,
     }}
   >
@@ -20,7 +22,7 @@ const Header = ({ siteTitle }) => (
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `${BLACK}`,
             textDecoration: `none`,
           }}
         >

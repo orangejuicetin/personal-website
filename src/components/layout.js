@@ -7,30 +7,32 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-// import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import MenuBar from "./MenuBar"
-import Header from "./header"
+import Header from "./Header"
 import "./layout.css"
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
+  const data = useStaticQuery(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          author
+        }
+      }
+    }
+  `)
 
   return (
     <>
       <Header siteTitle="Justin Choi" />
       <MenuBar />
-      <section>{children}</section>
+      <div className="block">{children}</div>
       <footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
-        <a href="https://github.com/orangejuicetin">orangejuicetin</a>
+        <a href="https://github.com/orangejuicetin">
+          {data.site.siteMetadata.author}
+        </a>
       </footer>
     </>
   )

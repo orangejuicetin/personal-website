@@ -18,7 +18,7 @@ const HomeImage = () => {
     query {
       image: file(relativePath: { eq: "lotte_sunset.JPG" }) {
         childImageSharp {
-          fluid(maxWidth: 1000, quality: 100) {
+          fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }

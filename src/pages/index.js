@@ -1,9 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import SEO from "../components/seo"
-import Image from "../components/HomeImage"
+// import Image from "../components/HomeImage"
 
 const IndexPage = () => (
   <Layout>
@@ -16,9 +16,10 @@ const IndexPage = () => (
         supposed to be styled!
       </div>
     </div>
-    <div>
-      <Image />
+    <div className="image">
+      <img src="src/images/korea_4.JPG" alt="korea.jpg" />
     </div>
+    <Link to="/about">About page</Link>
   </Layout>
 )
 
