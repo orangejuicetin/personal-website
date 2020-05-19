@@ -3,23 +3,25 @@ import { Link } from "gatsby"
 
 import Layout from "../components/Layout"
 import SEO from "../components/seo"
-// import Image from "../components/HomeImage"
+import Image from "../components/Image"
+// import korea from "../images/lotte_sunset.JPG"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
+    <div className="image">
+      <Image />
+    </div>
     <div>
-      <h1>About me</h1>
-      <p>This is just some test and initialization for Juice's website :DD</p>
-      <div style={{ maxWidth: `500px`, marginBottom: `1.45rem` }}>
+      <article>
+        This is just some test and initialization for Juice's website :DD
+      </article>
+      <article>
         Some more text just so that I know I can get the hang of how this is
         supposed to be styled!
-      </div>
+      </article>
+      <Link to="/projects">Other works</Link>
     </div>
-    <div className="image">
-      <img src="src/images/korea_4.JPG" alt="korea.jpg" />
-    </div>
-    <Link to="/about">About page</Link>
   </Layout>
 )
 

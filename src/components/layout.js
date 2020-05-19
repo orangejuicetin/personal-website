@@ -27,7 +27,7 @@ const Layout = ({ children }) => {
     <>
       <Header siteTitle="Justin Choi" />
       <MenuBar />
-      <div className="block">{children}</div>
+      <div className="section">{children}</div>
       <footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
         <a href="https://github.com/orangejuicetin">
