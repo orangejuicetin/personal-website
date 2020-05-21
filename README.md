@@ -1,3 +1,3 @@
-<h1 align="center">
-  Website for Orange Juicetin hoho
-</h1>
+# Website for Orange Juicetin hoho
+
+Made with Gatsby, trying various things to explore some cool CSS tricks as well as formatting ~
