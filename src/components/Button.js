@@ -1,10 +1,10 @@
 import { React } from "react"
 import Link from "gatsby"
 
-export const Button = ({ route }) => {
+export const Button = ({ route, name }) => {
   return (
     <div>
-      <Link to={route}>Hello there</Link>
+      <Link to={route}>{name}</Link>
     </div>
   )
 }

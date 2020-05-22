@@ -11,7 +11,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import MenuBar from "./MenuBar"
 import Header from "./Header"
 
-import { PROJECTS_ROUTE, ABOUT_ROUTE } from "./constants/routes"
+import { PROJECTS_ROUTE, ABOUT_ROUTE, GITHUB } from "./constants/routes"
 import { LIGHT_BLUE, LIGHT_GRAY, NAVY } from "./constants/colors"
 
 const Layout = ({ children }) => {
@@ -25,17 +25,19 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const menuItems = ["/projects", "/about", "/blog"]
   return (
     <>
       <Header siteTitle="Justin Choi" />
-      <MenuBar menuItems={[PROJECTS_ROUTE, ABOUT_ROUTE]} />
+      <MenuBar
+        menuItems={{
+          PROJECTS_ROUTE: "Projects",
+          ABOUT_ROUTE: "About",
+        }}
+      />
       <div className="section">{children}</div>
       <footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
-        <a href="https://github.com/orangejuicetin">
-          {data.site.siteMetadata.author}
-        </a>
+        <a href={GITHUB}>{data.site.siteMetadata.author}</a>
       </footer>
     </>
   )
