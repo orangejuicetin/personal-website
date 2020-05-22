@@ -1,8 +1,7 @@
 import React from "react"
 import Button from "./Button"
 
-const MenuBar = () => {
-  const menuItems = ["/projects", "/about", "/blog"]
+const MenuBar = ({ menuItems }) => {
   return (
     <div>
       {menuItems.map(route => (

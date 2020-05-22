@@ -10,7 +10,9 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import MenuBar from "./MenuBar"
 import Header from "./Header"
-import "./layout.css"
+
+import { PROJECTS_ROUTE, ABOUT_ROUTE } from "./constants/routes"
+import { LIGHT_BLUE, LIGHT_GRAY, NAVY } from "./constants/colors"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,10 +25,11 @@ const Layout = ({ children }) => {
     }
   `)
 
+  const menuItems = ["/projects", "/about", "/blog"]
   return (
     <>
       <Header siteTitle="Justin Choi" />
-      <MenuBar />
+      <MenuBar menuItems={[PROJECTS_ROUTE, ABOUT_ROUTE]} />
       <div className="section">{children}</div>
       <footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
