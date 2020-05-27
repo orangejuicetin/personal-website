@@ -1,11 +1,11 @@
 import React from "react"
-import Button from "./Button"
+import ButtonLink from "./ButtonLink"
 
 const MenuBar = ({ menuItems }) => {
   return (
     <div>
       {Object.keys(menuItems).map(route => (
-        <Button key={route} route={route} name={menuItems[route]} />
+        <ButtonLink key={route} route={route} name={menuItems[route]} />
       ))}
     </div>
   )
