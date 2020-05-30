@@ -17,7 +17,7 @@ import {
   GITHUB,
   BLOG_ROUTE,
 } from "./constants/routes"
-import { LIGHT_BLUE, LIGHT_GRAY, NAVY } from "./constants/colors"
+// import { LIGHT_BLUE, LIGHT_GRAY, NAVY } from "./constants/colors"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`

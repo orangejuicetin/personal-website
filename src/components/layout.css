@@ -30,6 +30,11 @@ div.section {
 
 /* ----------------------------- */
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   font-family: Open Sans, sans-serif;
   -ms-text-size-adjust: 100%;
@@ -49,6 +54,10 @@ details,
 figcaption,
 figure,
 footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
   font-family: "Jost", sans-serif;
   font-style: italic;
   flex-shrink: 0;

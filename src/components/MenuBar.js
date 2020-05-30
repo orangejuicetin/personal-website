@@ -1,5 +1,5 @@
 import React from "react"
-import ButtonLink from "./ButtonLink"
+import { ButtonLink } from "./ButtonLink"
 
 const MenuBar = ({ menuItems }) => {
   return (
