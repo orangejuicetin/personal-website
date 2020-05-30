@@ -15,5 +15,17 @@ export const ButtonLink = ({ route, name }) => {
     border-radius: 4px;
   `
 
-  return <StyledLink to={route}>{name}</StyledLink>
+  const activeStyles = {
+    background: WHITE,
+    color: NAVY,
+    display: "inline-block",
+    textDecoration: "none",
+    marginBottom: "1rem",
+  }
+
+  return (
+    <StyledLink to={route} activeStyle={activeStyles}>
+      {name}
+    </StyledLink>
+  )
 }

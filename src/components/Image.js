@@ -7,15 +7,15 @@ const Image = () => {
     query {
       image: file(relativePath: { eq: "ksa_roof_pic.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(quality: 100, width: 500) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
 
-  return <Img fluid={data.image.childImageSharp.fluid} />
+  return <Img fixed={data.image.childImageSharp.fixed} />
 }
 
 export default Image
