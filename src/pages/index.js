@@ -36,8 +36,8 @@ const IndexPage = () => {
       <Header siteTitle="Justin Choi" />
       <MenuBar menuItems={routes} />
       <SEO title="Home" />
-      <div className="top-section">
-        <div className="image">
+      <div>
+        <div>
           <Image />
         </div>
         <div>
@@ -51,9 +51,7 @@ const IndexPage = () => {
           <Link to="/projects">Other works</Link>
         </div>
       </div>
-      <div className="lower-section">
-        More information here about general projects, links, etc.
-      </div>
+      <div>More information here about general projects, links, etc.</div>
       <footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
         <a href={GITHUB}>{siteData.site.siteMetadata.author}</a>

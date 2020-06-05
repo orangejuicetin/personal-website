@@ -18,7 +18,7 @@ const Header = ({ siteTitle }) => (
         textAlign: `center`,
       }}
     >
-      <h1 className="juicetinTitle">
+      <h1>
         <Link
           to="/"
           style={{
