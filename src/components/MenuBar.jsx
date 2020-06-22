@@ -1,7 +1,7 @@
 import React from "react"
 import { ButtonLink } from "./ButtonLink"
 
-const MenuBar = ({ menuItems }) => {
+export const MenuBar = ({ menuItems }) => {
   return (
     <div>
       {Object.keys(menuItems).map(route => (
@@ -10,5 +10,3 @@ const MenuBar = ({ menuItems }) => {
     </div>
   )
 }
-
-export default MenuBar

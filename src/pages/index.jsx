@@ -3,9 +3,9 @@ import { Link } from "gatsby"
 import { useStaticQuery, graphql } from "gatsby"
 
 import SEO from "../components/seo"
-import Image from "../components/Image"
-import MenuBar from "../components/MenuBar"
-import Header from "../components/Header"
+import { Image } from "../components/Image"
+import { MenuBar } from "../components/MenuBar"
+import { Header } from "../components/Header"
 
 import {
   PROJECTS_ROUTE,

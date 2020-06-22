@@ -2,9 +2,9 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React from "react"
 
-import { LIGHT_ORANGE, BLACK, WHITE } from "./constants/colors"
+import { BLACK, WHITE } from "./constants/colors"
 
-const Header = ({ siteTitle }) => (
+export const Header = ({ siteTitle }) => (
   <header
     style={{
       background: `${WHITE}`,
@@ -40,5 +40,3 @@ Header.propTypes = {
 Header.defaultProps = {
   siteTitle: ``,
 }
-
-export default Header

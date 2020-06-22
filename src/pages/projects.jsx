@@ -1,13 +1,20 @@
 import React from "react"
 import { Link } from "gatsby"
+import styled from "styled-components"
 
-import Layout from "../components/Layout.js"
+import { Layout } from "../components/Layout.jsx"
 import SEO from "../components/seo"
 
+const StyledDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+`
 const ProjectsPage = () => (
   <Layout>
     <SEO title="Projects" />
-    <div>
+    <StyledDiv>
       <article>More stuff about projects here!</article>
       <div>
         <h2>Software Engineer</h2>
@@ -19,7 +26,7 @@ const ProjectsPage = () => (
         </p>
       </div>
       <Link to="/">Go back to the homepage</Link>
-    </div>
+    </StyledDiv>
   </Layout>
 )
 

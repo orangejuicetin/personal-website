@@ -42,9 +42,6 @@ main,
 menu,
 nav,
 section,
-summary {
-  display: block;
-}
 audio,
 canvas,
 progress,
