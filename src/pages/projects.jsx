@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 
 const StyledDiv = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
 `
@@ -24,6 +24,15 @@ const ProjectsPage = () => (
           backing from the OVO fund; worked with a React frontend, as well as
           graphQL backend.
         </p>
+      </div>
+      <Link to="/">Go back to the homepage</Link>
+    </StyledDiv>
+    <StyledDiv>
+      <article>Another generic article thingy</article>
+      <div>
+        <h2>Generic task</h2>
+        <h2>Some company</h2>
+        <p>Some text here to spice things up, maybe add component here</p>
       </div>
       <Link to="/">Go back to the homepage</Link>
     </StyledDiv>

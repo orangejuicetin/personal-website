@@ -18,6 +18,7 @@ export const PageContainer = styled.div`
 
 const Footer = styled.footer`
   position: relative;
+  margin-top: -180px;
   height: 180px;
   clear: both;
 `
@@ -37,10 +38,10 @@ export const Layout = ({ children }) => {
       <GlobalStyle />
       <Header siteTitle="Justin Choi" />
       {children}
-      <footer>
+      <Footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
         <a href={GITHUB}>{data.site.siteMetadata.author}</a>
-      </footer>
+      </Footer>
     </PageContainer>
   )
 }
