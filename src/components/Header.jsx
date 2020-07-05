@@ -1,36 +1,24 @@
+import React from "react"
+import styled from "styled-components"
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
-import React from "react"
 
 import { BLACK, WHITE } from "./constants/colors"
 
+const Head = styled.header`
+  background: ${WHITE};
+  padding: 1.25em;
+  margin: 1rem 2rem 0rem;
+`
+const Title = styled(Link)`
+  color: ${BLACK};
+  text-decoration: none;
+  font-size: 2.5em;
+`
 export const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `${WHITE}`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        padding: `1.45rem 1.0875rem`,
-        textAlign: `center`,
-      }}
-    >
-      <h1>
-        <Link
-          to="/"
-          style={{
-            color: `${BLACK}`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+  <Head>
+    <Title to="/">{siteTitle}</Title>
+  </Head>
 )
 
 Header.propTypes = {

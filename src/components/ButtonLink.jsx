@@ -5,19 +5,18 @@ import { NAVY, WHITE } from "./constants/colors"
 
 export const ButtonLink = ({ route, name }) => {
   const StyledLink = styled(Link)`
-    border-radius: 0rem;
-    padding: 0.5rem 1rem;
-    background: ${NAVY};
-    color: ${WHITE};
-    display: inline-block;
-    margin-bottom: 1rem;
+    padding: 0.5rem 2rem;
+    background-color: ${WHITE};
+    border: solid;
+    border-color: ${NAVY};
     text-decoration: none;
-    border-radius: 4px;
+    border-radius: 20px;
+    margin: 0rem 1rem;
   `
 
   const activeStyles = {
-    background: WHITE,
-    color: NAVY,
+    background: NAVY,
+    color: WHITE,
     display: "inline-block",
     textDecoration: "none",
     marginBottom: "1rem",
