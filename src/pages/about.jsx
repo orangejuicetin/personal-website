@@ -1,20 +1,23 @@
 import React from "react"
-import { Link } from "gatsby"
+import styled from "styled-components"
 import SEO from "../components/seo"
 import { Layout } from "../components/Layout"
+
+const Body = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
+const Paragraph = styled.p`
+  font-size: 2em;
+`
 
 const AboutPage = () => (
   <Layout>
     <SEO title="About" />
-    <div>
-      <h1>About Justin Choi!</h1>
-      <p>Welcome to this work in progress! Let's hope it works out lol</p>
-      <p>
-        This is also a way for me to present some of my projects and have some
-        cool functionality so let's see if this works out
-      </p>
-      <Link to="/">Go back to the homepage</Link>
-    </div>
+    <Body>
+      <Paragraph>Hello</Paragraph>
+    </Body>
   </Layout>
 )
 

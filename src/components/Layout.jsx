@@ -9,26 +9,22 @@ import { GITHUB } from "./constants/routes"
 // import { LIGHT_BLUE, LIGHT_GRAY, NAVY } from "./constants/colors"
 
 const PageContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: auto 1fr auto;
-  grid-column-gap: px;
-  grid-row-gap: 0px;
-`
-
-const Body = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 100%;
   height: 100%;
+  flex: 1 0 auto;
 `
 
 const Footer = styled.footer`
-  grid-area: 2 / 1 / 3 / 2;
-  align-content: center;
+  flex-shrink: 0;
+  margin-left: 25px;
+  margin-top: auto;
 `
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+    query {
       site {
         siteMetadata {
           author
@@ -40,14 +36,12 @@ export const Layout = ({ children }) => {
   return (
     <>
       <GlobalStyle />
-      <Header siteTitle="Justin Choi" />
-      <PageContainer>
-        <Body>{children}</Body>
-        <Footer>
-          © {new Date().getFullYear()}, made with {`<3`} by {` `}
-          <a href={GITHUB}>{data.site.siteMetadata.author}</a>
-        </Footer>
-      </PageContainer>
+      <Header />
+      <PageContainer>{children}</PageContainer>
+      <Footer>
+        © {new Date().getFullYear()}, made with {`<3`} by {` `}
+        <a href={GITHUB}>{data.site.siteMetadata.author}</a>
+      </Footer>
     </>
   )
 }
