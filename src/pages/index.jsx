@@ -97,10 +97,11 @@ const IndexPage = () => {
             straight magic) and not failing school work, I run a lot these days,
             yearn to travel, enjoy playing guitar, read some super old books,
             and mindlessly scroll through Twitter sometimes (rip). Feel free to
+            explore to check out other things I've done!
           </Section>
           <Section>
             On the note of traveling, I really wanna visit my home country of
-            Korea again, so here's an awesome pic in the mean time:
+            Korea again 🇰🇷, so here's an awesome pic in the mean time:
           </Section>
           <PicContainer>
             <Img fluid={picData.korea.childImageSharp.fluid} />
