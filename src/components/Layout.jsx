@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import GlobalStyle from "./GlobalStyle"
 import { Header } from "./Header"
 import { GITHUB } from "./constants/routes"
-// import { LIGHT_BLUE, LIGHT_GRAY, NAVY } from "./constants/colors"
+import { GRAY } from "./constants/colors"
 
 const PageContainer = styled.div`
   display: flex;
@@ -20,6 +20,14 @@ const Footer = styled.footer`
   flex-shrink: 0;
   margin-left: 25px;
   margin-top: auto;
+  font-size: 0.75rem;
+  color: ${GRAY};
+`
+const StyledLink = styled.a`
+  text-decoration: none;
+  &:visited {
+    color: ${GRAY};
+  }
 `
 
 export const Layout = ({ children }) => {
@@ -40,7 +48,7 @@ export const Layout = ({ children }) => {
       <PageContainer>{children}</PageContainer>
       <Footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
-        <a href={GITHUB}>{data.site.siteMetadata.author}</a>
+        <StyledLink href={GITHUB}>{data.site.siteMetadata.author}</StyledLink>
       </Footer>
     </>
   )

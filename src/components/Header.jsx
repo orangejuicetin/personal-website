@@ -4,7 +4,11 @@ import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { MenuBar } from "../components/MenuBar"
 import { BLACK, WHITE } from "./constants/colors"
-import { PROJECTS_ROUTE, BLOG_ROUTE } from "../components/constants/routes"
+import {
+  ABOUT_ROUTE,
+  PROJECTS_ROUTE,
+  BLOG_ROUTE,
+} from "../components/constants/routes"
 
 const Head = styled.header`
   background: ${WHITE};
@@ -42,8 +46,9 @@ const PersonalLogo = () => {
 
 export const Header = () => {
   const routes = {
-    [PROJECTS_ROUTE]: "Projects",
-    [BLOG_ROUTE]: "Random Thoughts",
+    [ABOUT_ROUTE]: "Who Am I",
+    [PROJECTS_ROUTE]: "Projects !!",
+    [BLOG_ROUTE]: "Random Thoughts ?",
   }
 
   return (

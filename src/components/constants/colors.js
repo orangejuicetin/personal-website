@@ -1,8 +1,8 @@
 // grayscale
 export const BLACK = "#000000"
-export const WHITE = "#FFF"
-export const LIGHT_GRAY = "#f4f5f7"
-export const DARK_GRAY = "#47484C"
+export const DARK_GRAY = "#58627a"
+export const GRAY = "#aab1c2"
+export const WHITE = "#FFFFFF"
 
 // blues
 export const LIGHT_BLUE = "#6bb3f2"

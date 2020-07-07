@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import styled from "styled-components"
-import { DARK_GRAY } from "./constants/colors"
+import { DARK_GRAY, GRAY } from "./constants/colors"
 
 export const ButtonLink = ({ route, name }) => {
   const StyledLink = styled(Link)`
@@ -9,12 +9,19 @@ export const ButtonLink = ({ route, name }) => {
     text-decoration: none;
     margin: 0rem 1rem;
     font-size: 1.5em;
-    color: ${DARK_GRAY};
-    &:visited {
-      text-decoration: none;
+    color: ${GRAY};
+    &:hover {
       color: ${DARK_GRAY};
+      -moz-transition: all 0.27s ease-in;
+      -o-transition: all 0.27s ease-in;
+      -webkit-transition: all 0.27s ease-in;
+      transition: all 0.27s ease-in;
     }
   `
 
-  return <StyledLink to={route}>{name}</StyledLink>
+  return (
+    <StyledLink to={route} activeStyle={{ color: DARK_GRAY }}>
+      {name}
+    </StyledLink>
+  )
 }

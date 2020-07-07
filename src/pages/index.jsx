@@ -6,6 +6,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 // import korea from "../images/lotte_sunset.JPG"
 
+const SmallText = styled.text`
+  font-size: 0.8em;
+`
 const Body = styled.div`
   display: grid;
   grid-template-columns: 1fr 1.75fr;
@@ -19,7 +22,7 @@ const TopLeft = styled.div`
   justify-content: center;
   align-items: center;
   margin: auto;
-  font-size: 5rem;
+  font-size: 3rem;
 `
 const TopRight = styled.div`
   grid-area: 1 / 2 / 2 / 3;
@@ -38,7 +41,7 @@ const Section = styled.p`
   text-indent: 2em;
 `
 
-const PicContainer = styled.div`
+const PicContainer = styled.figure`
   margin: auto 15em 2em;
 `
 
@@ -81,33 +84,62 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Body>
         <TopLeft>
-          <div>Hi there ~</div>
+          <div>Hello there ~ </div>
+          <div>My name's Justin.</div>
         </TopLeft>
         <TopRight>
-          <Img fluid={picData.personalPic.childImageSharp.fluid} />
+          <Img
+            fluid={picData.personalPic.childImageSharp.fluid}
+            style={{
+              borderRadius: 60,
+              background: "#ffffff",
+              boxShadow: `-28px 28px 56px #cfcfcf, 
+                         28px -28px 56px #ffffff`,
+            }}
+          />
         </TopRight>
         <Bottom>
           <Section>
-            I'm a rising junior at Penn{" "}
+            And I'm a rising junior at Penn!{" "}
             <a href="https://www.upenn.edu/">
               <Img fixed={picData.pennShield.childImageSharp.fixed} />
             </a>{" "}
-            currently studying computer science 💻, but outside of trying to
-            learn make my React components <em>not</em> look ugly (CSS is
-            straight magic) and not failing school work, I run a lot these days,
-            yearn to travel, enjoy playing guitar, read some super old books,
-            and mindlessly scroll through Twitter sometimes (rip). Feel free to
-            explore to check out other things I've done!
+            Currently studying computer science{" "}
+            <span role="img" aria-label="computer">
+              💻
+            </span>
+            , but outside of trying to learn make my React components{" "}
+            <em>not</em> look ugly{" "}
+            <SmallText>(CSS is straight magic I tell ya)</SmallText> and trying
+            to stuff my head with as much new knowledge as I can, I run a lot
+            these days, yearn to travel, enjoy playing guitar, read some super
+            old books, and mindlessly scroll through Twitter sometimes{" "}
+            <SmallText>(rip)</SmallText>. Feel free to check out some of the
+            other things I've done!
           </Section>
           <Section>
             On the note of traveling, I really wanna visit my home country of
-            Korea again 🇰🇷, so here's an awesome pic in the mean time:
+            Korea again{" "}
+            <span role="img" aria-label="korea">
+              🇰🇷
+            </span>
+            , so here's an awesome pic (or two) in the mean time:
           </Section>
           <PicContainer>
             <Img fluid={picData.korea.childImageSharp.fluid} />
+            <figcaption>
+              Isn't this one so pretty? This was at the top of Lotte Tower, and
+              I got soooo lucky to capture these colors; if you look closely
+              enough in the direction of the sunset, you can see 남산 타워
+              (Namsan Tower), which is a super cool spot in Seoul with cute
+              locks on its fence (!!)
+            </figcaption>
           </PicContainer>
           <PicContainer>
             <Img fluid={picData.anotherKorea.childImageSharp.fluid} />
+            <figcaption>
+              Also at Lotte tower, but just more pretty shades :))
+            </figcaption>
           </PicContainer>
         </Bottom>
       </Body>
