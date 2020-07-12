@@ -4,45 +4,60 @@ import SEO from "../components/seo"
 import { Layout } from "../components/Layout"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
-// import korea from "../images/lotte_sunset.JPG"
+import {
+  HeaderText,
+  HighlightText,
+  Paragraph,
+  StyledUnorderedList,
+  Caption,
+  SmallText,
+} from "../theme"
 
-const SmallText = styled.text`
-  font-size: 0.8em;
-`
+// page setup
+
 const Body = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1.75fr;
+  grid-template-columns: 1fr 1.5fr;
   grid-template-rows: 1fr auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 `
-
 const TopLeft = styled.div`
   grid-area: 1 / 1 / 2 / 2;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
   margin: auto;
-  font-size: 3rem;
 `
 const TopRight = styled.div`
   grid-area: 1 / 2 / 2 / 3;
-  margin: 3em;
+  margin: 7%;
 `
 const Bottom = styled.div`
   grid-area: 2 / 1 / 3 / 3;
   justify-content: center;
   align-items: center;
-  margin: 2em;
+  margin: 2% 7.5%;
 `
 
-const Section = styled.p`
-  font-size: 2em;
-  margin: auto 3em 1.5em;
-  text-indent: 2em;
+// text elements
+
+const NameText = styled.text`
+  color: ${props => props.theme.colors.orange[0]};
+  -moz-transition: all 0.7s ease-in;
+  -o-transition: all 0.7s ease-in;
+  -webkit-transition: all 0.7s ease-in;
+  transition: all 0.7s ease-in;
 `
 
-const PicContainer = styled.figure`
-  margin: auto 15em 2em;
+// pictures
+const SectionPic = styled.figure`
+  margin: 5% 12.5% 2.5%;
+`
+
+const InlinePicLink = styled.a`
+  width: 3.5%;
+  display: inline-block;
+  position: relative;
+  top: 0.25%;
 `
 
 const IndexPage = () => {
@@ -57,8 +72,8 @@ const IndexPage = () => {
       }
       pennShield: file(relativePath: { eq: "simplified-penn-shield.png" }) {
         childImageSharp {
-          fixed(quality: 100, height: 30) {
-            ...GatsbyImageSharpFixed
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
@@ -84,8 +99,10 @@ const IndexPage = () => {
       <SEO title="Home" />
       <Body>
         <TopLeft>
-          <div>Hello there ~ </div>
-          <div>My name's Justin.</div>
+          <HeaderText>Hello there ~ </HeaderText>
+          <HeaderText>
+            My name's <NameText>Justin</NameText>.
+          </HeaderText>
         </TopLeft>
         <TopRight>
           <Img
@@ -99,48 +116,92 @@ const IndexPage = () => {
           />
         </TopRight>
         <Bottom>
-          <Section>
+          <HighlightText>
             And I'm a rising junior at Penn!{" "}
-            <a href="https://www.upenn.edu/">
-              <Img fixed={picData.pennShield.childImageSharp.fixed} />
-            </a>{" "}
+            <InlinePicLink href="https://www.upenn.edu/">
+              <Img fluid={picData.pennShield.childImageSharp.fluid} />
+            </InlinePicLink>{" "}
+          </HighlightText>
+          <HighlightText>
             Currently studying computer science{" "}
             <span role="img" aria-label="computer">
               💻
             </span>
-            , but outside of trying to learn make my React components{" "}
-            <em>not</em> look ugly{" "}
-            <SmallText>(CSS is straight magic I tell ya)</SmallText> and trying
-            to stuff my head with as much new knowledge as I can, I run a lot
-            these days, yearn to travel, enjoy playing guitar, read some super
-            old books, and mindlessly scroll through Twitter sometimes{" "}
-            <SmallText>(rip)</SmallText>. Feel free to check out some of the
-            other things I've done!
-          </Section>
-          <Section>
+            &nbsp; but outside of trying to make my React components not look
+            ugly and stuffing my head with as much stuff as I can before I
+            embark unto adult life, I...
+          </HighlightText>
+          <StyledUnorderedList>
+            <li>
+              run a lot these days{" "}
+              <span role="img" aria-label="runner">
+                🏃🏻‍♂️
+              </span>
+            </li>
+            <li>
+              {" "}
+              yearn to travel&nbsp;
+              <span role="img" aria-label="airplane">
+                ✈️
+              </span>
+            </li>
+            <li>
+              enjoy playing guitar{" "}
+              <span role="img" aria-label="guitar">
+                🎸
+              </span>{" "}
+            </li>
+            <li>
+              read some super old books{" "}
+              <SmallText>(insert Bible emoji here)</SmallText>
+            </li>
+            <li>
+              and mindlessly scroll through Twitter sometimes{" "}
+              <SmallText>(rip)</SmallText>
+            </li>
+          </StyledUnorderedList>
+          <Paragraph>
+            Feel free to check out some of the other things I've done!
+          </Paragraph>
+          <Paragraph>
             On the note of traveling, I really wanna visit my home country of
-            Korea again{" "}
+            Korea again&nbsp;
             <span role="img" aria-label="korea">
               🇰🇷
             </span>
-            , so here's an awesome pic (or two) in the mean time:
-          </Section>
-          <PicContainer>
-            <Img fluid={picData.korea.childImageSharp.fluid} />
-            <figcaption>
+            &nbsp;after all this chaos settles down, so here's an awesome pic
+            (or two) in the mean time:
+          </Paragraph>
+          <SectionPic>
+            <Img
+              fluid={picData.korea.childImageSharp.fluid}
+              style={{
+                borderRadius: 56,
+                boxShadow: `-7px 7px 20px #adadad, 
+                7px -7px 20px #ffffff`,
+              }}
+            />
+            <Caption>
               Isn't this one so pretty? This was at the top of Lotte Tower, and
               I got soooo lucky to capture these colors; if you look closely
               enough in the direction of the sunset, you can see 남산 타워
               (Namsan Tower), which is a super cool spot in Seoul with cute
               locks on its fence (!!)
-            </figcaption>
-          </PicContainer>
-          <PicContainer>
-            <Img fluid={picData.anotherKorea.childImageSharp.fluid} />
-            <figcaption>
+            </Caption>
+          </SectionPic>
+          <SectionPic>
+            <Img
+              fluid={picData.anotherKorea.childImageSharp.fluid}
+              style={{
+                borderRadius: 56,
+                boxShadow: `-7px 7px 20px #adadad, 
+                7px -7px 20px #ffffff`,
+              }}
+            />
+            <Caption>
               Also at Lotte tower, but just more pretty shades :))
-            </figcaption>
-          </PicContainer>
+            </Caption>
+          </SectionPic>
         </Bottom>
       </Body>
     </Layout>

@@ -1,12 +1,30 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
-import GlobalStyle from "./GlobalStyle"
+import { theme } from "../theme"
 import { Header } from "./Header"
-import { GITHUB } from "./constants/routes"
-import { GRAY } from "./constants/colors"
+
+const GlobalStyle = createGlobalStyle`
+  html {
+    font-family: "Avenir Next", sans-serif;  
+    color: ${props => props.theme.colors.gray[0]}; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+    height: 100%; 
+  }   
+  @font-face {
+    font-family: 'Perpetua';
+      src: url('/static/fonts/Perpetua.ttf');
+      font-weight: normal;
+  }
+  @font-face {
+    font-family: 'Perpetua Bold';
+    src: url('/static/fonts/Perpetua-Bold.ttf');
+    font-weight: bold;
+  }
+`
 
 const PageContainer = styled.div`
   display: flex;
@@ -21,12 +39,13 @@ const Footer = styled.footer`
   margin-left: 25px;
   margin-top: auto;
   font-size: 0.75rem;
-  color: ${GRAY};
+  color: ${props => props.theme.colors.gray[1]};
 `
 const StyledLink = styled.a`
   text-decoration: none;
-  &:visited {
-    color: ${GRAY};
+  color: ${props => props.theme.colors.gray[1]};
+  &:hover {
+    color: ${props => props.theme.colors.orange[0]};
   }
 `
 
@@ -42,15 +61,17 @@ export const Layout = ({ children }) => {
   `)
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Header />
       <PageContainer>{children}</PageContainer>
       <Footer>
         © {new Date().getFullYear()}, made with {`<3`} by {` `}
-        <StyledLink href={GITHUB}>{data.site.siteMetadata.author}</StyledLink>
+        <StyledLink href={"https://github.com/orangejuicetin"}>
+          {data.site.siteMetadata.author}
+        </StyledLink>
       </Footer>
-    </>
+    </ThemeProvider>
   )
 }
 

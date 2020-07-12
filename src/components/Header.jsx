@@ -3,30 +3,19 @@ import styled from "styled-components"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { MenuBar } from "../components/MenuBar"
-import { BLACK, WHITE } from "./constants/colors"
-import {
-  ABOUT_ROUTE,
-  PROJECTS_ROUTE,
-  BLOG_ROUTE,
-} from "../components/constants/routes"
 
 const Head = styled.header`
-  background: ${WHITE};
-  align-items: flex-start;
-  padding: 1em;
-  margin: 1.5rem 3em 0rem;
+  display: flex;
+  align-items: center;
+  background: ${props => props.theme.colors.white};
+  margin: 2.5% 5%;
 `
 
-const Title = styled(Link)`
-  color: ${BLACK};
-  text-decoration: none;
-  font-size: 2.5em;
-  vertical-align: middle;
+const LogoContainer = styled.div`
+  width: 5%;
 `
-
-const Spacer = styled.div`
-  margin: 0 2em;
-  display: inline-block;
+const MenuBarContainer = styled.div`
+  margin-left: 4%;
 `
 
 const PersonalLogo = () => {
@@ -34,30 +23,37 @@ const PersonalLogo = () => {
     query {
       personalLogo: file(relativePath: { eq: "personal_logo.jpg" }) {
         childImageSharp {
-          fixed(quality: 100, height: 150) {
-            ...GatsbyImageSharpFixed
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
           }
         }
       }
     }
   `)
-  return <Img fixed={data.personalLogo.childImageSharp.fixed} />
+  return (
+    <Link to="/">
+      <Img fluid={data.personalLogo.childImageSharp.fluid} />
+    </Link>
+  )
 }
 
+// const SocialMedia = () => {}
+
 export const Header = () => {
-  const routes = {
-    [ABOUT_ROUTE]: "Who Am I",
-    [PROJECTS_ROUTE]: "Projects !!",
-    [BLOG_ROUTE]: "Random Thoughts ?",
+  const menuItems = {
+    "/about": "Who Am I",
+    "/projects": "Projects !!",
+    "/blog": "Random Thoughts ?",
   }
 
   return (
     <Head>
-      <Title to="/">
+      <LogoContainer>
         <PersonalLogo />
-      </Title>
-      <Spacer />
-      <MenuBar menuItems={routes} />
+      </LogoContainer>
+      <MenuBarContainer>
+        <MenuBar menuItems={menuItems} />
+      </MenuBarContainer>
     </Head>
   )
 }
