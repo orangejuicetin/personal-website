@@ -3,9 +3,7 @@ import { Link } from "gatsby"
 import styled, { ThemeContext } from "styled-components"
 
 const StyledLink = styled(Link)`
-  padding: 0.5rem 2rem;
   text-decoration: none;
-  margin: 0rem 1rem;
   font-size: 1.75vw;
   color: ${props => props.theme.colors.gray[1]};
   &:hover {

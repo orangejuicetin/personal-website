@@ -7,7 +7,7 @@ import Img from "gatsby-image"
 import {
   HeaderText,
   HighlightText,
-  Paragraph,
+  RegularParagraph,
   StyledUnorderedList,
   Caption,
   SmallText,
@@ -48,6 +48,9 @@ const NameText = styled.text`
   transition: all 0.7s ease-in;
 `
 
+const SquishedSection = styled.div`
+  margin-right: 20%;
+`
 // pictures
 const SectionPic = styled.figure`
   margin: 5% 12.5% 2.5%;
@@ -57,34 +60,41 @@ const InlinePicLink = styled.a`
   width: 3.5%;
   display: inline-block;
   position: relative;
-  top: 0.25%;
+  top: 0.2rem;
+`
+// spacers
+
+const Spacer = styled.div`
+  margin: 1.5rem;
 `
 
 const IndexPage = () => {
   const picData = useStaticQuery(graphql`
     query {
-      personalPic: file(relativePath: { eq: "ksa_roof_pic.jpg" }) {
+      personalPic: file(relativePath: { eq: "korea/ksa_roof_pic.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      pennShield: file(relativePath: { eq: "simplified-penn-shield.png" }) {
+      pennShield: file(
+        relativePath: { eq: "logos/simplified-penn-shield.png" }
+      ) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      korea: file(relativePath: { eq: "lotte_sunset.JPG" }) {
+      korea: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      anotherKorea: file(relativePath: { eq: "korea_1.JPG" }) {
+      anotherKorea: file(relativePath: { eq: "korea/korea_1.JPG" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -116,33 +126,48 @@ const IndexPage = () => {
           />
         </TopRight>
         <Bottom>
-          <HighlightText>
-            And I'm a rising junior at Penn!{" "}
-            <InlinePicLink href="https://www.upenn.edu/">
-              <Img fluid={picData.pennShield.childImageSharp.fluid} />
-            </InlinePicLink>{" "}
-          </HighlightText>
-          <HighlightText>
-            Currently studying computer science{" "}
-            <span role="img" aria-label="computer">
-              💻
-            </span>
-            &nbsp; but outside of trying to make my React components not look
-            ugly and stuffing my head with as much stuff as I can before I
-            embark unto adult life, I...
-          </HighlightText>
+          <SquishedSection>
+            <HighlightText>
+              I'm currently a rising junior at Penn!{" "}
+              <InlinePicLink href="https://www.upenn.edu/">
+                <Img fluid={picData.pennShield.childImageSharp.fluid} />
+              </InlinePicLink>{" "}
+            </HighlightText>
+            <Spacer />
+            <HighlightText>
+              And my degree's in computer science{" "}
+              <span role="img" aria-label="computer">
+                💻
+              </span>
+              &nbsp; so I beep boop bop
+            </HighlightText>
+            <Spacer />
+            <HighlightText>
+              But outside of scraping by and trying to stuff my tiny brain with
+              as much stuff as I can before I embark unto adult life, I also...
+            </HighlightText>
+          </SquishedSection>
+          <Spacer />
           <StyledUnorderedList>
             <li>
               run a lot these days{" "}
               <span role="img" aria-label="runner">
                 🏃🏻‍♂️
               </span>
+              &nbsp;
+              <SmallText>
+                (if you follow me on Strava I follow back{" "}
+                <span role="img" aria-label="eyes">
+                  👀
+                </span>
+                &nbsp;)
+              </SmallText>
             </li>
             <li>
               {" "}
               yearn to travel&nbsp;
               <span role="img" aria-label="airplane">
-                ✈️
+                ✈️😔
               </span>
             </li>
             <li>
@@ -160,18 +185,19 @@ const IndexPage = () => {
               <SmallText>(rip)</SmallText>
             </li>
           </StyledUnorderedList>
-          <Paragraph>
+          <RegularParagraph>
             Feel free to check out some of the other things I've done!
-          </Paragraph>
-          <Paragraph>
+          </RegularParagraph>
+          <RegularParagraph>
             On the note of traveling, I really wanna visit my home country of
             Korea again&nbsp;
             <span role="img" aria-label="korea">
               🇰🇷
             </span>
+            <embed src="../images/korea/korean_flag.svg" alt="korea_flag" />
             &nbsp;after all this chaos settles down, so here's an awesome pic
             (or two) in the mean time:
-          </Paragraph>
+          </RegularParagraph>
           <SectionPic>
             <Img
               fluid={picData.korea.childImageSharp.fluid}
