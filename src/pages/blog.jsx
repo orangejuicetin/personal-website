@@ -26,7 +26,12 @@ const BlogPage = () => (
   <Layout>
     <SEO title="Blog" />
     <Body>
-      <Section>Under construction! 🚧</Section>
+      <Section>
+        Under construction!{" "}
+        <span role="img" aria-label="construction">
+          🚧
+        </span>
+      </Section>
     </Body>
   </Layout>
 )

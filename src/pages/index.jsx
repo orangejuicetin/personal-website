@@ -195,7 +195,7 @@ const IndexPage = () => {
                 7px -7px 20px #ffffff`,
                 }}
               />
-              <Caption>Rip sleep schedule</Caption>
+              <Caption>rip sleep schedule</Caption>
             </LeftSectionPic>
             <RightSection>
               <HighlightText>
@@ -210,21 +210,22 @@ const IndexPage = () => {
                 <span role="img" aria-label="computer">
                   💻
                 </span>
-                &nbsp;so I beep boop bop and unfortunately lose some sleep in
-                the process.
+                &nbsp;so I <em>beep boop bop</em> and unfortunately lose some
+                sleep in the process.
               </HighlightText>
             </RightSection>
           </BottomContainer>
           <BigSpacer />
           <HighlightText>
             But outside of scraping by and trying to stuff my tiny brain with as
-            much stuff as I can before I embark unto adult life, I also...
+            much new material as I can before I embark unto adult life, I
+            also...
           </HighlightText>
           <StyledUnorderedList>
             <li>
               run a lot these days{" "}
               {/* <span role="img" aria-label="runner">
-                🏃🏻‍♂️
+                // 🏃🏻‍♂️
               </span> */}
               &nbsp;
               {/* <SmallText>
@@ -243,7 +244,7 @@ const IndexPage = () => {
             </li>
             <li>
               {" "}
-              yearn to travel
+              wish I could be traveling
               {/* <span role="img" aria-label="airplane">
                 ✈️
               </span> */}
@@ -252,7 +253,7 @@ const IndexPage = () => {
                 😔
               </span>
             </li>
-            <li>enjoy playing guitar </li>
+            <li>enjoy learning new guitar songs</li>
             <li>
               and mindlessly scroll through Twitter sometimes{" "}
               <SmallText>(rip)</SmallText>
@@ -260,17 +261,19 @@ const IndexPage = () => {
           </StyledUnorderedList>
           <RegularText>
             However, feel free to check out some of the other things I've done!
-            There's a projects page so I can talk a bit more than I usually can
-            about some of the work I've done, and all the links to my other
-            profiles are all up top, so click freely ~
+            There's a projects page where I elaborate more on the work I've done
+            in the past (free from the constraint of a one page resume
+            thankfully), and all the links to my other profiles are all up top,
+            so click freely!
           </RegularText>
           <LittleSpacer />
           <RegularText>
-            On the note of traveling, I really wanna visit my home country of
-            Korea&nbsp;
+            And, on the note of traveling, I really wanna visit my home country
+            of Korea&nbsp;
             <Svg src={KoreanFlag} alt="korea_flag" />
-            &nbsp;after all this chaos settles down, so here's some senti
-            reminiscing for you to enjoy in the mean time :')
+            &nbsp;if there's any chance, y'know, flying becomes normal again, so
+            in the mean time, here's some senti reminiscing for you to enjoy
+            from the last time I was able to go :')
           </RegularText>
           <MediumSpacer />
           <SectionPic>
@@ -329,7 +332,7 @@ const IndexPage = () => {
             />
             <Caption>
               A flower garden that I stumbled upon in Busan, and I just thought
-              this pic was cute :) the banners just say "happy wish" and "flower
+              this pic was cute ~ the banners just say "happy wish" and "flower
               garden" haha
             </Caption>
           </SectionPic>
@@ -344,7 +347,7 @@ const IndexPage = () => {
             />
             <Caption>
               As you can tell, I sorta have a thing for nice sunsets LOL, this
-              one was also in Busan and I thought it was so nice to gaze it :')
+              one was also in Busan and I thought it was so nice to gaze at :')
             </Caption>
           </SectionPic>
         </Bottom>

@@ -27,13 +27,21 @@ const TwitterLink = styled(ExternalLink)`
   width: 100%;
 `
 const GithubLink = styled(ExternalLink)`
+  opacity: 0.65;
+  &:hover {
+    opacity: 1;
+  }
   width: 100%;
 `
 const SpotifyLink = styled(ExternalLink)`
   width: 100%;
 `
 const LinkedInLink = styled(ExternalLink)`
-  width: 100%;
+  width: 107%;
+  opacity: 0.65;
+  &:hover {
+    opacity: 1;
+  }
   position: relative;
   top: 0.15rem;
 `
