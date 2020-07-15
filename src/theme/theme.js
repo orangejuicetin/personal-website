@@ -4,7 +4,7 @@ export const theme = {
       fontSize: "3.75vw",
     },
     large: {
-      fontSize: "2vw",
+      fontSize: "2.3vw",
     },
     regular: {
       fontSize: "1.4vw",

@@ -23,20 +23,36 @@ const Body = styled.div`
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 `
+
 const TopLeft = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   text-align: center;
   margin: auto;
 `
+
 const TopRight = styled.div`
   grid-area: 1 / 2 / 2 / 3;
   margin: 7%;
 `
+
 const Bottom = styled.div`
   grid-area: 2 / 1 / 3 / 3;
   justify-content: center;
   align-items: center;
   margin: 2% 7.5%;
+`
+
+const BottomContainer = styled.div`
+  display: flex;
+`
+
+const RightSection = styled.div`
+  margin: auto;
+  margin-left: 5%;
+`
+
+const LeftSectionPic = styled.div`
+  width: 100%;
 `
 
 // text elements
@@ -49,36 +65,48 @@ const NameText = styled.text`
   transition: all 0.7s ease-in;
 `
 
-const SquishedSection = styled.div`
-  margin-right: 20%;
-`
 // pictures
 const SectionPic = styled.figure`
   margin: 5% 12.5% 2.5%;
 `
 
 const InlinePicLink = styled.a`
-  width: 3.5%;
+  width: 6%;
   display: inline-block;
   position: relative;
-  top: 0.5rem;
+  top: 0.7rem;
 `
 
 const Svg = styled.img`
   display: inline-block;
-  width: 5%;
+  width: 4%;
   vertical-align: text-bottom;
 `
 // spacers
 
-const Spacer = styled.div`
-  margin: 1.5rem;
+const BigSpacer = styled.div`
+  margin: 5%;
+`
+const MediumSpacer = styled.div`
+  margin: 2.5%;
+`
+const LittleSpacer = styled.div`
+  margin: 1.25%;
 `
 
 const IndexPage = () => {
   const picData = useStaticQuery(graphql`
     query {
-      personalPic: file(relativePath: { eq: "gallery/ksa_roof_pic.jpg" }) {
+      personalPic: file(
+        relativePath: { eq: "gallery/puertorico_juicetin.png" }
+      ) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      sleepy: file(relativePath: { eq: "gallery/sleepy_juicetin.png" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -94,14 +122,35 @@ const IndexPage = () => {
           }
         }
       }
-      korea: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
+      lotte: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      anotherKorea: file(relativePath: { eq: "korea/korea_1.JPG" }) {
+      lotte_2: file(relativePath: { eq: "korea/korea_1.JPG" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      koreanFood: file(relativePath: { eq: "korea/busan_donkatsu.JPG" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      flowerGarden: file(relativePath: { eq: "korea/flower_garden.png" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      busanSunset: file(relativePath: { eq: "korea/busan_sunset.png" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -120,6 +169,9 @@ const IndexPage = () => {
           <HeaderText>
             My name's <NameText>Justin</NameText>.
           </HeaderText>
+          <SmallText>
+            (And no, I don't know what I'm looking at either unfortunately)
+          </SmallText>
         </TopLeft>
         <TopRight>
           <Img
@@ -133,42 +185,55 @@ const IndexPage = () => {
           />
         </TopRight>
         <Bottom>
-          <SquishedSection>
-            <HighlightText>
-              I'm currently a rising junior at Penn!&nbsp;
-              <InlinePicLink href="https://www.upenn.edu/">
-                <Img fluid={picData.pennShield.childImageSharp.fluid} />
-              </InlinePicLink>{" "}
-            </HighlightText>
-            <Spacer />
-            <HighlightText>
-              And my degree's in computer science{" "}
-              <span role="img" aria-label="computer">
-                💻
-              </span>
-              &nbsp;so I beep boop bop.
-            </HighlightText>
-            <Spacer />
-            <HighlightText>
-              But outside of scraping by and trying to stuff my tiny brain with
-              as much stuff as I can before I embark unto adult life, I also...
-            </HighlightText>
-          </SquishedSection>
-          <Spacer />
+          <BottomContainer>
+            <LeftSectionPic>
+              <Img
+                fluid={picData.sleepy.childImageSharp.fluid}
+                style={{
+                  borderRadius: 56,
+                  boxShadow: `-7px 7px 20px #adadad, 
+                7px -7px 20px #ffffff`,
+                }}
+              />
+              <Caption>Rip sleep schedule</Caption>
+            </LeftSectionPic>
+            <RightSection>
+              <HighlightText>
+                I'm currently a rising junior at Penn!&nbsp;
+                <InlinePicLink href="https://www.upenn.edu/">
+                  <Img fluid={picData.pennShield.childImageSharp.fluid} />
+                </InlinePicLink>{" "}
+              </HighlightText>
+              <MediumSpacer />
+              <HighlightText>
+                And my degree's in computer science{" "}
+                <span role="img" aria-label="computer">
+                  💻
+                </span>
+                &nbsp;so I beep boop bop and unfortunately lose some sleep in
+                the process.
+              </HighlightText>
+            </RightSection>
+          </BottomContainer>
+          <BigSpacer />
+          <HighlightText>
+            But outside of scraping by and trying to stuff my tiny brain with as
+            much stuff as I can before I embark unto adult life, I also...
+          </HighlightText>
           <StyledUnorderedList>
             <li>
               run a lot these days{" "}
-              <span role="img" aria-label="runner">
+              {/* <span role="img" aria-label="runner">
                 🏃🏻‍♂️
-              </span>
+              </span> */}
               &nbsp;
-              <SmallText>
-                (if you follow me on Strava I follow back{" "}
+              {/* <SmallText>
+                (if you can find me on Strava, I follow back sooo{" "}
                 <span role="img" aria-label="eyes">
                   👀
                 </span>
                 &nbsp;)
-              </SmallText>
+              </SmallText> */}
             </li>
             <li>
               read some super old books{" "}
@@ -178,26 +243,28 @@ const IndexPage = () => {
             </li>
             <li>
               {" "}
-              yearn to travel&nbsp;
-              <span role="img" aria-label="airplane">
-                ✈️ &nbsp;😔
+              yearn to travel
+              {/* <span role="img" aria-label="airplane">
+                ✈️
+              </span> */}
+              &nbsp;
+              <span role="img" aria-label="sad">
+                😔
               </span>
             </li>
-            <li>
-              enjoy playing guitar{" "}
-              <span role="img" aria-label="guitar">
-                🎸
-              </span>{" "}
-            </li>
+            <li>enjoy playing guitar </li>
             <li>
               and mindlessly scroll through Twitter sometimes{" "}
               <SmallText>(rip)</SmallText>
             </li>
           </StyledUnorderedList>
           <RegularText>
-            Feel free to check out some of the other things I've done!
+            However, feel free to check out some of the other things I've done!
+            There's a projects page so I can talk a bit more than I usually can
+            about some of the work I've done, and all the links to my other
+            profiles are all up top, so click freely ~
           </RegularText>
-          <Spacer />
+          <LittleSpacer />
           <RegularText>
             On the note of traveling, I really wanna visit my home country of
             Korea&nbsp;
@@ -205,9 +272,10 @@ const IndexPage = () => {
             &nbsp;after all this chaos settles down, so here's some senti
             reminiscing for you to enjoy in the mean time :')
           </RegularText>
+          <MediumSpacer />
           <SectionPic>
             <Img
-              fluid={picData.korea.childImageSharp.fluid}
+              fluid={picData.lotte.childImageSharp.fluid}
               style={{
                 borderRadius: 56,
                 boxShadow: `-7px 7px 20px #adadad, 
@@ -224,7 +292,7 @@ const IndexPage = () => {
           </SectionPic>
           <SectionPic>
             <Img
-              fluid={picData.anotherKorea.childImageSharp.fluid}
+              fluid={picData.koreanFood.childImageSharp.fluid}
               style={{
                 borderRadius: 56,
                 boxShadow: `-7px 7px 20px #adadad, 
@@ -232,7 +300,51 @@ const IndexPage = () => {
               }}
             />
             <Caption>
-              Also at Lotte tower, but just more pretty shades :))
+              This was 돈까스 (donkatsu) down in Busan the same summer, and it
+              was sooo good, especially after a long train ride from Seoul. brb
+              gonna go cry for a bit T.T
+            </Caption>
+          </SectionPic>
+          <SectionPic>
+            <Img
+              fluid={picData.lotte_2.childImageSharp.fluid}
+              style={{
+                borderRadius: 56,
+                boxShadow: `-7px 7px 20px #adadad, 
+                7px -7px 20px #ffffff`,
+              }}
+            />
+            <Caption>
+              Also at Lotte tower, but just more pretty shades :D
+            </Caption>
+          </SectionPic>
+          <SectionPic>
+            <Img
+              fluid={picData.flowerGarden.childImageSharp.fluid}
+              style={{
+                borderRadius: 56,
+                boxShadow: `-7px 7px 20px #adadad, 
+                7px -7px 20px #ffffff`,
+              }}
+            />
+            <Caption>
+              A flower garden that I stumbled upon in Busan, and I just thought
+              this pic was cute :) the banners just say "happy wish" and "flower
+              garden" haha
+            </Caption>
+          </SectionPic>
+          <SectionPic>
+            <Img
+              fluid={picData.busanSunset.childImageSharp.fluid}
+              style={{
+                borderRadius: 56,
+                boxShadow: `-7px 7px 20px #adadad, 
+                7px -7px 20px #ffffff`,
+              }}
+            />
+            <Caption>
+              As you can tell, I sorta have a thing for nice sunsets LOL, this
+              one was also in Busan and I thought it was so nice to gaze it :')
             </Caption>
           </SectionPic>
         </Bottom>
