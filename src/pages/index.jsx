@@ -61,12 +61,12 @@ const InlinePicLink = styled.a`
   width: 3.5%;
   display: inline-block;
   position: relative;
-  top: 0.2rem;
+  top: 0.5rem;
 `
 
 const Svg = styled.img`
   display: inline-block;
-  width: 5.5%;
+  width: 5%;
   vertical-align: text-bottom;
 `
 // spacers
@@ -135,7 +135,7 @@ const IndexPage = () => {
         <Bottom>
           <SquishedSection>
             <HighlightText>
-              I'm currently a rising junior at Penn!{" "}
+              I'm currently a rising junior at Penn!&nbsp;
               <InlinePicLink href="https://www.upenn.edu/">
                 <Img fluid={picData.pennShield.childImageSharp.fluid} />
               </InlinePicLink>{" "}
@@ -146,7 +146,7 @@ const IndexPage = () => {
               <span role="img" aria-label="computer">
                 💻
               </span>
-              &nbsp; so I beep boop bop.
+              &nbsp;so I beep boop bop.
             </HighlightText>
             <Spacer />
             <HighlightText>

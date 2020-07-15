@@ -7,7 +7,7 @@ import {
   HighlightText,
   RegularText,
   SmallText,
-  SmallParagraph,
+  RegularParagraph,
 } from "../theme"
 import SEO from "../components/seo"
 import Img from "gatsby-image"
@@ -55,7 +55,7 @@ const ImageContainer = styled.ul`
   text-align: center;
 `
 const LogoImage = styled.li`
-  width: 8%;
+  width: 7%;
   display: inline-block;
   margin: auto 4%;
   border-radius: 44px;
@@ -142,7 +142,7 @@ const ProjectsPage = () => {
             </LogoImage>
           </ImageContainer>
           <MediumSpacer />
-          <SmallParagraph>
+          <RegularParagraph>
             WIP right now, but it's what I'm working on for the summer! Fingers
             crossed we're gonna launch a beta by beginning of August, but it's
             looking super promising as of now; currently building it from the
@@ -154,7 +154,7 @@ const ProjectsPage = () => {
               @andrewshen
             </ExternalLink>{" "}
             is what those images are above us.
-          </SmallParagraph>
+          </RegularParagraph>
         </Section>
         <Section>
           <HighlightText>CORD-19 Dataset Analysis + Modeling</HighlightText>
@@ -167,15 +167,19 @@ const ProjectsPage = () => {
             />
           </ImageContainer>
           <BigSpacer />
-          <SmallParagraph>
+          <RegularParagraph>
             Quite pertinent to the times, my final project for CIS545 was based
             around this dataset that was amassed thanks to A2I, Chan Zuckerberg
             Initiative, NIH and more. Called the "CORD-19" dataset (I swear, it
             wasn't a typo or anything on my end), it contained a massive number
             of research articles covering all topics related to coronaviruses,
             whether it be COVID-19, SARS, MERS, etc. in the form of{" "}
-            <code>.json</code> files
-          </SmallParagraph>
+            <code>.json</code> files.
+          </RegularParagraph>
+          <RegularParagraph>
+            From there, a lot of the work was first cleaning the data and
+            getting it into a workable form.
+          </RegularParagraph>
         </Section>
       </Body>
     </Layout>

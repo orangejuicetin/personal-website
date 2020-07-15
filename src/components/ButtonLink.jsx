@@ -6,12 +6,13 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 1.75vw;
   color: ${props => props.theme.colors.gray[1]};
+  transition: all 0.24s ease-in;
   &:hover {
     color: ${props => props.theme.colors.gray[0]};
-    -moz-transition: all 0.27s ease-in;
-    -o-transition: all 0.27s ease-in;
-    -webkit-transition: all 0.27s ease-in;
-    transition: all 0.27s ease-in;
+    -moz-transition: all 0.17s ease-in;
+    -o-transition: all 0.17s ease-in;
+    -webkit-transition: all 0.17s ease-in;
+    transition: all 0.17s ease-in;
   }
 `
 

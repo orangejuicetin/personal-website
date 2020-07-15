@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { ButtonLink } from "./ButtonLink"
+import { SocialMedia } from "./SocialMedia"
 
 const Head = styled.header`
   display: flex;
@@ -13,10 +14,16 @@ const Head = styled.header`
 
 const LogoContainer = styled.div`
   width: 5%;
+  flex: 0.6;
 `
 const MenuBarContainer = styled.ul`
   margin-left: 4%;
-  flex-grow: 1;
+  flex-grow: 4;
+`
+
+const SocialMediaContainer = styled.div`
+  display: flex;
+  flex-grow: 2;
 `
 
 const MenuButton = styled.li`
@@ -64,6 +71,9 @@ export const Header = () => {
           </MenuButton>
         ))}
       </MenuBarContainer>
+      <SocialMediaContainer>
+        <SocialMedia />
+      </SocialMediaContainer>
     </Head>
   )
 }
