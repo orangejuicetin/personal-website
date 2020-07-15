@@ -253,10 +253,10 @@ const IndexPage = () => {
                 😔
               </span>
             </li>
-            <li>enjoy learning new guitar songs</li>
+            <li>enjoy strumming my Taylor 510ce</li>
             <li>
-              and mindlessly scroll through Twitter sometimes{" "}
-              <SmallText>(rip)</SmallText>
+              and mindlessly scroll through Twitter sometimes&nbsp;
+              <SmallText>(oops)</SmallText>
             </li>
           </StyledUnorderedList>
           <RegularText>
