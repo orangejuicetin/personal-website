@@ -4,10 +4,11 @@ import SEO from "../components/seo"
 import { Layout } from "../components/Layout"
 import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
+import KoreanFlag from "../images/assets/korean_flag.svg"
 import {
   HeaderText,
   HighlightText,
-  RegularParagraph,
+  RegularText,
   StyledUnorderedList,
   Caption,
   SmallText,
@@ -62,6 +63,12 @@ const InlinePicLink = styled.a`
   position: relative;
   top: 0.2rem;
 `
+
+const Svg = styled.img`
+  display: inline-block;
+  width: 5.5%;
+  vertical-align: text-bottom;
+`
 // spacers
 
 const Spacer = styled.div`
@@ -71,7 +78,7 @@ const Spacer = styled.div`
 const IndexPage = () => {
   const picData = useStaticQuery(graphql`
     query {
-      personalPic: file(relativePath: { eq: "korea/ksa_roof_pic.jpg" }) {
+      personalPic: file(relativePath: { eq: "gallery/ksa_roof_pic.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -139,7 +146,7 @@ const IndexPage = () => {
               <span role="img" aria-label="computer">
                 💻
               </span>
-              &nbsp; so I beep boop bop
+              &nbsp; so I beep boop bop.
             </HighlightText>
             <Spacer />
             <HighlightText>
@@ -164,10 +171,16 @@ const IndexPage = () => {
               </SmallText>
             </li>
             <li>
+              read some super old books{" "}
+              <SmallText>
+                <em>(*insert Bible emoji here*)</em>
+              </SmallText>
+            </li>
+            <li>
               {" "}
               yearn to travel&nbsp;
               <span role="img" aria-label="airplane">
-                ✈️😔
+                ✈️ &nbsp;😔
               </span>
             </li>
             <li>
@@ -177,27 +190,21 @@ const IndexPage = () => {
               </span>{" "}
             </li>
             <li>
-              read some super old books{" "}
-              <SmallText>(insert Bible emoji here)</SmallText>
-            </li>
-            <li>
               and mindlessly scroll through Twitter sometimes{" "}
               <SmallText>(rip)</SmallText>
             </li>
           </StyledUnorderedList>
-          <RegularParagraph>
+          <RegularText>
             Feel free to check out some of the other things I've done!
-          </RegularParagraph>
-          <RegularParagraph>
+          </RegularText>
+          <Spacer />
+          <RegularText>
             On the note of traveling, I really wanna visit my home country of
-            Korea again&nbsp;
-            <span role="img" aria-label="korea">
-              🇰🇷
-            </span>
-            <embed src="../images/korea/korean_flag.svg" alt="korea_flag" />
-            &nbsp;after all this chaos settles down, so here's an awesome pic
-            (or two) in the mean time:
-          </RegularParagraph>
+            Korea&nbsp;
+            <Svg src={KoreanFlag} alt="korea_flag" />
+            &nbsp;after all this chaos settles down, so here's some senti
+            reminiscing for you to enjoy in the mean time :')
+          </RegularText>
           <SectionPic>
             <Img
               fluid={picData.korea.childImageSharp.fluid}

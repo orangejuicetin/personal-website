@@ -12,6 +12,7 @@ import {
 import SEO from "../components/seo"
 import Img from "gatsby-image"
 
+// layout
 const Body = styled.div`
   display: flex;
   flex-direction: column;
@@ -21,33 +22,50 @@ const Body = styled.div`
 `
 
 const Section = styled.div`
-  border-radius: 47px;
+  border-radius: 33px;
   background: #ffffff;
-  box-shadow: -12px 12px 24px #c9c9c9, 12px -12px 24px #ffffff;
+  box-shadow: -15px 15px 58px #f0f0f0, 15px -15px 58px #ffffff;
   font-size: ${props => props.theme.typography.small.fontSize};
-  margin: auto 3em 1.5em;
+  margin: auto 3rem 3rem;
   padding: 3%;
   width: 90%;
 `
 const BigSpacer = styled.div`
-  margin: 3% auto;
+  margin: 4% auto;
+  flex-grow: 1;
 `
 const MediumSpacer = styled.div`
   margin: 1.5% auto;
+  flex-grow: 1;
 `
 
+// text
 const TopText = styled(RegularText)`
   text-indent: 3%;
 `
 
+const ExternalLink = styled.a`
+  color: ${props => props.theme.colors.blue[1]};
+  text-decoration: none;
+`
+
+// pictures
 const ImageContainer = styled.ul`
   margin: 2% auto;
   text-align: center;
 `
-const Image = styled.li`
-  width: 10%;
+const LogoImage = styled.li`
+  width: 8%;
   display: inline-block;
   margin: auto 4%;
+  border-radius: 44px;
+  background: #ffffff;
+  box-shadow: -8px 8px 18px #e3e3e3, 8px -8px 18px #ffffff;
+`
+const GenericImage = styled(Img)`
+  border-radius: 44px;
+  background: #ffffff;
+  box-shadow: -9px 9px 32px #cccccc, 9px -9px 32px #ffffff;
 `
 const ProjectsPage = () => {
   const picData = useStaticQuery(graphql`
@@ -67,6 +85,24 @@ const ProjectsPage = () => {
         }
       }
       ampe_yellow: file(relativePath: { eq: "ampe/ampe-logo-yellow.png" }) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      cord_19_clusters: file(
+        relativePath: { eq: "gallery/cord-19_diagram.png" }
+      ) {
+        childImageSharp {
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      cord_19_lda: file(
+        relativePath: { eq: "gallery/cord-19_lda_sample.png" }
+      ) {
         childImageSharp {
           fluid(quality: 100) {
             ...GatsbyImageSharpFluid
@@ -95,15 +131,15 @@ const ProjectsPage = () => {
             <em>May 2020 - Present</em>
           </SmallText>
           <ImageContainer>
-            <Image>
+            <LogoImage>
               <Img fluid={picData.ampe_main.childImageSharp.fluid} />
-            </Image>
-            <Image>
+            </LogoImage>
+            <LogoImage>
               <Img fluid={picData.ampe_sky.childImageSharp.fluid} />
-            </Image>
-            <Image>
+            </LogoImage>
+            <LogoImage>
               <Img fluid={picData.ampe_yellow.childImageSharp.fluid} />
-            </Image>
+            </LogoImage>
           </ImageContainer>
           <MediumSpacer />
           <SmallParagraph>
@@ -112,9 +148,12 @@ const ProjectsPage = () => {
             looking super promising as of now; currently building it from the
             ground up using TypeScript, and our stack is React Native, a Apollo
             GraphQL server, and Nexus + Prisma in order to build our schema and
-            map it to our PostgreSQL database. Exciting stuff :)) sneak peek of
-            our logo from the wonderful @andrewshen is what those images are
-            above us.
+            map it to our PostgreSQL database. Sneak peek of our logo designed
+            by the wonderful{" "}
+            <ExternalLink href="https://andrewshen.net/">
+              @andrewshen
+            </ExternalLink>{" "}
+            is what those images are above us.
           </SmallParagraph>
         </Section>
         <Section>
@@ -122,12 +161,20 @@ const ProjectsPage = () => {
           <SmallText>
             <em>April 2020 - May 2020</em>
           </SmallText>
-          <ImageContainer></ImageContainer>
-          <MediumSpacer />
+          <ImageContainer>
+            <GenericImage
+              fluid={picData.cord_19_clusters.childImageSharp.fluid}
+            />
+          </ImageContainer>
+          <BigSpacer />
           <SmallParagraph>
-            Quite pertinent to the times, this was my final project for CIS545
-            and this dataset from A2I, Chan Zuckerberg Initiative, NIH and more
-            was a massive dataset of
+            Quite pertinent to the times, my final project for CIS545 was based
+            around this dataset that was amassed thanks to A2I, Chan Zuckerberg
+            Initiative, NIH and more. Called the "CORD-19" dataset (I swear, it
+            wasn't a typo or anything on my end), it contained a massive number
+            of research articles covering all topics related to coronaviruses,
+            whether it be COVID-19, SARS, MERS, etc. in the form of{" "}
+            <code>.json</code> files
           </SmallParagraph>
         </Section>
       </Body>
