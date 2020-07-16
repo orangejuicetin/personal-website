@@ -1,7 +1,7 @@
 {
   "name": "justinchoi_website",
   "private": true,
-  "description": "My personal website!! Built with Gatsby",
+  "description": "My personal website! Built with Gatsby",
   "version": "0.1.0",
   "author": "Justin Choi <juicetin@seas.upenn.edu>",
   "dependencies": {
