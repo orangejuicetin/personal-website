@@ -22,6 +22,7 @@ const Body = styled.div`
   grid-template-rows: 1fr auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+  margin: auto 8.25%;
 `
 
 const TopLeft = styled.div`
@@ -47,6 +48,7 @@ const BottomContainer = styled.div`
 `
 
 const RightSection = styled.div`
+  text-align: center;
   margin: auto;
   margin-left: 5%;
 `
@@ -59,14 +61,20 @@ const LeftSectionPic = styled.div`
 
 const NameText = styled.text`
   color: ${props => props.theme.colors.orange[0]};
-  -moz-transition: all 0.7s ease-in;
-  -o-transition: all 0.7s ease-in;
-  -webkit-transition: all 0.7s ease-in;
-  transition: all 0.7s ease-in;
 `
 
 // pictures
-const SectionPic = styled.figure`
+const ShadowedMainPic = styled(Img)`
+  border-radius: 5%;
+  box-shadow: -28px 28px 56px #cfcfcf, 28px -28px 56px #ffffff;
+`
+
+const ShadowedGeneralPic = styled(Img)`
+  border-radius: 10%;
+  box-shadow: -9px 9px 18px #d1d1d1, 9px -9px 18px #ffffff;
+`
+
+const Figure = styled.figure`
   margin: 5% 12.5% 2.5%;
 `
 
@@ -79,7 +87,7 @@ const InlinePicLink = styled.a`
 
 const Svg = styled.img`
   display: inline-block;
-  width: 4%;
+  width: 5%;
   vertical-align: text-bottom;
 `
 // spacers
@@ -174,26 +182,13 @@ const IndexPage = () => {
           </SmallText>
         </TopLeft>
         <TopRight>
-          <Img
-            fluid={picData.personalPic.childImageSharp.fluid}
-            style={{
-              borderRadius: 60,
-              background: "#ffffff",
-              boxShadow: `-28px 28px 56px #cfcfcf, 
-                         28px -28px 56px #ffffff`,
-            }}
-          />
+          <ShadowedMainPic fluid={picData.personalPic.childImageSharp.fluid} />
         </TopRight>
         <Bottom>
           <BottomContainer>
             <LeftSectionPic>
-              <Img
+              <ShadowedGeneralPic
                 fluid={picData.sleepy.childImageSharp.fluid}
-                style={{
-                  borderRadius: 56,
-                  boxShadow: `-7px 7px 20px #adadad, 
-                7px -7px 20px #ffffff`,
-                }}
               />
               <Caption>rip sleep schedule</Caption>
             </LeftSectionPic>
@@ -206,12 +201,12 @@ const IndexPage = () => {
               </HighlightText>
               <MediumSpacer />
               <HighlightText>
-                And my degree's in computer science{" "}
-                <span role="img" aria-label="computer">
+                And my degree's in computer science
+                {/* <span role="img" aria-label="computer">
                   💻
-                </span>
-                &nbsp;so I <em>beep boop bop</em> and unfortunately lose some
-                sleep in the process.
+                </span> */}
+                &nbsp;so I <em>beep boop bop</em> and kinda lose some sleep in
+                the process.
               </HighlightText>
             </RightSection>
           </BottomContainer>
@@ -276,15 +271,8 @@ const IndexPage = () => {
             from the last time I was able to go :')
           </RegularText>
           <MediumSpacer />
-          <SectionPic>
-            <Img
-              fluid={picData.lotte.childImageSharp.fluid}
-              style={{
-                borderRadius: 56,
-                boxShadow: `-7px 7px 20px #adadad, 
-                7px -7px 20px #ffffff`,
-              }}
-            />
+          <Figure>
+            <ShadowedGeneralPic fluid={picData.lotte.childImageSharp.fluid} />
             <Caption>
               Isn't this one so pretty? This was at the top of Lotte Tower, and
               I got soooo lucky to capture these colors; if you look closely
@@ -292,64 +280,42 @@ const IndexPage = () => {
               (Namsan Tower), which is a super cool spot in Seoul with cute
               locks on its fence (!!)
             </Caption>
-          </SectionPic>
-          <SectionPic>
-            <Img
+          </Figure>
+          <Figure>
+            <ShadowedGeneralPic
               fluid={picData.koreanFood.childImageSharp.fluid}
-              style={{
-                borderRadius: 56,
-                boxShadow: `-7px 7px 20px #adadad, 
-                7px -7px 20px #ffffff`,
-              }}
             />
             <Caption>
               This was 돈까스 (donkatsu) down in Busan the same summer, and it
               was sooo good, especially after a long train ride from Seoul. brb
               gonna go cry for a bit T.T
             </Caption>
-          </SectionPic>
-          <SectionPic>
-            <Img
-              fluid={picData.lotte_2.childImageSharp.fluid}
-              style={{
-                borderRadius: 56,
-                boxShadow: `-7px 7px 20px #adadad, 
-                7px -7px 20px #ffffff`,
-              }}
-            />
+          </Figure>
+          <Figure>
+            <ShadowedGeneralPic fluid={picData.lotte_2.childImageSharp.fluid} />
             <Caption>
               Also at Lotte tower, but just more pretty shades :D
             </Caption>
-          </SectionPic>
-          <SectionPic>
-            <Img
+          </Figure>
+          <Figure>
+            <ShadowedGeneralPic
               fluid={picData.flowerGarden.childImageSharp.fluid}
-              style={{
-                borderRadius: 56,
-                boxShadow: `-7px 7px 20px #adadad, 
-                7px -7px 20px #ffffff`,
-              }}
             />
             <Caption>
               A flower garden that I stumbled upon in Busan, and I just thought
               this pic was cute ~ the banners just say "happy wish" and "flower
               garden" haha
             </Caption>
-          </SectionPic>
-          <SectionPic>
-            <Img
+          </Figure>
+          <Figure>
+            <ShadowedGeneralPic
               fluid={picData.busanSunset.childImageSharp.fluid}
-              style={{
-                borderRadius: 56,
-                boxShadow: `-7px 7px 20px #adadad, 
-                7px -7px 20px #ffffff`,
-              }}
             />
             <Caption>
               As you can tell, I sorta have a thing for nice sunsets LOL, this
               one was also in Busan and I thought it was so nice to gaze at :')
             </Caption>
-          </SectionPic>
+          </Figure>
         </Bottom>
       </Body>
     </Layout>

@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const ExternalLink = styled.a`
-  width: 50%;
+  width: 3vw;
   padding: 3%;
   display: inline-block;
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
@@ -24,26 +24,32 @@ const ExternalLink = styled.a`
   }
 `
 const TwitterLink = styled(ExternalLink)`
-  width: 100%;
+  && {
+    width: 100%;
+  }
 `
 const GithubLink = styled(ExternalLink)`
-  opacity: 0.65;
-  &:hover {
-    opacity: 1;
+  && {
+    opacity: 0.65;
+    &:hover {
+      opacity: 1;
+    }
+    width: 100%;
   }
-  width: 100%;
 `
 const SpotifyLink = styled(ExternalLink)`
-  width: 100%;
+  && {
+    width: 100%;
+  }
 `
 const LinkedInLink = styled(ExternalLink)`
-  width: 107%;
-  opacity: 0.65;
-  &:hover {
-    opacity: 1;
+  && {
+    width: 105%;
+    opacity: 0.65;
+    &:hover {
+      opacity: 1;
+    }
   }
-  position: relative;
-  top: 0.15rem;
 `
 // const Svg = styled.img`
 //   display: inline-block;

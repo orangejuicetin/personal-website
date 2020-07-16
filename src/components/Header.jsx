@@ -8,16 +8,30 @@ import { SocialMedia } from "./SocialMedia"
 const Head = styled.header`
   display: flex;
   align-items: center;
+  justify-content: center;
   background: ${props => props.theme.colors.white};
   margin: 2.5% 5%;
 `
 
 const LogoContainer = styled.div`
   width: 5%;
-  flex: 0.6;
+  margin: 2%;
+  -moz-transition: all 0.34s ease-in;
+  -o-transition: all 0.34s ease-in;
+  -webkit-transition: all 0.34s ease-in;
+  transition: all 0.34s ease;
+  &:hover {
+    opacity: 0.8;
+    -moz-transition: all 0.23s ease-in;
+    -o-transition: all 0.23s ease-in;
+    -webkit-transition: all 0.23s ease-in;
+    transition: all 0.23s ease;
+  }
 `
-const MenuBarContainer = styled.ul`
-  margin-left: 4%;
+
+const MenuBarContainer = styled.div`
+  margin-left: 3%;
+  display: flex;
   flex-grow: 4;
 `
 
@@ -28,7 +42,7 @@ const SocialMediaContainer = styled.div`
 
 const MenuButton = styled.li`
   display: inline-block;
-  margin: 2rem;
+  margin: 5%;
 `
 
 const PersonalLogo = () => {

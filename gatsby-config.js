@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Justin Choi`,
     description: `A smattering of materials and thoughts`,
-    author: `orangejuicetin`,
+    author: `Justin Choi`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
