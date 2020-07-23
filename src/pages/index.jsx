@@ -83,7 +83,7 @@ const InlinePicLink = styled.a`
   width: 6%;
   display: inline-block;
   position: relative;
-  top: 0.7rem;
+  top: 0.5vw;
 `
 
 const Svg = styled.img`
@@ -119,14 +119,14 @@ const IndexPage = () => {
         relativePath: { eq: "gallery/puertorico_juicetin.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 800) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       sleepy: file(relativePath: { eq: "gallery/sleepy_juicetin.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 400) {
+          fluid(quality: 100, maxWidth: 300) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -142,35 +142,35 @@ const IndexPage = () => {
       }
       lotte: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 800) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       lotte_2: file(relativePath: { eq: "korea/korea_1.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 800) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       koreanFood: file(relativePath: { eq: "korea/busan_donkatsu.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 800) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       flowerGarden: file(relativePath: { eq: "korea/flower_garden.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 800) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       busanSunset: file(relativePath: { eq: "korea/busan_sunset.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 800) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

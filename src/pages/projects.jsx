@@ -85,21 +85,21 @@ const ProjectsPage = () => {
     query {
       ampe_main: file(relativePath: { eq: "ampe/ampe-logo.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 400) {
+          fluid(quality: 100, maxWidth: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       ampe_sky: file(relativePath: { eq: "ampe/ampe-logo-sky.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 400) {
+          fluid(quality: 100, maxWidth: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       ampe_yellow: file(relativePath: { eq: "ampe/ampe-logo-yellow.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 400) {
+          fluid(quality: 100, maxWidth: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -108,7 +108,7 @@ const ProjectsPage = () => {
         relativePath: { eq: "gallery/cord-19_diagram.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 400) {
+          fluid(quality: 100, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -117,7 +117,7 @@ const ProjectsPage = () => {
         relativePath: { eq: "gallery/cord-19_lda_sample.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 400) {
+          fluid(quality: 100, maxWidth: 700) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
