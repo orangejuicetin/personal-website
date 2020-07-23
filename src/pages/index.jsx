@@ -208,7 +208,7 @@ const IndexPage = () => {
                 <InlinePicLink
                   href="https://www.upenn.edu/"
                   target="_blank"
-                  rel="noopener"
+                  rel="noreferrer"
                 >
                   <Img
                     fluid={picData.pennShield.childImageSharp.fluid}

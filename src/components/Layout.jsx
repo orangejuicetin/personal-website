@@ -79,7 +79,7 @@ export const Layout = ({ children }) => {
           <StyledLink
             href="https://github.com/orangejuicetin"
             target="_blank"
-            rel="noopener"
+            rel="noreferrer"
           >
             {data.site.siteMetadata.author}
           </StyledLink>

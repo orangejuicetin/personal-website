@@ -168,7 +168,7 @@ const ProjectsPage = () => {
             <ExternalLink
               href="https://andrewshen.net/"
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
             >
               @andrewshen
             </ExternalLink>
@@ -189,7 +189,7 @@ const ProjectsPage = () => {
             <ExternalLink
               href="https://github.com/orangejuicetin/CIS545-Final-Project"
               target="_blank"
-              rel="noopener"
+              rel="noreferrer"
             >
               final project
             </ExternalLink>{" "}

@@ -79,28 +79,28 @@ export const SocialMedia = () => {
       <ExternalLink
         href="https://twitter.com/orange_juicetin"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
       >
         <Img fluid={logos.twitter.childImageSharp.fluid} />
       </ExternalLink>
       <ExternalLink
         href="https://open.spotify.com/user/12157433086?si=lbBCA0GvRuS1-IM970rIyA"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
       >
         <Img fluid={logos.spotify.childImageSharp.fluid} />
       </ExternalLink>
       <GithubLink
         href="https://github.com/orangejuicetin"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
       >
         <Img fluid={logos.github.childImageSharp.fluid} />
       </GithubLink>
       <LinkedInLink
         href="https://www.linkedin.com/in/juicetinchoi/"
         target="_blank"
-        rel="noopener"
+        rel="noreferrer"
       >
         <Img fluid={logos.linkedin.childImageSharp.fluid} />
       </LinkedInLink>
