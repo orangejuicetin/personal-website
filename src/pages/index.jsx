@@ -108,7 +108,7 @@ const IndexPage = () => {
     query {
       seoPic: file(relativePath: { eq: "gallery/puertorico_juicetin.png" }) {
         childImageSharp {
-          resize(width: 600) {
+          resize(width: 1200) {
             src
             width
             height
