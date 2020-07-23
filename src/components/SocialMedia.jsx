@@ -76,16 +76,32 @@ export const SocialMedia = () => {
   `)
   return (
     <>
-      <ExternalLink href="https://twitter.com/orange_juicetin">
+      <ExternalLink
+        href="https://twitter.com/orange_juicetin"
+        target="_blank"
+        rel="noopener"
+      >
         <Img fluid={logos.twitter.childImageSharp.fluid} />
       </ExternalLink>
-      <ExternalLink href="https://open.spotify.com/user/12157433086?si=lbBCA0GvRuS1-IM970rIyA">
+      <ExternalLink
+        href="https://open.spotify.com/user/12157433086?si=lbBCA0GvRuS1-IM970rIyA"
+        target="_blank"
+        rel="noopener"
+      >
         <Img fluid={logos.spotify.childImageSharp.fluid} />
       </ExternalLink>
-      <GithubLink href="https://github.com/orangejuicetin">
+      <GithubLink
+        href="https://github.com/orangejuicetin"
+        target="_blank"
+        rel="noopener"
+      >
         <Img fluid={logos.github.childImageSharp.fluid} />
       </GithubLink>
-      <LinkedInLink href="https://www.linkedin.com/in/juicetinchoi/">
+      <LinkedInLink
+        href="https://www.linkedin.com/in/juicetinchoi/"
+        target="_blank"
+        rel="noopener"
+      >
         <Img fluid={logos.linkedin.childImageSharp.fluid} />
       </LinkedInLink>
     </>

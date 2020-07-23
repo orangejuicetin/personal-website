@@ -165,7 +165,11 @@ const ProjectsPage = () => {
             GraphQL server, and Nexus + Prisma in order to build our schema and
             map it to our PostgreSQL database. Sneak peek of our logo designed
             by the wonderful&nbsp;
-            <ExternalLink href="https://andrewshen.net/">
+            <ExternalLink
+              href="https://andrewshen.net/"
+              target="_blank"
+              rel="noopener"
+            >
               @andrewshen
             </ExternalLink>
             !!
@@ -182,7 +186,11 @@ const ProjectsPage = () => {
           <BigSpacer />
           <RegularParagraph>
             Quite pertinent to the times, my{" "}
-            <ExternalLink href="https://github.com/orangejuicetin/CIS545-Final-Project">
+            <ExternalLink
+              href="https://github.com/orangejuicetin/CIS545-Final-Project"
+              target="_blank"
+              rel="noopener"
+            >
               final project
             </ExternalLink>{" "}
             for CIS545 was based around this dataset that was amassed thanks to

@@ -205,7 +205,11 @@ const IndexPage = () => {
             <RightSection>
               <HighlightText>
                 I'm currently a rising junior at Penn!&nbsp;
-                <InlinePicLink href="https://www.upenn.edu/">
+                <InlinePicLink
+                  href="https://www.upenn.edu/"
+                  target="_blank"
+                  rel="noopener"
+                >
                   <Img
                     fluid={picData.pennShield.childImageSharp.fluid}
                     alt=""

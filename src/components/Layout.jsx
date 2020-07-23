@@ -24,21 +24,6 @@ const GlobalStyle = createGlobalStyle`
     src: url('/static/fonts/Perpetua-Bold.ttf');
     font-weight: bold;
   }
-  @font-face {
-    font-family: 'Comfortaa';
-      src: url('/static/fonts/Comfortaa-Light.ttf');
-      font-weight: light;
-  }
-  @font-face {
-    font-family: 'Comfortaa';
-      src: url('/static/fonts/Comfortaa-Regular.ttf');
-      font-weight: normal;
-  }
-  @font-face {
-    font-family: 'Comfortaa Bold';
-    src: url('/static/fonts/Comfortaa-Bold.ttf');
-    font-weight: bold;
-  }
 `
 
 const PageContainer = styled.div`
@@ -91,12 +76,16 @@ export const Layout = ({ children }) => {
       <Footer>
         <div>
           © {new Date().getFullYear()}, made with {`<3`} by&nbsp;
-          <StyledLink href={"https://github.com/orangejuicetin"}>
+          <StyledLink
+            href="https://github.com/orangejuicetin"
+            target="_blank"
+            rel="noopener"
+          >
             {data.site.siteMetadata.author}
           </StyledLink>
         </div>
         Want to contact me? Shoot me an email at&nbsp;
-        <StyledLink href={"mailto:juicetin@seas.upenn.edu"}>
+        <StyledLink href="mailto:juicetin@seas.upenn.edu">
           juicetin@seas.upenn.edu
         </StyledLink>
         &nbsp;~
