@@ -3,7 +3,8 @@ module.exports = {
     title: `Justin Choi`,
     description: `A smattering of materials and thoughts`,
     author: `Justin Choi`,
-    url: "https://orangejuicetin.com",
+    keywords: [],
+    siteUrl: "https://orangejuicetin.com",
     twitterUsername: "orange_juicetin",
   },
   plugins: [

@@ -105,6 +105,15 @@ const LittleSpacer = styled.div`
 const IndexPage = () => {
   const picData = useStaticQuery(graphql`
     query {
+      seoPic: file(relativePath: { eq: "gallery/puertorico_juicetin.png" }) {
+        childImageSharp {
+          resize(width: 1200) {
+            src
+            width
+            height
+          }
+        }
+      }
       personalPic: file(
         relativePath: { eq: "gallery/puertorico_juicetin.png" }
       ) {
@@ -168,9 +177,11 @@ const IndexPage = () => {
     }
   `)
 
+  const seoImage = picData.seoImage.childImageSharp.resize
+
   return (
     <Layout>
-      <SEO title="Home" />
+      <SEO title="Home" image={seoImage} />
       <Body>
         <TopLeft>
           <HeaderText>Hello there ~ </HeaderText>

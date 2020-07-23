@@ -8,86 +8,117 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
-import { useLocation } from "@reach/router"
-
 import { useStaticQuery, graphql } from "gatsby"
 
-const SEO = ({ title, description, image }) => {
-  const { pathname } = useLocation()
+const SEO = ({ description, lang, meta, image: metaImage, title }) => {
   const { site } = useStaticQuery(
     graphql`
       query {
         site {
           siteMetadata {
-            defaultDescription: description
+            title
+            description
             author
-            siteUrl: url
-            twitterUsername
+            keywords
+            siteUrl
           }
         }
       }
     `
   )
-
-  const {
-    defaultDescription,
-    siteUrl,
-    author,
-    twitterUsername,
-  } = site.siteMetadata
-
-  const defaultImage = "../images/gallery/puertorico_juicetin.png"
-
-  const seo = {
-    title: title,
-    author: author,
-    description: description || defaultDescription,
-    url: `${siteUrl}${pathname}`,
-    image: defaultImage,
-    twitterUsername: twitterUsername,
-  }
+  const metaDescription = description || site.siteMetadata.description
+  const image =
+    metaImage && metaImage.src
+      ? `${site.siteMetadata.siteUrl}${metaImage.src}`
+      : null
 
   return (
-    <Helmet title={seo.title} titleTemplate={`%s · ${seo.author}`}>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={image ? image : seo.image} />
-      {seo.url && <meta property="og:url" content={seo.url} />}
-      {seo.title && <meta property="og:title" content={seo.title} />}
-      {seo.description && (
-        <meta property="og:description" content={seo.description} />
-      )}
-      {seo.image && (
-        <meta property="og:image" content={image ? image : seo.image} />
-      )}
-      <meta name="twitter:card" content="summary_large_image" />
-      {seo.twitterUsername && (
-        <meta name="twitter:creator" content={seo.twitterUsername} />
-      )}
-      {seo.title && <meta name="twitter:title" content={seo.title} />}
-      {seo.description && (
-        <meta name="twitter:description" content={seo.description} />
-      )}
-      {seo.image && (
-        <meta name="twitter:image" content={image ? image : seo.image} />
-      )}
-    </Helmet>
+    <Helmet
+      htmlAttributes={{
+        lang,
+      }}
+      title={title}
+      titleTemplate={`%s | ${site.siteMetadata.title}`}
+      meta={[
+        {
+          name: `description`,
+          content: metaDescription,
+        },
+        {
+          name: "keywords",
+          content: site.siteMetadata.keywords.join(","),
+        },
+        {
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:description`,
+          content: metaDescription,
+        },
+        {
+          property: `og:type`,
+          content: `website`,
+        },
+        {
+          name: `twitter:creator`,
+          content: site.siteMetadata.author,
+        },
+        {
+          name: `twitter:title`,
+          content: title,
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription,
+        },
+      ]
+        .concat(
+          metaImage
+            ? [
+                {
+                  property: "og:image",
+                  content: image,
+                },
+                {
+                  property: "og:image:width",
+                  content: metaImage.width,
+                },
+                {
+                  property: "og:image:height",
+                  content: metaImage.height,
+                },
+                {
+                  name: "twitter:card",
+                  content: "summary_large_image",
+                },
+              ]
+            : [
+                {
+                  name: "twitter:card",
+                  content: "summary",
+                },
+              ]
+        )
+        .concat(meta)}
+    />
   )
 }
 
 SEO.defaultProps = {
-  description: ``,
   lang: `en`,
   meta: [],
-  title: ``,
-  image: null,
+  description: ``,
 }
-
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  image: PropTypes.string,
+  image: PropTypes.shape({
+    src: PropTypes.string.isRequired,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+  }),
 }
-
 export default SEO
