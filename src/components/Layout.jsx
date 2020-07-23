@@ -24,6 +24,21 @@ const GlobalStyle = createGlobalStyle`
     src: url('/static/fonts/Perpetua-Bold.ttf');
     font-weight: bold;
   }
+  /* @font-face {
+    font-family: 'Comfortaa';
+      src: url('/static/fonts/Comfortaa-Light.ttf');
+      font-weight: light;
+  }
+  @font-face {
+    font-family: 'Comfortaa';
+      src: url('/static/fonts/Comfortaa-Regular.ttf');
+      font-weight: normal;
+  }
+  @font-face {
+    font-family: 'Comfortaa Bold';
+    src: url('/static/fonts/Comfortaa-Bold.ttf');
+    font-weight: bold;
+  } */
 `
 
 const PageContainer = styled.div`
@@ -36,7 +51,7 @@ const PageContainer = styled.div`
 
 const Footer = styled.footer`
   flex-shrink: 0;
-  margin-left: 25px;
+  margin-left: 2vw;
   margin-top: auto;
   font-size: 1vw;
   color: ${props => props.theme.colors.gray[1]};

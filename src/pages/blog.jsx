@@ -13,7 +13,7 @@ const Body = styled.div`
 `
 
 const Section = styled.div`
-  border-radius: 47px;
+  border-radius: 1vw;
   background: #ffffff;
   box-shadow: -0.7vw 0.7vw 1.4vw #c9c9c9, 0.7vw -0.7vw 1.4vw #ffffff;
   font-size: ${props => props.theme.typography.small.fontSize};

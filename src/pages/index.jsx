@@ -108,7 +108,7 @@ const IndexPage = () => {
     query {
       seoPic: file(relativePath: { eq: "gallery/puertorico_juicetin.png" }) {
         childImageSharp {
-          resize(width: 1200) {
+          resize(width: 600) {
             src
             width
             height
@@ -119,7 +119,7 @@ const IndexPage = () => {
         relativePath: { eq: "gallery/puertorico_juicetin.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
+          fluid(quality: 100, maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -135,7 +135,7 @@ const IndexPage = () => {
         relativePath: { eq: "logos/simplified-penn-shield.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 200) {
+          fluid(quality: 100, maxWidth: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

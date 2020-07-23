@@ -40,7 +40,7 @@ const AboutPage = () => {
     query {
       mePic: file(relativePath: { eq: "gallery/christmas.JPG" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
