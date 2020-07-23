@@ -57,8 +57,6 @@ const PersonalLogo = () => {
   )
 }
 
-// const SocialMedia = () => {}
-
 export const Header = () => {
   const menuItems = {
     // "/about": "Who Am I",

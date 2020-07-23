@@ -26,6 +26,7 @@ const Section = styled.div`
   background: #ffffff;
   box-shadow: -0.65vw 0.65vw 2.4vw #f0f0f0, 0.65vw -0.65vw 2.4vw #ffffff;
   font-size: ${props => props.theme.typography.small.fontSize};
+  font-family: ${props => props.theme.typography.small.fontFamily};
   margin: auto 1vw 4vw;
   padding: 3%;
   width: 100%;

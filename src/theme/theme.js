@@ -2,18 +2,23 @@ export const theme = {
   typography: {
     header: {
       fontSize: "3.75vw",
+      fontFamily: "Comfortaa",
     },
     large: {
       fontSize: "2.3vw",
+      fontFamily: "Comfortaa",
     },
     regular: {
-      fontSize: "1.4vw",
+      fontSize: "1.5vw",
+      fontFamily: "Avenir",
     },
     small: {
-      fontSize: "1.2vw",
+      fontSize: "1.3vw",
+      fontFamily: "Avenir",
     },
     caption: {
-      fontSize: "0.95vw",
+      fontSize: "1.1vw",
+      fontFamily: "Avenir",
       marginTop: "2vw",
     },
   },

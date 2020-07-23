@@ -61,6 +61,7 @@ const LeftSectionPic = styled.div`
 
 const NameText = styled.text`
   color: ${props => props.theme.colors.orange[0]};
+  font-family: "Comfortaa";
 `
 
 // pictures
