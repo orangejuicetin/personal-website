@@ -119,14 +119,14 @@ const IndexPage = () => {
         relativePath: { eq: "gallery/puertorico_juicetin.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       sleepy: file(relativePath: { eq: "gallery/sleepy_juicetin.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 400) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -135,42 +135,42 @@ const IndexPage = () => {
         relativePath: { eq: "logos/simplified-penn-shield.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       lotte: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       lotte_2: file(relativePath: { eq: "korea/korea_1.JPG" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       koreanFood: file(relativePath: { eq: "korea/busan_donkatsu.JPG" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       flowerGarden: file(relativePath: { eq: "korea/flower_garden.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       busanSunset: file(relativePath: { eq: "korea/busan_sunset.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 800) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

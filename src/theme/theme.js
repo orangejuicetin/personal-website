@@ -5,7 +5,7 @@ export const theme = {
       fontFamily: "Comfortaa",
     },
     large: {
-      fontSize: "2vw",
+      fontSize: "1.9vw",
       fontFamily: "Comfortaa",
     },
     regular: {

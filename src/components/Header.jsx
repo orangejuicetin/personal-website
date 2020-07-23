@@ -43,7 +43,7 @@ const PersonalLogo = () => {
     query {
       personalLogo: file(relativePath: { eq: "logos/personal_logo.jpg" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 250) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

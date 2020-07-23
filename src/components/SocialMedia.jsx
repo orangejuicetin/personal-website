@@ -46,28 +46,28 @@ export const SocialMedia = () => {
     query {
       twitter: file(relativePath: { eq: "logos/twitter_circle.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       linkedin: file(relativePath: { eq: "logos/linkedin.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       github: file(relativePath: { eq: "logos/github.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       spotify: file(relativePath: { eq: "logos/spotify_green_2.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
+          fluid(quality: 100, maxWidth: 200) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
