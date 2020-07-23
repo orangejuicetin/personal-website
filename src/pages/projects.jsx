@@ -86,21 +86,21 @@ const ProjectsPage = () => {
       ampe_main: file(relativePath: { eq: "ampe/ampe-logo.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       ampe_sky: file(relativePath: { eq: "ampe/ampe-logo-sky.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       ampe_yellow: file(relativePath: { eq: "ampe/ampe-logo-yellow.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -109,7 +109,7 @@ const ProjectsPage = () => {
       ) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -118,7 +118,7 @@ const ProjectsPage = () => {
       ) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

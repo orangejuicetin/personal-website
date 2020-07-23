@@ -30,7 +30,7 @@ const MenuBarContainer = styled.div`
 
 const SocialMediaContainer = styled.div`
   display: flex;
-  flex-grow: 2;
+  flex-grow: 1;
 `
 
 const MenuButton = styled.li`
@@ -44,7 +44,7 @@ const PersonalLogo = () => {
       personalLogo: file(relativePath: { eq: "logos/personal_logo.jpg" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }

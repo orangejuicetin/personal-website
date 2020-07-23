@@ -120,14 +120,14 @@ const IndexPage = () => {
       ) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       sleepy: file(relativePath: { eq: "gallery/sleepy_juicetin.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -136,42 +136,42 @@ const IndexPage = () => {
       ) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       lotte: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       lotte_2: file(relativePath: { eq: "korea/korea_1.JPG" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       koreanFood: file(relativePath: { eq: "korea/busan_donkatsu.JPG" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       flowerGarden: file(relativePath: { eq: "korea/flower_garden.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       busanSunset: file(relativePath: { eq: "korea/busan_sunset.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -206,7 +206,10 @@ const IndexPage = () => {
               <HighlightText>
                 I'm currently a rising junior at Penn!&nbsp;
                 <InlinePicLink href="https://www.upenn.edu/">
-                  <Img fluid={picData.pennShield.childImageSharp.fluid} />
+                  <Img
+                    fluid={picData.pennShield.childImageSharp.fluid}
+                    alt=""
+                  />
                 </InlinePicLink>{" "}
               </HighlightText>
               <MediumSpacer />

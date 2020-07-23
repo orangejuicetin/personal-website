@@ -4,9 +4,8 @@ import { useStaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 
 const ExternalLink = styled.a`
-  width: 3vw;
-  padding: 3%;
   display: inline-block;
+  padding: 1.5%;
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
   filter: gray; /* IE6-9 */
   -webkit-filter: grayscale(65%);
@@ -23,67 +22,52 @@ const ExternalLink = styled.a`
     transition: all 0.45s ease;
   }
 `
-const TwitterLink = styled(ExternalLink)`
-  && {
-    width: 100%;
-  }
-`
 const GithubLink = styled(ExternalLink)`
   && {
     opacity: 0.65;
     &:hover {
       opacity: 1;
     }
-    width: 100%;
-  }
-`
-const SpotifyLink = styled(ExternalLink)`
-  && {
-    width: 100%;
   }
 `
 const LinkedInLink = styled(ExternalLink)`
   && {
-    width: 105%;
     opacity: 0.65;
     &:hover {
       opacity: 1;
     }
   }
+  width: 105%;
 `
-// const Svg = styled.img`
-//   display: inline-block;
-//   width: 5%;
-// `
 
 export const SocialMedia = () => {
   const logos = useStaticQuery(graphql`
     query {
       twitter: file(relativePath: { eq: "logos/twitter_circle.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(quality: 100, width: 50, height: 50) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       linkedin: file(relativePath: { eq: "logos/linkedin.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(quality: 100, width: 50, height: 50) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       github: file(relativePath: { eq: "logos/github.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(quality: 100, width: 50, height: 50) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
       spotify: file(relativePath: { eq: "logos/spotify_green_2.png" }) {
         childImageSharp {
-          fluid(quality: 100) {
-            ...GatsbyImageSharpFluid
+          fixed(quality: 100, width: 50, height: 50) {
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
@@ -91,17 +75,17 @@ export const SocialMedia = () => {
   `)
   return (
     <>
-      <TwitterLink href="https://twitter.com/orange_juicetin">
-        <Img fluid={logos.twitter.childImageSharp.fluid} />
-      </TwitterLink>
-      <SpotifyLink href="https://open.spotify.com/user/12157433086?si=lbBCA0GvRuS1-IM970rIyA">
-        <Img fluid={logos.spotify.childImageSharp.fluid} />
-      </SpotifyLink>
+      <ExternalLink href="https://twitter.com/orange_juicetin">
+        <Img fixed={logos.twitter.childImageSharp.fixed} />
+      </ExternalLink>
+      <ExternalLink href="https://open.spotify.com/user/12157433086?si=lbBCA0GvRuS1-IM970rIyA">
+        <Img fixed={logos.spotify.childImageSharp.fixed} />
+      </ExternalLink>
       <GithubLink href="https://github.com/orangejuicetin">
-        <Img fluid={logos.github.childImageSharp.fluid} />
+        <Img fixed={logos.github.childImageSharp.fixed} />
       </GithubLink>
       <LinkedInLink href="https://www.linkedin.com/in/juicetinchoi/">
-        <Img fluid={logos.linkedin.childImageSharp.fluid} />
+        <Img fixed={logos.linkedin.childImageSharp.fixed} />
       </LinkedInLink>
     </>
   )
