@@ -22,7 +22,6 @@ const SEO = ({ title, description, image }) => {
             defaultDescription: description
             author
             siteUrl: url
-            defaultImage: image
             twitterUsername
           }
         }
@@ -34,29 +33,32 @@ const SEO = ({ title, description, image }) => {
     defaultDescription,
     siteUrl,
     author,
-    defaultImage,
     twitterUsername,
   } = site.siteMetadata
+
+  const defaultImage = "../images/gallery/puertorico_juicetin.png"
 
   const seo = {
     title: title,
     author: author,
     description: description || defaultDescription,
-    image: `${siteUrl}${image || defaultImage}`,
     url: `${siteUrl}${pathname}`,
+    image: defaultImage,
     twitterUsername: twitterUsername,
   }
 
   return (
     <Helmet title={seo.title} titleTemplate={`%s · ${seo.author}`}>
       <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
+      <meta name="image" content={image ? image : seo.image} />
       {seo.url && <meta property="og:url" content={seo.url} />}
       {seo.title && <meta property="og:title" content={seo.title} />}
       {seo.description && (
         <meta property="og:description" content={seo.description} />
       )}
-      {seo.image && <meta property="og:image" content={seo.image} />}
+      {seo.image && (
+        <meta property="og:image" content={image ? image : seo.image} />
+      )}
       <meta name="twitter:card" content="summary_large_image" />
       {seo.twitterUsername && (
         <meta name="twitter:creator" content={seo.twitterUsername} />
@@ -65,7 +67,9 @@ const SEO = ({ title, description, image }) => {
       {seo.description && (
         <meta name="twitter:description" content={seo.description} />
       )}
-      {seo.image && <meta name="twitter:image" content={seo.image} />}
+      {seo.image && (
+        <meta name="twitter:image" content={image ? image : seo.image} />
+      )}
     </Helmet>
   )
 }

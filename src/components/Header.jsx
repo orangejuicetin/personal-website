@@ -14,19 +14,12 @@ const Head = styled.header`
 `
 
 const LogoContainer = styled.div`
-  width: 5%;
+  width: 8%;
   margin: 2%;
   -moz-transition: all 0.34s ease-in;
   -o-transition: all 0.34s ease-in;
   -webkit-transition: all 0.34s ease-in;
   transition: all 0.34s ease;
-  &:hover {
-    opacity: 0.8;
-    -moz-transition: all 0.23s ease-in;
-    -o-transition: all 0.23s ease-in;
-    -webkit-transition: all 0.23s ease-in;
-    transition: all 0.23s ease;
-  }
 `
 
 const MenuBarContainer = styled.div`

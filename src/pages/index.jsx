@@ -66,12 +66,12 @@ const NameText = styled.text`
 // pictures
 const ShadowedMainPic = styled(Img)`
   border-radius: 5%;
-  box-shadow: -28px 28px 56px #cfcfcf, 28px -28px 56px #ffffff;
+  box-shadow: -1vw 1vw 2vw #cfcfcf, 1vw -1vw 2vw #ffffff;
 `
 
 const ShadowedGeneralPic = styled(Img)`
   border-radius: 10%;
-  box-shadow: -9px 9px 18px #d1d1d1, 9px -9px 18px #ffffff;
+  box-shadow: -0.5vw 0.5vw 1vw #d1d1d1, 0.5vw -0.5vw 1vw #ffffff;
 `
 
 const Figure = styled.figure`

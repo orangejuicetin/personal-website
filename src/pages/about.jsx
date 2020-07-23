@@ -32,7 +32,7 @@ const Bottom = styled.div`
 
 const ShadowedMainPic = styled(Img)`
   border-radius: 5%;
-  box-shadow: -28px 28px 56px #d9d9d9, 28px -28px 56px #ffffff;
+  box-shadow: -1vw 1vw 2vw #d9d9d9, 1vw -1vw 2vw #ffffff;
 `
 
 const AboutPage = () => {

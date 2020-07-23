@@ -72,12 +72,12 @@ const LogoImage = styled.li`
   margin: auto 4%;
   border-radius: 44px;
   background: #ffffff;
-  box-shadow: -8px 8px 18px #e3e3e3, 8px -8px 18px #ffffff;
+  box-shadow: -0.4vw 0.4vw 1vw #d1d1d1, 0.4vw -0.4vw 1vw #ffffff;
 `
 const GenericImage = styled(Img)`
   border-radius: 44px;
   background: #ffffff;
-  box-shadow: -9px 9px 32px #cccccc, 9px -9px 32px #ffffff;
+  box-shadow: -0.5vw 0.5vw 2vw #cccccc, 0.5vw -0.5vw 2vw #ffffff;
 `
 const ProjectsPage = () => {
   const picData = useStaticQuery(graphql`

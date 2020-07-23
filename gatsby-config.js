@@ -4,7 +4,6 @@ module.exports = {
     description: `A smattering of materials and thoughts`,
     author: `Justin Choi`,
     url: "https://orangejuicetin.com",
-    image: "/src/images/gallery/puertorico_juicetin.png",
     twitterUsername: "orange_juicetin",
   },
   plugins: [
