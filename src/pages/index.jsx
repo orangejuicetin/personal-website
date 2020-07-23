@@ -119,7 +119,7 @@ const IndexPage = () => {
         relativePath: { eq: "gallery/puertorico_juicetin.png" }
       ) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 500) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -142,35 +142,35 @@ const IndexPage = () => {
       }
       lotte: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
+          fluid(quality: 100, maxWidth: 700) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       lotte_2: file(relativePath: { eq: "korea/korea_1.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
+          fluid(quality: 100, maxWidth: 700) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       koreanFood: file(relativePath: { eq: "korea/busan_donkatsu.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
+          fluid(quality: 100, maxWidth: 700) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       flowerGarden: file(relativePath: { eq: "korea/flower_garden.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
+          fluid(quality: 100, maxWidth: 700) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       busanSunset: file(relativePath: { eq: "korea/busan_sunset.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
+          fluid(quality: 100, maxWidth: 700) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
