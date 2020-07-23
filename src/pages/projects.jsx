@@ -22,13 +22,13 @@ const Body = styled.div`
 `
 
 const Section = styled.div`
-  border-radius: 33px;
+  border-radius: 2vw;
   background: #ffffff;
-  box-shadow: -15px 15px 58px #f0f0f0, 15px -15px 58px #ffffff;
+  box-shadow: -0.65vw 0.65vw 2.4vw #f0f0f0, 0.65vw -0.65vw 2.4vw #ffffff;
   font-size: ${props => props.theme.typography.small.fontSize};
-  margin: auto 3rem 3rem;
+  margin: auto 1vw 4vw;
   padding: 3%;
-  width: 90%;
+  width: 100%;
 `
 const BigSpacer = styled.div`
   margin: 4% auto;
@@ -62,21 +62,21 @@ const ExternalLink = styled.a`
 `
 
 // pictures
-const ImageContainer = styled.ul`
+const RowImageContainer = styled.div`
   margin: 2% auto;
   text-align: center;
 `
-const LogoImage = styled.li`
+const LogoImage = styled.div`
   width: 7%;
   display: inline-block;
   margin: auto 4%;
-  border-radius: 44px;
+  border-radius: 3vw;
   background: #ffffff;
   box-shadow: -0.4vw 0.4vw 1vw #d1d1d1, 0.4vw -0.4vw 1vw #ffffff;
 `
 const GenericImage = styled(Img)`
-  border-radius: 44px;
-  background: #ffffff;
+  margin: 3% 6%;
+  border-radius: 3vw;
   box-shadow: -0.5vw 0.5vw 2vw #cccccc, 0.5vw -0.5vw 2vw #ffffff;
 `
 const ProjectsPage = () => {
@@ -142,7 +142,7 @@ const ProjectsPage = () => {
           <SmallText>
             <em>May 2020 - Present</em>
           </SmallText>
-          <ImageContainer>
+          <RowImageContainer>
             <LogoImage>
               <Img fluid={picData.ampe_main.childImageSharp.fluid} />
             </LogoImage>
@@ -152,7 +152,7 @@ const ProjectsPage = () => {
             <LogoImage>
               <Img fluid={picData.ampe_yellow.childImageSharp.fluid} />
             </LogoImage>
-          </ImageContainer>
+          </RowImageContainer>
           <MediumSpacer />
           <RegularParagraph>
             WIP right now, but it's what I'm working on for the summer! Helping
@@ -175,11 +175,9 @@ const ProjectsPage = () => {
           <SmallText>
             <em>April 2020 - May 2020</em>
           </SmallText>
-          <ImageContainer>
-            <GenericImage
-              fluid={picData.cord_19_clusters.childImageSharp.fluid}
-            />
-          </ImageContainer>
+          <GenericImage
+            fluid={picData.cord_19_clusters.childImageSharp.fluid}
+          />
           <BigSpacer />
           <RegularParagraph>
             Quite pertinent to the times, my{" "}
@@ -244,9 +242,7 @@ const ProjectsPage = () => {
             shared characteristics within each of these clusters (otherwise our
             model wouldn't have partitioned them this way otherwise!).
           </RegularParagraph>
-          <ImageContainer>
-            <GenericImage fluid={picData.cord_19_lda.childImageSharp.fluid} />
-          </ImageContainer>
+          <GenericImage fluid={picData.cord_19_lda.childImageSharp.fluid} />
           <BigSpacer />
           <RegularParagraph>
             As some finishing touches, the last cool thing I got to do was to
@@ -276,7 +272,7 @@ const ProjectsPage = () => {
           gratitude for your patience, here's a cute puppy gif to keep you
           company:
           <BigSpacer />
-          <div>
+          <RowImageContainer>
             <iframe
               src="https://giphy.com/embed/3oKIPd8EtLUiCYHbry"
               title="puppy"
@@ -286,7 +282,7 @@ const ProjectsPage = () => {
               class="giphy-embed"
               allowFullScreen
             ></iframe>
-          </div>
+          </RowImageContainer>
         </Section>
       </Body>
     </Layout>

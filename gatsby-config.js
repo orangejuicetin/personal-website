@@ -3,7 +3,7 @@ module.exports = {
     title: `Justin Choi`,
     description: `A smattering of materials and thoughts`,
     author: `Justin Choi`,
-    keywords: [],
+    keywords: ["Justin Choi", "personal website", "juicetin"],
     siteUrl: "https://orangejuicetin.com",
     twitterUsername: "orange_juicetin",
   },

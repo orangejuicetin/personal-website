@@ -177,11 +177,9 @@ const IndexPage = () => {
     }
   `)
 
-  const seoImage = picData.seoImage.childImageSharp.resize
-
   return (
     <Layout>
-      <SEO title="Home" image={seoImage} />
+      <SEO title="Home" image={picData.seoPic.childImageSharp.resize} />
       <Body>
         <TopLeft>
           <HeaderText>Hello there ~ </HeaderText>
