@@ -5,7 +5,8 @@ import Img from "gatsby-image"
 
 const ExternalLink = styled.a`
   display: inline-block;
-  padding: 1.5%;
+  padding: 3%;
+  width: 100%;
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale"); /* Firefox 3.5+ */
   filter: gray; /* IE6-9 */
   -webkit-filter: grayscale(65%);
@@ -36,8 +37,8 @@ const LinkedInLink = styled(ExternalLink)`
     &:hover {
       opacity: 1;
     }
+    max-width: 105%;
   }
-  width: 105%;
 `
 
 export const SocialMedia = () => {
@@ -45,29 +46,29 @@ export const SocialMedia = () => {
     query {
       twitter: file(relativePath: { eq: "logos/twitter_circle.png" }) {
         childImageSharp {
-          fixed(quality: 100, width: 50, height: 50) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       linkedin: file(relativePath: { eq: "logos/linkedin.png" }) {
         childImageSharp {
-          fixed(quality: 100, width: 50, height: 50) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       github: file(relativePath: { eq: "logos/github.png" }) {
         childImageSharp {
-          fixed(quality: 100, width: 50, height: 50) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       spotify: file(relativePath: { eq: "logos/spotify_green_2.png" }) {
         childImageSharp {
-          fixed(quality: 100, width: 50, height: 50) {
-            ...GatsbyImageSharpFixed_withWebp
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -76,16 +77,16 @@ export const SocialMedia = () => {
   return (
     <>
       <ExternalLink href="https://twitter.com/orange_juicetin">
-        <Img fixed={logos.twitter.childImageSharp.fixed} />
+        <Img fluid={logos.twitter.childImageSharp.fluid} />
       </ExternalLink>
       <ExternalLink href="https://open.spotify.com/user/12157433086?si=lbBCA0GvRuS1-IM970rIyA">
-        <Img fixed={logos.spotify.childImageSharp.fixed} />
+        <Img fluid={logos.spotify.childImageSharp.fluid} />
       </ExternalLink>
       <GithubLink href="https://github.com/orangejuicetin">
-        <Img fixed={logos.github.childImageSharp.fixed} />
+        <Img fluid={logos.github.childImageSharp.fluid} />
       </GithubLink>
       <LinkedInLink href="https://www.linkedin.com/in/juicetinchoi/">
-        <Img fixed={logos.linkedin.childImageSharp.fixed} />
+        <Img fluid={logos.linkedin.childImageSharp.fluid} />
       </LinkedInLink>
     </>
   )

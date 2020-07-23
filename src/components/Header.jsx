@@ -30,7 +30,7 @@ const MenuBarContainer = styled.div`
 
 const SocialMediaContainer = styled.div`
   display: flex;
-  flex-grow: 1;
+  flex-grow: 1.5;
 `
 
 const MenuButton = styled.li`
