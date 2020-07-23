@@ -33,7 +33,7 @@ const SocialMediaContainer = styled.div`
   flex-grow: 1.5;
 `
 
-const MenuButton = styled.li`
+const MenuButton = styled.div`
   display: inline-block;
   margin: 5%;
 `
