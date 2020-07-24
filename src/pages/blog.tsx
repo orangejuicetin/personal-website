@@ -1,8 +1,7 @@
-import React from "react"
-import styled from "styled-components"
+import React from "react";
+import styled from "styled-components";
 
-import SEO from "../components/seo"
-import { Layout } from "../components/Layout"
+import { SEO, Layout } from "../components";
 
 const Body = styled.div`
   display: flex;
@@ -10,7 +9,7 @@ const Body = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2.5% 7.5%;
-`
+`;
 
 const Section = styled.div`
   border-radius: 1vw;
@@ -20,7 +19,7 @@ const Section = styled.div`
   margin: auto 3em 1.5em;
   padding: 3%;
   width: 90%;
-`
+`;
 
 const BlogPage = () => (
   <Layout>
@@ -34,6 +33,6 @@ const BlogPage = () => (
       </Section>
     </Body>
   </Layout>
-)
+);
 
-export default BlogPage
+export default BlogPage;

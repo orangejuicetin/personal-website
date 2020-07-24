@@ -39,4 +39,4 @@ export const theme = {
       0: "#ffa500",
     },
   },
-}
+};

@@ -1,10 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import SEO from "../components/seo"
-import { Layout } from "../components/Layout"
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import KoreanFlag from "../images/assets/korean_flag.svg"
+import React from "react";
+import styled from "styled-components";
+import { SEO, Layout } from "../components";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import KoreanFlag from "../images/assets/korean_flag.svg";
 import {
   HeaderText,
   HighlightText,
@@ -12,7 +11,8 @@ import {
   StyledUnorderedList,
   Caption,
   SmallText,
-} from "../theme"
+} from "../theme";
+import { useGallery, useKoreaImages } from "../hooks";
 
 // page setup
 
@@ -23,88 +23,98 @@ const Body = styled.div`
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   margin: auto 8.25%;
-`
+`;
 
 const TopLeft = styled.div`
   grid-area: 1 / 1 / 2 / 2;
   text-align: center;
   margin: auto;
-`
+`;
 
 const TopRight = styled.div`
   grid-area: 1 / 2 / 2 / 3;
   margin: 7%;
-`
+`;
 
 const Bottom = styled.div`
   grid-area: 2 / 1 / 3 / 3;
   justify-content: center;
   align-items: center;
   margin: 2% 7.5%;
-`
+`;
 
 const BottomContainer = styled.div`
   display: flex;
-`
+`;
 
 const RightSection = styled.div`
   text-align: center;
   margin: auto;
   margin-left: 5%;
-`
+`;
 
 const LeftSectionPic = styled.div`
   width: 100%;
-`
+`;
 
 // text elements
 
 const NameText = styled.text`
   color: ${props => props.theme.colors.orange[0]};
   font-family: "Comfortaa";
-`
+`;
 
 // pictures
 const ShadowedMainPic = styled(Img)`
   border-radius: 5%;
   box-shadow: -1vw 1vw 2vw #cfcfcf, 1vw -1vw 2vw #ffffff;
-`
+`;
 
 const ShadowedGeneralPic = styled(Img)`
   border-radius: 10%;
   box-shadow: -0.5vw 0.5vw 1vw #d1d1d1, 0.5vw -0.5vw 1vw #ffffff;
-`
+`;
 
 const Figure = styled.figure`
   margin: 5% 12.5% 2.5%;
-`
+`;
 
 const InlinePicLink = styled.a`
   width: 6%;
   display: inline-block;
   position: relative;
   top: 0.5vw;
-`
+`;
 
 const Svg = styled.img`
   display: inline-block;
   width: 5%;
   vertical-align: text-bottom;
-`
+`;
 // spacers
 
 const BigSpacer = styled.div`
   margin: 5%;
-`
+`;
 const MediumSpacer = styled.div`
   margin: 2.5%;
-`
+`;
 const LittleSpacer = styled.div`
   margin: 1.25%;
-`
+`;
 
 const IndexPage = () => {
-  const picData = useStaticQuery(graphql`
+  // use hook to query all necessary data from images folder
+  const { personalPic, sleepy } = useGallery();
+  const {
+    lotte,
+    lotteAlternate,
+    busanDonkatsu,
+    flowerGarden,
+    busanSunset,
+  } = useKoreaImages();
+
+  const extraData = useStaticQuery(graphql`
     query {
       seoPic: file(relativePath: { eq: "gallery/puertorico_juicetin.png" }) {
         childImageSharp {
@@ -112,22 +122,6 @@ const IndexPage = () => {
             src
             width
             height
-          }
-        }
-      }
-      personalPic: file(
-        relativePath: { eq: "gallery/puertorico_juicetin.png" }
-      ) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      sleepy: file(relativePath: { eq: "gallery/sleepy_juicetin.png" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 300) {
-            ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
@@ -140,47 +134,11 @@ const IndexPage = () => {
           }
         }
       }
-      lotte: file(relativePath: { eq: "korea/lotte_sunset.JPG" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      lotte_2: file(relativePath: { eq: "korea/korea_1.JPG" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      koreanFood: file(relativePath: { eq: "korea/busan_donkatsu.JPG" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      flowerGarden: file(relativePath: { eq: "korea/flower_garden.png" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      busanSunset: file(relativePath: { eq: "korea/busan_sunset.png" }) {
-        childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
     }
-  `)
-
+  `);
   return (
     <Layout>
-      <SEO title="Home" image={picData.seoPic.childImageSharp.resize} />
+      <SEO title="Home" image={extraData.seoPic.childImageSharp.resize} />
       <Body>
         <TopLeft>
           <HeaderText>Hello there ~ </HeaderText>
@@ -192,14 +150,12 @@ const IndexPage = () => {
           </SmallText>
         </TopLeft>
         <TopRight>
-          <ShadowedMainPic fluid={picData.personalPic.childImageSharp.fluid} />
+          <ShadowedMainPic fluid={personalPic.childImageSharp.fluid} />
         </TopRight>
         <Bottom>
           <BottomContainer>
             <LeftSectionPic>
-              <ShadowedGeneralPic
-                fluid={picData.sleepy.childImageSharp.fluid}
-              />
+              <ShadowedGeneralPic fluid={sleepy.childImageSharp.fluid} />
               <Caption>rip sleep schedule</Caption>
             </LeftSectionPic>
             <RightSection>
@@ -211,7 +167,7 @@ const IndexPage = () => {
                   rel="noreferrer"
                 >
                   <Img
-                    fluid={picData.pennShield.childImageSharp.fluid}
+                    fluid={extraData.pennShield.childImageSharp.fluid}
                     alt=""
                   />
                 </InlinePicLink>{" "}
@@ -289,7 +245,7 @@ const IndexPage = () => {
           </RegularText>
           <MediumSpacer />
           <Figure>
-            <ShadowedGeneralPic fluid={picData.lotte.childImageSharp.fluid} />
+            <ShadowedGeneralPic fluid={lotte.childImageSharp.fluid} />
             <Caption>
               Isn't this one so pretty? This was at the top of Lotte Tower, and
               I got soooo lucky to capture these colors; if you look closely
@@ -299,9 +255,7 @@ const IndexPage = () => {
             </Caption>
           </Figure>
           <Figure>
-            <ShadowedGeneralPic
-              fluid={picData.koreanFood.childImageSharp.fluid}
-            />
+            <ShadowedGeneralPic fluid={busanDonkatsu.childImageSharp.fluid} />
             <Caption>
               This was 돈까스 (donkatsu) down in Busan the same summer, and it
               was sooo good, especially after a long train ride from Seoul. brb
@@ -309,15 +263,13 @@ const IndexPage = () => {
             </Caption>
           </Figure>
           <Figure>
-            <ShadowedGeneralPic fluid={picData.lotte_2.childImageSharp.fluid} />
+            <ShadowedGeneralPic fluid={lotteAlternate.childImageSharp.fluid} />
             <Caption>
               Also at Lotte tower, but just more pretty shades :D
             </Caption>
           </Figure>
           <Figure>
-            <ShadowedGeneralPic
-              fluid={picData.flowerGarden.childImageSharp.fluid}
-            />
+            <ShadowedGeneralPic fluid={flowerGarden.childImageSharp.fluid} />
             <Caption>
               A flower garden that I stumbled upon in Busan, and I just thought
               this pic was cute ~ the banners just say "happy wish" and "flower
@@ -325,9 +277,7 @@ const IndexPage = () => {
             </Caption>
           </Figure>
           <Figure>
-            <ShadowedGeneralPic
-              fluid={picData.busanSunset.childImageSharp.fluid}
-            />
+            <ShadowedGeneralPic fluid={busanSunset.childImageSharp.fluid} />
             <Caption>
               As you can tell, I sorta have a thing for nice sunsets LOL, this
               one was also in Busan and I thought it was so nice to gaze at :')
@@ -336,7 +286,7 @@ const IndexPage = () => {
         </Bottom>
       </Body>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

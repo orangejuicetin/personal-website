@@ -1,16 +1,15 @@
-import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
-import styled from "styled-components"
-import { Layout } from "../components/Layout.jsx"
+import React from "react";
+import { useStaticQuery, graphql } from "gatsby";
+import styled from "styled-components";
+import { SEO, Layout } from "../components";
 import {
   HeaderText,
   HighlightText,
   RegularText,
   SmallText,
   RegularParagraph,
-} from "../theme"
-import SEO from "../components/seo"
-import Img from "gatsby-image"
+} from "../theme";
+import Img from "gatsby-image";
 
 // layout
 const Body = styled.div`
@@ -19,7 +18,7 @@ const Body = styled.div`
   justify-content: center;
   align-items: center;
   margin: 2.5% 12.5%;
-`
+`;
 
 const Section = styled.div`
   border-radius: 2vw;
@@ -30,20 +29,20 @@ const Section = styled.div`
   margin: auto 1vw 4vw;
   padding: 3%;
   width: 100%;
-`
+`;
 const BigSpacer = styled.div`
   margin: 4% auto;
   flex-grow: 1;
-`
+`;
 const MediumSpacer = styled.div`
   margin: 1.5% auto;
   flex-grow: 1;
-`
+`;
 
 // text
 const TopText = styled(RegularText)`
   text-indent: 3%;
-`
+`;
 
 const ExternalLink = styled.a`
   color: ${props => props.theme.colors.orange[0]};
@@ -60,13 +59,13 @@ const ExternalLink = styled.a`
     -webkit-transition: all 0.4s ease-in;
     transition: all 0.4s ease;
   }
-`
+`;
 
 // pictures
 const RowImageContainer = styled.div`
   margin: 2% auto;
   text-align: center;
-`
+`;
 const LogoImage = styled.div`
   width: 7%;
   display: inline-block;
@@ -74,12 +73,12 @@ const LogoImage = styled.div`
   border-radius: 3vw;
   background: #ffffff;
   box-shadow: -0.4vw 0.4vw 1vw #d1d1d1, 0.4vw -0.4vw 1vw #ffffff;
-`
+`;
 const GenericImage = styled(Img)`
   margin: 3% 6%;
   border-radius: 3vw;
   box-shadow: -0.5vw 0.5vw 2vw #cccccc, 0.5vw -0.5vw 2vw #ffffff;
-`
+`;
 const ProjectsPage = () => {
   const picData = useStaticQuery(graphql`
     query {
@@ -123,7 +122,7 @@ const ProjectsPage = () => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <Layout>
@@ -295,7 +294,7 @@ const ProjectsPage = () => {
         </Section>
       </Body>
     </Layout>
-  )
-}
+  );
+};
 
-export default ProjectsPage
+export default ProjectsPage;
