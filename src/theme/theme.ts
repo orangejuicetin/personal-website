@@ -10,15 +10,15 @@ export const theme = {
     },
     regular: {
       fontSize: "1.5vw",
-      fontFamily: "Avenir",
+      fontFamily: "Montserrat",
     },
     small: {
       fontSize: "1.3vw",
-      fontFamily: "Avenir",
+      fontFamily: "Montserrat",
     },
     caption: {
       fontSize: "1.1vw",
-      fontFamily: "Avenir",
+      fontFamily: "Montserrat",
       marginTop: "2vw",
     },
   },

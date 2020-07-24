@@ -178,8 +178,8 @@ const IndexPage = () => {
                 {/* <span role="img" aria-label="computer">
                   💻
                 </span> */}
-                &nbsp;so I <em>beep boop bop</em> and kinda lose some sleep in
-                the process.
+                &nbsp;so I beep boop bop and kinda lose some sleep in the
+                process.
               </HighlightText>
             </RightSection>
           </BottomContainer>

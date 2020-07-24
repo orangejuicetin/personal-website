@@ -39,5 +39,11 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [`Comfortaa`, `Montserrat`],
+      },
+    },
   ],
-}
+};

@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "commonjs",
+    "lib": ["es6"],
+    "allowJs": true,
+    "alwaysStrict": true,
+    "jsx": "react"
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    ".firebaserc",
+    "firebase.json",
+    "firebase",
+    "gatsby-config.js"
+  ]
+}
