@@ -1,9 +1,9 @@
-import React from "react"
-import styled from "styled-components"
-import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
-import { ButtonLink } from "./ButtonLink"
-import { SocialMedia } from "./SocialMedia"
+import React from "react";
+import styled from "styled-components";
+import { Link, useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { ButtonLink } from "./ButtonLink";
+import { SocialMedia } from "./SocialMedia";
 
 const Head = styled.header`
   display: flex;
@@ -11,7 +11,7 @@ const Head = styled.header`
   justify-content: center;
   background: ${props => props.theme.colors.white};
   margin: 2.5% 5%;
-`
+`;
 
 const LogoContainer = styled.div`
   width: 8%;
@@ -20,23 +20,23 @@ const LogoContainer = styled.div`
   -o-transition: all 0.34s ease-in;
   -webkit-transition: all 0.34s ease-in;
   transition: all 0.34s ease;
-`
+`;
 
 const MenuBarContainer = styled.div`
   margin-left: 3%;
   display: flex;
   flex-grow: 4;
-`
+`;
 
 const SocialMediaContainer = styled.div`
   display: flex;
   flex-grow: 1.5;
-`
+`;
 
 const MenuButton = styled.div`
   display: inline-block;
   margin: 5%;
-`
+`;
 
 const PersonalLogo = () => {
   const data = useStaticQuery(graphql`
@@ -49,20 +49,20 @@ const PersonalLogo = () => {
         }
       }
     }
-  `)
+  `);
   return (
     <Link to="/">
       <Img fluid={data.personalLogo.childImageSharp.fluid} />
     </Link>
-  )
-}
+  );
+};
 
 export const Header = () => {
   const menuItems = {
     // "/about": "Who Am I",
     "/projects": "Projects",
     "/blog": "Random Thoughts",
-  }
+  };
 
   return (
     <Head>
@@ -80,5 +80,5 @@ export const Header = () => {
         <SocialMedia />
       </SocialMediaContainer>
     </Head>
-  )
-}
+  );
+};

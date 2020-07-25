@@ -1,9 +1,9 @@
-import React from "react"
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { theme } from "../theme"
-import { Header } from "./Header"
+import React from "react";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql } from "gatsby";
+import { theme } from "../theme";
+import { Header } from "./Header";
 
 const GlobalStyle = createGlobalStyle`
   html {
@@ -14,32 +14,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%; 
     height: 100%; 
   }   
-  @font-face {
-    font-family: 'Perpetua';
-      src: url('/static/fonts/Perpetua.ttf');
-      font-weight: normal;
-  }
-  @font-face {
-    font-family: 'Perpetua Bold';
-    src: url('/static/fonts/Perpetua-Bold.ttf');
-    font-weight: bold;
-  }
-  /* @font-face {
-    font-family: 'Comfortaa';
-      src: url('/static/fonts/Comfortaa-Light.ttf');
-      font-weight: light;
-  }
-  @font-face {
-    font-family: 'Comfortaa';
-      src: url('/static/fonts/Comfortaa-Regular.ttf');
-      font-weight: normal;
-  }
-  @font-face {
-    font-family: 'Comfortaa Bold';
-    src: url('/static/fonts/Comfortaa-Bold.ttf');
-    font-weight: bold;
-  } */
-`
+`;
 
 const PageContainer = styled.div`
   display: flex;
@@ -47,7 +22,7 @@ const PageContainer = styled.div`
   width: 100%;
   height: 100%;
   flex: 1 0 auto;
-`
+`;
 
 const Footer = styled.footer`
   flex-shrink: 0;
@@ -55,7 +30,7 @@ const Footer = styled.footer`
   margin-top: auto;
   font-size: 1vw;
   color: ${props => props.theme.colors.gray[1]};
-`
+`;
 const StyledLink = styled.a`
   text-decoration: none;
   color: ${props => props.theme.colors.blue[0]};
@@ -70,7 +45,7 @@ const StyledLink = styled.a`
     -webkit-transition: all 0.15s ease-in;
     transition: all 0.15s ease-in;
   }
-`
+`;
 
 export const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -81,7 +56,7 @@ export const Layout = ({ children }) => {
         }
       }
     }
-  `)
+  `);
 
   return (
     <ThemeProvider theme={theme}>
@@ -106,9 +81,9 @@ export const Layout = ({ children }) => {
         &nbsp;~
       </Footer>
     </ThemeProvider>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};

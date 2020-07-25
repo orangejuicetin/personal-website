@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { SEO, Layout } from "../components";
 import { useGallery } from "../hooks";
 import Img from "gatsby-image";
-import { HighlightText, RegularText } from "../theme";
+import { HighlightText, RegularText } from "../style";
 
 const Body = styled.div`
   display: grid;

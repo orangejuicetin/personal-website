@@ -9,15 +9,15 @@ export const theme = {
       fontFamily: "Comfortaa",
     },
     regular: {
-      fontSize: "1.5vw",
-      fontFamily: "Montserrat",
-    },
-    small: {
       fontSize: "1.3vw",
       fontFamily: "Montserrat",
     },
-    caption: {
+    small: {
       fontSize: "1.1vw",
+      fontFamily: "Montserrat",
+    },
+    caption: {
+      fontSize: "0.9vw",
       fontFamily: "Montserrat",
       marginTop: "2vw",
     },
