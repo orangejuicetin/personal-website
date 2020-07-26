@@ -52,6 +52,13 @@ module.exports = {
         fonts: [`Comfortaa`, `Montserrat`],
       },
     },
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve("./src/components/DefaultPostLayout.tsx"),
+        },
+      },
+    },
   ],
 };

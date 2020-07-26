@@ -11,7 +11,7 @@ import {
   StyledUnorderedList,
   Caption,
   SmallText,
-} from "../theme";
+} from "../style";
 import { useGallery, useKoreaImages } from "../hooks";
 
 // page setup

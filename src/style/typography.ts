@@ -48,7 +48,6 @@ export const StyledUnorderedList = styled.ul`
 export const DateText = styled.text`
   font-size: ${props => props.theme.typography.caption.fontSize};
   font-family: ${props => props.theme.typography.caption.fontFamily};
-  margin-top: ${props => props.theme.typography.caption.marginTop};
 `;
 export const Caption = styled.figcaption`
   font-style: italic;

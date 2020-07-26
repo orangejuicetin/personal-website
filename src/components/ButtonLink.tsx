@@ -1,6 +1,6 @@
-import React, { useContext } from "react"
-import { Link } from "gatsby"
-import styled, { ThemeContext } from "styled-components"
+import React from "react";
+import { Link } from "gatsby";
+import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
@@ -18,13 +18,8 @@ const StyledLink = styled(Link)`
     -webkit-transition: all 0.15s ease-in;
     transition: all 0.15s ease-in;
   }
-`
+`;
 
 export const ButtonLink = ({ route, name }) => {
-  const themeContext = useContext(ThemeContext)
-  return (
-    <StyledLink to={route} activeStyle={{ color: themeContext.colors.gray[0] }}>
-      {name}
-    </StyledLink>
-  )
-}
+  return <StyledLink to={route}>{name}</StyledLink>;
+};

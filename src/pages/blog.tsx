@@ -1,15 +1,15 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { graphql, Link } from "gatsby";
 import styled from "styled-components";
-import { SEO, Layout, ButtonLink } from "../components";
-import { SmallText, DateText } from "../style";
+import { SEO, Layout } from "../components";
+import { DateText, SmallText, RegularParagraph, HighlightText } from "../style";
 
 const Body = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2.5% 15%;
+  margin: auto 15% 10%;
 `;
 
 const Section = styled.div`
@@ -17,10 +17,37 @@ const Section = styled.div`
   flex-direction: column;
   border-radius: 1vw;
   background: #ffffff;
-  box-shadow: -0.7vw 0.7vw 1.4vw #d9d9d9, 0.7vw -0.7vw 1.4vw #ffffff;
+  box-shadow: -0.7vw 0.7vw 1.4vw #e9e9e9, 0.7vw -0.7vw 1.4vw #ffffff;
   font-size: ${props => props.theme.typography.small.fontSize};
-  padding: 3%;
-  width: 90%;
+  padding: 5%;
+  width: 65%;
+`;
+
+const TitleLink = styled(Link)`
+  text-decoration: none;
+  font-size: 1.75vw;
+  font-family: "Avenir Next", sans-serif;
+  color: ${props => props.theme.colors.gray[1]};
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  &:hover {
+    color: ${props => props.theme.colors.blue[1]};
+    -moz-transition: all 0.15s ease-in;
+    -o-transition: all 0.15s ease-in;
+    -webkit-transition: all 0.15s ease-in;
+    transition: all 0.15s ease-in;
+  }
+`;
+
+const Abstract = styled.div`
+  margin: 2.5% 0 0;
+  font-style: italic;
+`;
+
+const Spacer = styled.div`
+  margin: 2.5%;
 `;
 
 const BlogPage = ({ data }) => {
@@ -29,16 +56,35 @@ const BlogPage = ({ data }) => {
     <Layout>
       <SEO title="Blog" />
       <Body>
+        <HighlightText>Thanks for stopping by!</HighlightText>
+        <RegularParagraph>
+          Below are quite literally random thoughts I've simply written down,
+          either because of a vested sudden <em>~ passionate ~</em> interest in
+          the topic or just so I can consolidate them on all on a single page
+          and make sense of it all. Nothing more, nothing less. I'm quite the
+          open book, so apologies in advance if some topics suit your taste buds
+          more than others, but I'll try my best to make most of the content
+          digestable.
+          <div>
+            I've found writing to be quite therapeutic and a great way to simply
+            practice how to convey ideas concisely but clearly, so I'm trying to
+            make it more of a habit! If you ever have any thoughts, questions,
+            or comments on anything I write, feel more than free to ping me
+            through any method of contact, because I'm always down to Chat™
+          </div>
+          &nbsp;
+          <div>- Justin</div>
+        </RegularParagraph>
+        <Spacer />
         {posts.map(({ node: post }) => (
           <Section key={post.id}>
-            <ButtonLink
-              route={post.frontmatter.slug}
-              name={post.frontmatter.title}
-            />
-            <div>
-              <DateText>{post.frontmatter.date}</DateText>
-            </div>
-            <p>{post.excerpt}</p>
+            <TitleLink to={post.frontmatter.slug}>
+              {post.frontmatter.title}
+            </TitleLink>
+            <DateText>{post.frontmatter.date}</DateText>
+            <Abstract>
+              <SmallText>{post.frontmatter.abstract}</SmallText>
+            </Abstract>
           </Section>
         ))}
       </Body>
@@ -52,12 +98,12 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             author
             date
             slug
+            abstract
           }
         }
       }

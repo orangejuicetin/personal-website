@@ -8,7 +8,7 @@ import {
   RegularText,
   SmallText,
   RegularParagraph,
-} from "../theme";
+} from "../style";
 import Img from "gatsby-image";
 
 // layout
