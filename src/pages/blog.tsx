@@ -2,7 +2,7 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import { SEO, Layout } from "../components";
-import { DateText, SmallText, RegularParagraph, HighlightText } from "../style";
+import { DateText, SmallText, RegularParagraph, SubtitleText } from "../styled";
 
 const Body = styled.div`
   display: flex;
@@ -26,7 +26,7 @@ const Section = styled.div`
 const TitleLink = styled(Link)`
   text-decoration: none;
   font-size: 1.75vw;
-  font-family: "Avenir Next", sans-serif;
+  font-family: ${props => props.theme.typography.regular.fontFamily}, sans-serif;
   color: ${props => props.theme.colors.gray[1]};
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -56,7 +56,7 @@ const BlogPage = ({ data }) => {
     <Layout>
       <SEO title="Blog" />
       <Body>
-        <HighlightText>Thanks for stopping by!</HighlightText>
+        <SubtitleText>Thanks for stopping by!</SubtitleText>
         <RegularParagraph>
           Below are quite literally random thoughts I've simply written down,
           either because of a vested sudden <em>~ passionate ~</em> interest in

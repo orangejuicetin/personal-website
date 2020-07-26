@@ -5,6 +5,7 @@
     "lib": ["es6"],
     "allowJs": true,
     "alwaysStrict": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react"
   },
   "include": ["src/**/*"],

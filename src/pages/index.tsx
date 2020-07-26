@@ -6,12 +6,12 @@ import Img from "gatsby-image";
 import KoreanFlag from "../images/assets/korean_flag.svg";
 import {
   HeaderText,
-  HighlightText,
+  LargeText,
   RegularText,
   StyledUnorderedList,
   Caption,
   SmallText,
-} from "../style";
+} from "../styled";
 import { useGallery, useKoreaImages } from "../hooks";
 
 // page setup
@@ -159,7 +159,7 @@ const IndexPage = () => {
               <Caption>rip sleep schedule</Caption>
             </LeftSectionPic>
             <RightSection>
-              <HighlightText>
+              <LargeText>
                 I'm currently a rising junior at Penn!&nbsp;
                 <InlinePicLink
                   href="https://www.upenn.edu/"
@@ -171,24 +171,24 @@ const IndexPage = () => {
                     alt=""
                   />
                 </InlinePicLink>{" "}
-              </HighlightText>
+              </LargeText>
               <MediumSpacer />
-              <HighlightText>
+              <LargeText>
                 And my degree's in computer science
                 {/* <span role="img" aria-label="computer">
                   💻
                 </span> */}
                 &nbsp;so I beep boop bop and kinda lose some sleep in the
                 process.
-              </HighlightText>
+              </LargeText>
             </RightSection>
           </BottomContainer>
           <BigSpacer />
-          <HighlightText>
+          <LargeText>
             But outside of scraping by and trying to stuff my tiny brain with as
             much new material as I can before I embark unto adult life, I
             also...
-          </HighlightText>
+          </LargeText>
           <StyledUnorderedList>
             <li>
               run a lot these days{" "}

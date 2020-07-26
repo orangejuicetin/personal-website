@@ -4,11 +4,11 @@ import styled from "styled-components";
 import { SEO, Layout } from "../components";
 import {
   HeaderText,
-  HighlightText,
+  SubtitleText,
   RegularText,
   SmallText,
   RegularParagraph,
-} from "../style";
+} from "../styled";
 import Img from "gatsby-image";
 
 // layout
@@ -17,7 +17,7 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2.5% 12.5%;
+  margin: auto 12.5%;
 `;
 
 const Section = styled.div`
@@ -31,7 +31,7 @@ const Section = styled.div`
   width: 100%;
 `;
 const BigSpacer = styled.div`
-  margin: 4% auto;
+  margin: 2.5% auto 4%;
   flex-grow: 1;
 `;
 const MediumSpacer = styled.div`
@@ -66,6 +66,7 @@ const RowImageContainer = styled.div`
   margin: 2% auto;
   text-align: center;
 `;
+
 const LogoImage = styled.div`
   width: 7%;
   display: inline-block;
@@ -74,11 +75,13 @@ const LogoImage = styled.div`
   background: #ffffff;
   box-shadow: -0.4vw 0.4vw 1vw #d1d1d1, 0.4vw -0.4vw 1vw #ffffff;
 `;
+
 const GenericImage = styled(Img)`
   margin: 3% 6%;
   border-radius: 3vw;
   box-shadow: -0.5vw 0.5vw 2vw #cccccc, 0.5vw -0.5vw 2vw #ffffff;
 `;
+
 const ProjectsPage = () => {
   const picData = useStaticQuery(graphql`
     query {
@@ -129,7 +132,7 @@ const ProjectsPage = () => {
       <SEO title="Projects" />
       <Body>
         <HeaderText>Gallery</HeaderText>
-        <BigSpacer />
+        <MediumSpacer />
         <TopText>
           Here are some projects that I wanted to display in fuller detail!
           Figured that I'd rather not use this space to just repeat my resume on
@@ -138,7 +141,7 @@ const ProjectsPage = () => {
         </TopText>
         <BigSpacer />
         <Section>
-          <HighlightText>Ampe</HighlightText>
+          <SubtitleText>Ampe</SubtitleText>
           <SmallText>
             <em>May 2020 - Present</em>
           </SmallText>
@@ -175,7 +178,7 @@ const ProjectsPage = () => {
           </RegularParagraph>
         </Section>
         <Section>
-          <HighlightText>CORD-19 Dataset Analysis + Modeling</HighlightText>
+          <SubtitleText>CORD-19 Dataset Analysis + Modeling</SubtitleText>
           <SmallText>
             <em>April 2020 - May 2020</em>
           </SmallText>

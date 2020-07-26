@@ -5,21 +5,21 @@ import { MDXProvider } from "@mdx-js/react";
 import { MDXRenderer } from "gatsby-plugin-mdx";
 import { Layout } from "./Layout";
 // import all the typography and common elements to be used in the MDX pages
-import * as Style from "../style";
+import * as Style from "../styled";
 import { SEO } from "./SEO";
 
 const shortcodes = { Link, ...Style }; // Provide common components here
 
 const Page = styled.div`
   margin: auto 17.5% 10%;
-  font-family: "Montserrat", sans-serif;
+  font-family: ${props => props.theme.typography.regular.fontFamily}, sans-serif;
   font-size: ${props => props.theme.typography.regular.fontSize};
 `;
 
 const GoBack = styled(Link)`
   text-decoration: underline;
   font-size: 1.25vw;
-  font-family: "Avenir Next", sans-serif;
+  font-family: ${props => props.theme.typography.regular.fontFamily}, sans-serif;
   color: ${props => props.theme.colors.gray[1]};
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
@@ -29,7 +29,7 @@ const GoBack = styled(Link)`
     color: ${props => props.theme.colors.gray[0]};
     -moz-transition: all 0.15s ease-in;
     -o-transition: all 0.15s ease-in;
-    -webkit-transition: all 0.15s ease-in;
+    -webkit-transition: all 0.15themes ease-in;
     transition: all 0.15s ease-in;
   }
 `;
@@ -40,7 +40,7 @@ export default function PageTemplate({ data: { mdx } }) {
       <SEO title={mdx.frontmatter.title} />
       <Page>
         <GoBack to="/blog">go back</GoBack>
-        <Style.HighlightText>{mdx.frontmatter.title}</Style.HighlightText>
+        {/* <Style.SubtitleText>{mdx.frontmatter.title}</Style.SubtitleText> */}
         <MDXProvider components={shortcodes}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>

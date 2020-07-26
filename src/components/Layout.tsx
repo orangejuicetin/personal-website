@@ -2,10 +2,10 @@ import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { theme } from "../style";
+import { theme, ThemeType } from "../styled";
 import { Header } from "./Header";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   html {
     font-family: "Avenir Next", sans-serif;  
     color: ${props => props.theme.colors.gray[0]}; 
@@ -25,12 +25,14 @@ const PageContainer = styled.div`
 `;
 
 const Footer = styled.footer`
+  font-family: ${props => props.theme.typography.regular.fontFamily};
   flex-shrink: 0;
   margin-left: 2vw;
   margin-top: auto;
   font-size: 1vw;
   color: ${props => props.theme.colors.gray[1]};
 `;
+
 const StyledLink = styled.a`
   text-decoration: none;
   color: ${props => props.theme.colors.blue[0]};
@@ -65,7 +67,7 @@ export const Layout = ({ children }) => {
       <PageContainer>{children}</PageContainer>
       <Footer>
         <div>
-          © {new Date().getFullYear()}, made with {`<3`} by&nbsp;
+          © {new Date().getFullYear()}, made with ♥️ &nbsp; by&nbsp;
           <StyledLink
             href="https://github.com/orangejuicetin"
             target="_blank"

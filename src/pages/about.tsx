@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { SEO, Layout } from "../components";
 import { useGallery } from "../hooks";
 import Img from "gatsby-image";
-import { HighlightText, RegularText } from "../style";
+import { SubtitleText, RegularText } from "../styled";
 
 const Body = styled.div`
   display: grid;
@@ -41,7 +41,7 @@ const AboutPage = () => {
       <SEO title="Who Am I" />
       <Body>
         <TopLeftSide>
-          <HighlightText>Good question!</HighlightText>
+          <SubtitleText>Good question!</SubtitleText>
           <RegularText>
             Not sure to be quite honest; I will say, I think that this page
             needs a bit more work

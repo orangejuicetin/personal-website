@@ -4,21 +4,25 @@ export const theme = {
       fontSize: "3.75vw",
       fontFamily: "Comfortaa",
     },
+    subtitle: {
+      fontSize: "2.75vw",
+      fontFamily: "Quicksand",
+    },
     large: {
-      fontSize: "1.9vw",
-      fontFamily: "Comfortaa",
+      fontSize: "2vw",
+      fontFamily: "Quicksand",
     },
     regular: {
       fontSize: "1.3vw",
-      fontFamily: "Montserrat",
+      fontFamily: "Quicksand",
     },
     small: {
       fontSize: "1.1vw",
-      fontFamily: "Montserrat",
+      fontFamily: "Quicksand",
     },
     caption: {
       fontSize: "0.9vw",
-      fontFamily: "Montserrat",
+      fontFamily: "Quicksand",
       marginTop: "2vw",
     },
   },
@@ -40,3 +44,6 @@ export const theme = {
     },
   },
 };
+
+type ThemeType = typeof theme;
+export { ThemeType };
