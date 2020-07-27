@@ -7,7 +7,6 @@ import KoreanFlag from "../images/assets/korean_flag.svg";
 import {
   HeaderText,
   LargeText,
-  RegularText,
   RegularParagraph,
   StyledUnorderedList,
   Caption,
@@ -54,6 +53,13 @@ const RightSection = styled.div`
 
 const LeftSectionPic = styled.div`
   width: 100%;
+`;
+
+const CenteringDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 // text elements
@@ -179,56 +185,53 @@ const IndexPage = () => {
               </LargeText>
               <MediumSpacer />
               <LargeText>
-                And my degree's in computer science
-                {/* <span role="img" aria-label="computer">
-                  💻
-                </span> */}
-                &nbsp;so I beep boop bop and kinda lose some sleep in the
-                process.
+                And my degree's in computer science, so I beep boop bop and
+                kinda lose some sleep in the process.
               </LargeText>
             </RightSection>
           </BottomContainer>
-          <BigSpacer />
-          <LargeText>
-            But outside of scraping by and trying to stuff my tiny brain with as
-            much new material as I can before I embark unto adult life, I
-            also...
-          </LargeText>
-          <StyledUnorderedList>
-            <li>run a lot these days &nbsp;</li>
-            <li>
-              read some super old books{" "}
-              <SmallText>
-                <em>(*insert Bible emoji here*)</em>
-              </SmallText>
-            </li>
-            <li>
-              wish I could be traveling &nbsp;
-              <span role="img" aria-label="sad">
-                😔
-              </span>
-            </li>
-            <li>enjoy strumming my Taylor 510ce</li>
-            <li>
-              and mindlessly scroll through Twitter sometimes&nbsp;
-              <SmallText>(oops)</SmallText>
-            </li>
-          </StyledUnorderedList>
-          <RegularParagraph>
-            However, feel free to check out some of the other things I've done!
-            There's a projects page where I elaborate more on the work I've done
-            in the past (free from the constraint of a one page resume
-            thankfully), and all the links to my other profiles are all up top,
-            so click freely!
-          </RegularParagraph>
-          <RegularParagraph>
-            And, on the note of traveling, I really wanna visit my home country
-            of Korea&nbsp;
-            <Svg src={KoreanFlag} alt="korea_flag" />
-            &nbsp;if there's any chance, y'know, flying becomes normal again, so
-            in the mean time, here's some senti reminiscing for you to enjoy
-            from the last time I was able to go :')
-          </RegularParagraph>
+          <CenteringDiv>
+            <LargeText>
+              But outside of scraping by and trying to stuff my tiny brain with
+              as much new material as I can before I embark unto adult life, I
+              also...
+            </LargeText>
+            <StyledUnorderedList>
+              <li>run a lot these days &nbsp;</li>
+              <li>
+                read some super old books{" "}
+                <SmallText>
+                  <em>(*insert Bible emoji here*)</em>
+                </SmallText>
+              </li>
+              <li>
+                wish I could be traveling &nbsp;
+                <span role="img" aria-label="sad">
+                  😔
+                </span>
+              </li>
+              <li>enjoy strumming my Taylor 510ce</li>
+              <li>
+                and mindlessly scroll through Twitter sometimes&nbsp;
+                <SmallText>(oops)</SmallText>
+              </li>
+            </StyledUnorderedList>
+            <RegularParagraph>
+              However, feel free to check out some of the other things I've
+              done! There's a projects page where I elaborate more on the work
+              I've done in the past (free from the constraint of a one page
+              resume thankfully), and all the links to my other profiles are all
+              up top, so click freely!
+              <div>
+                And, on the note of traveling, I really wanna visit my home
+                country of Korea&nbsp;
+                <Svg src={KoreanFlag} alt="korea_flag" />
+                &nbsp;if there's any chance, y'know, flying becomes normal
+                again, so in the mean time, here's some senti reminiscing for
+                you to enjoy from the last time I was able to go :')
+              </div>
+            </RegularParagraph>
+          </CenteringDiv>
           <PicRow>
             <Figure>
               <ShadowedGeneralPic fluid={lotte.childImageSharp.fluid} />

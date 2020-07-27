@@ -7,6 +7,7 @@ const Paragraph = styled.p`
   max-width: 100%;
   text-align: justify;
   hyphens: auto;
+  text-indent: 3%;
 `;
 
 const Text = styled.text`
