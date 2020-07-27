@@ -11,9 +11,15 @@ import { SEO } from "./SEO";
 const shortcodes = { Link, ...Style }; // Provide common components here
 
 const Page = styled.div`
-  margin: auto 17.5% 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+const Container = styled.div`
+  margin: auto 15% 10%;
   font-family: ${props => props.theme.typography.regular.fontFamily}, sans-serif;
   font-size: ${props => props.theme.typography.regular.fontSize};
+  width: 70ch;
 `;
 
 const GoBack = styled(Link)`
@@ -39,11 +45,12 @@ export default function PageTemplate({ data: { mdx } }) {
     <Layout>
       <SEO title={mdx.frontmatter.title} />
       <Page>
-        <GoBack to="/blog">go back</GoBack>
-        {/* <Style.SubtitleText>{mdx.frontmatter.title}</Style.SubtitleText> */}
-        <MDXProvider components={shortcodes}>
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
+        <Container>
+          <GoBack to="/blog">go back</GoBack>
+          <MDXProvider components={shortcodes}>
+            <MDXRenderer>{mdx.body}</MDXRenderer>
+          </MDXProvider>
+        </Container>
       </Page>
     </Layout>
   );

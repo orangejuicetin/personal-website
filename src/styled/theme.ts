@@ -23,7 +23,7 @@ export const theme = {
     caption: {
       fontSize: "0.9vw",
       fontFamily: "Quicksand",
-      marginTop: "2vw",
+      marginTop: "1.25vw",
     },
   },
 

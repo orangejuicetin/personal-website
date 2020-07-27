@@ -2,25 +2,30 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import styled from "styled-components";
 import { SEO, Layout } from "../components";
-import { DateText, SmallText, RegularParagraph, SubtitleText } from "../styled";
+import {
+  DateText,
+  SmallParagraph,
+  RegularParagraph,
+  SubtitleText,
+} from "../styled";
 
 const Body = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto 15% 10%;
+  margin: auto 12.5% 10%;
 `;
 
 const Section = styled.div`
+  margin: 1.75vw auto;
   display: flex;
   flex-direction: column;
   border-radius: 1vw;
   background: #ffffff;
   box-shadow: -0.7vw 0.7vw 1.4vw #e9e9e9, 0.7vw -0.7vw 1.4vw #ffffff;
   font-size: ${props => props.theme.typography.small.fontSize};
-  padding: 5%;
-  width: 65%;
+  padding: 2vw;
 `;
 
 const TitleLink = styled(Link)`
@@ -42,12 +47,8 @@ const TitleLink = styled(Link)`
 `;
 
 const Abstract = styled.div`
-  margin: 2.5% 0 0;
+  margin: auto 0;
   font-style: italic;
-`;
-
-const Spacer = styled.div`
-  margin: 2.5%;
 `;
 
 const BlogPage = ({ data }) => {
@@ -75,7 +76,6 @@ const BlogPage = ({ data }) => {
           &nbsp;
           <div>- Justin</div>
         </RegularParagraph>
-        <Spacer />
         {posts.map(({ node: post }) => (
           <Section key={post.id}>
             <TitleLink to={post.frontmatter.slug}>
@@ -83,7 +83,7 @@ const BlogPage = ({ data }) => {
             </TitleLink>
             <DateText>{post.frontmatter.date}</DateText>
             <Abstract>
-              <SmallText>{post.frontmatter.abstract}</SmallText>
+              <SmallParagraph>{post.frontmatter.abstract}</SmallParagraph>
             </Abstract>
           </Section>
         ))}
@@ -94,7 +94,7 @@ const BlogPage = ({ data }) => {
 
 export const pageQuery = graphql`
   query blogIndex {
-    allMdx {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id

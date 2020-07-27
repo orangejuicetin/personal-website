@@ -8,6 +8,7 @@ import {
   HeaderText,
   LargeText,
   RegularText,
+  RegularParagraph,
   StyledUnorderedList,
   Caption,
   SmallText,
@@ -22,7 +23,7 @@ const Body = styled.div`
   grid-template-rows: 1fr auto;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  margin: auto 8.25%;
+  margin: auto 12.5%;
 `;
 
 const TopLeft = styled.div`
@@ -38,9 +39,7 @@ const TopRight = styled.div`
 
 const Bottom = styled.div`
   grid-area: 2 / 1 / 3 / 3;
-  justify-content: center;
-  align-items: center;
-  margin: 2% 7.5%;
+  margin: 2.5% auto;
 `;
 
 const BottomContainer = styled.div`
@@ -61,10 +60,14 @@ const LeftSectionPic = styled.div`
 
 const NameText = styled.text`
   color: ${props => props.theme.colors.orange[0]};
-  font-family: "Comfortaa";
+  font-family: ${props => props.theme.typography.header.fontFamily};
 `;
 
 // pictures
+
+const PicRow = styled.div`
+  display: flex;
+`;
 const ShadowedMainPic = styled(Img)`
   border-radius: 5%;
   box-shadow: -1vw 1vw 2vw #cfcfcf, 1vw -1vw 2vw #ffffff;
@@ -76,7 +79,7 @@ const ShadowedGeneralPic = styled(Img)`
 `;
 
 const Figure = styled.figure`
-  margin: 5% 12.5% 2.5%;
+  margin: 5% 2%;
 `;
 
 const InlinePicLink = styled.a`
@@ -98,9 +101,6 @@ const BigSpacer = styled.div`
 `;
 const MediumSpacer = styled.div`
   margin: 2.5%;
-`;
-const LittleSpacer = styled.div`
-  margin: 1.25%;
 `;
 
 const IndexPage = () => {
@@ -141,13 +141,18 @@ const IndexPage = () => {
       <SEO title="Home" image={extraData.seoPic.childImageSharp.resize} />
       <Body>
         <TopLeft>
-          <HeaderText>Hello there ~ </HeaderText>
-          <HeaderText>
-            My name's <NameText>Justin</NameText>.
-          </HeaderText>
-          <SmallText>
-            (And no, I don't know what I'm looking at either unfortunately)
-          </SmallText>
+          <div>
+            <HeaderText>
+              <div>Hello there ~ </div>
+              <br />
+              My name's <NameText>Justin</NameText>.
+            </HeaderText>
+          </div>
+          <div>
+            <SmallText>
+              (And no, I don't know what I'm looking at either unfortunately)
+            </SmallText>
+          </div>
         </TopLeft>
         <TopRight>
           <ShadowedMainPic fluid={personalPic.childImageSharp.fluid} />
@@ -190,20 +195,7 @@ const IndexPage = () => {
             also...
           </LargeText>
           <StyledUnorderedList>
-            <li>
-              run a lot these days{" "}
-              {/* <span role="img" aria-label="runner">
-                // 🏃🏻‍♂️
-              </span> */}
-              &nbsp;
-              {/* <SmallText>
-                (if you can find me on Strava, I follow back sooo{" "}
-                <span role="img" aria-label="eyes">
-                  👀
-                </span>
-                &nbsp;)
-              </SmallText> */}
-            </li>
+            <li>run a lot these days &nbsp;</li>
             <li>
               read some super old books{" "}
               <SmallText>
@@ -211,12 +203,7 @@ const IndexPage = () => {
               </SmallText>
             </li>
             <li>
-              {" "}
-              wish I could be traveling
-              {/* <span role="img" aria-label="airplane">
-                ✈️
-              </span> */}
-              &nbsp;
+              wish I could be traveling &nbsp;
               <span role="img" aria-label="sad">
                 😔
               </span>
@@ -227,62 +214,71 @@ const IndexPage = () => {
               <SmallText>(oops)</SmallText>
             </li>
           </StyledUnorderedList>
-          <RegularText>
+          <RegularParagraph>
             However, feel free to check out some of the other things I've done!
             There's a projects page where I elaborate more on the work I've done
             in the past (free from the constraint of a one page resume
             thankfully), and all the links to my other profiles are all up top,
             so click freely!
-          </RegularText>
-          <LittleSpacer />
-          <RegularText>
+          </RegularParagraph>
+          <RegularParagraph>
             And, on the note of traveling, I really wanna visit my home country
             of Korea&nbsp;
             <Svg src={KoreanFlag} alt="korea_flag" />
             &nbsp;if there's any chance, y'know, flying becomes normal again, so
             in the mean time, here's some senti reminiscing for you to enjoy
             from the last time I was able to go :')
-          </RegularText>
-          <MediumSpacer />
-          <Figure>
-            <ShadowedGeneralPic fluid={lotte.childImageSharp.fluid} />
-            <Caption>
-              Isn't this one so pretty? This was at the top of Lotte Tower, and
-              I got soooo lucky to capture these colors; if you look closely
-              enough in the direction of the sunset, you can see 남산 타워
-              (Namsan Tower), which is a super cool spot in Seoul with cute
-              locks on its fence (!!)
-            </Caption>
-          </Figure>
-          <Figure>
-            <ShadowedGeneralPic fluid={busanDonkatsu.childImageSharp.fluid} />
-            <Caption>
-              This was 돈까스 (donkatsu) down in Busan the same summer, and it
-              was sooo good, especially after a long train ride from Seoul. brb
-              gonna go cry for a bit T.T
-            </Caption>
-          </Figure>
-          <Figure>
-            <ShadowedGeneralPic fluid={lotteAlternate.childImageSharp.fluid} />
-            <Caption>
-              Also at Lotte tower, but just more pretty shades :D
-            </Caption>
-          </Figure>
-          <Figure>
-            <ShadowedGeneralPic fluid={flowerGarden.childImageSharp.fluid} />
-            <Caption>
-              A flower garden that I stumbled upon in Busan, and I just thought
-              this pic was cute ~ the banners just say "happy wish" and "flower
-              garden" haha
-            </Caption>
-          </Figure>
-          <Figure>
-            <ShadowedGeneralPic fluid={busanSunset.childImageSharp.fluid} />
-            <Caption>
-              As you can tell, I sorta have a thing for nice sunsets LOL, this
-              one was also in Busan and I thought it was so nice to gaze at :')
-            </Caption>
-          </Figure>
+          </RegularParagraph>
+          <PicRow>
+            <Figure>
+              <ShadowedGeneralPic fluid={lotte.childImageSharp.fluid} />
+              <Caption>
+                Isn't this one so pretty? This was at the top of Lotte Tower,
+                and I got soooo lucky to capture these colors; if you look
+                closely enough in the direction of the sunset, you can see 남산
+                타워 (Namsan Tower), which is a super cool spot in Seoul with
+                cute locks on its fence (!!)
+              </Caption>
+            </Figure>
+            <div>
+              <Figure>
+                <ShadowedGeneralPic
+                  fluid={busanDonkatsu.childImageSharp.fluid}
+                />
+                <Caption>
+                  This was 돈까스 (donkatsu) down in Busan the same summer, and
+                  it was sooo good, especially after a long train ride from
+                  Seoul. brb gonna go cry for a bit T.T
+                </Caption>
+              </Figure>
+              <Figure>
+                <ShadowedGeneralPic
+                  fluid={lotteAlternate.childImageSharp.fluid}
+                />
+                <Caption>
+                  Also at Lotte tower, but just more pretty shades :D
+                </Caption>
+              </Figure>
+            </div>
+          </PicRow>
+          <PicRow>
+            <Figure>
+              <ShadowedGeneralPic fluid={flowerGarden.childImageSharp.fluid} />
+              <Caption>
+                A flower garden that I stumbled upon in Busan, and I just
+                thought this pic was cute ~ the banners just say "happy wish"
+                and "flower garden" haha
+              </Caption>
+            </Figure>
+            <Figure>
+              <ShadowedGeneralPic fluid={busanSunset.childImageSharp.fluid} />
+              <Caption>
+                As you can tell, I sorta have a thing for nice sunsets LOL, this
+                one was also in Busan and I thought it was so nice to gaze at
+                :')
+              </Caption>
+            </Figure>
+          </PicRow>
         </Bottom>
       </Body>
     </Layout>

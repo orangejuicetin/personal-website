@@ -10,12 +10,11 @@ const Head = styled.header`
   align-items: center;
   justify-content: center;
   background: ${props => props.theme.colors.white};
-  margin: 2.5% 5%;
+  margin: 2vw 4vw;
 `;
 
 const LogoContainer = styled.div`
   width: 8%;
-  margin: 2%;
   -moz-transition: all 0.34s ease-in;
   -o-transition: all 0.34s ease-in;
   -webkit-transition: all 0.34s ease-in;
@@ -35,7 +34,7 @@ const SocialMediaContainer = styled.div`
 
 const MenuButton = styled.div`
   display: inline-block;
-  margin: 5%;
+  margin: 2vw;
 `;
 
 const PersonalLogo = () => {

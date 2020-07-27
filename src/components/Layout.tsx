@@ -21,7 +21,6 @@ const PageContainer = styled.div`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  flex: 1 0 auto;
 `;
 
 const Footer = styled.footer`

@@ -12,28 +12,28 @@ export const useKoreaImages = () => {
       }
       lotteAlternate: file(relativePath: { eq: "korea/korea_1.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
+          fluid(quality: 100, maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       busanDonkatsu: file(relativePath: { eq: "korea/busan_donkatsu.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
+          fluid(quality: 100, maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       flowerGarden: file(relativePath: { eq: "korea/flower_garden.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
       busanSunset: file(relativePath: { eq: "korea/busan_sunset.png" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 700) {
+          fluid(quality: 100, maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }

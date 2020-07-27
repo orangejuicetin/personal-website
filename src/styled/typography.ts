@@ -1,47 +1,58 @@
 import styled from "styled-components";
 
-export const HeaderText = styled.div`
+const Paragraph = styled.p`
+  line-height: calc(1ex / 0.32);
+  margin: calc(1ex / 0.32) 0;
+  width: 70ch;
+  max-width: 100%;
+  text-align: justify;
+  hyphens: auto;
+`;
+
+const Text = styled.text`
+  line-height: calc(1ex / 0.32);
+  margin: calc(1ex / 0.32) 0;
+`;
+
+export const HeaderText = styled(Text)`
   font-size: ${props => props.theme.typography.header.fontSize};
   font-family: ${props => props.theme.typography.header.fontFamily};
-  line-height: calc(1ex / 0.32);
+  line-height: calc(1ex / 0.42);
+  margin: calc(1ex / 0.42) 0;
 `;
 
-export const SubtitleText = styled.div`
+export const SubtitleText = styled(Text)`
   font-size: ${props => props.theme.typography.subtitle.fontSize};
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
-  line-height: calc(1ex / 0.32);
+  line-height: calc(1ex / 0.42);
+  margin: calc(1ex / 0.42) 0;
 `;
 
-export const LargeText = styled.div`
+export const LargeText = styled(Text)`
   font-size: ${props => props.theme.typography.large.fontSize};
   font-family: ${props => props.theme.typography.large.fontFamily};
-  line-height: calc(1ex / 0.32);
+  line-height: calc(1ex / 0.37);
+  margin: calc(1ex / 0.37) 0;
 `;
 
-export const RegularParagraph = styled.p`
+export const RegularParagraph = styled(Paragraph)`
   font-size: ${props => props.theme.typography.regular.fontSize};
   font-family: ${props => props.theme.typography.regular.fontFamily};
-  text-indent: 3%;
-  line-height: calc(1ex / 0.32);
 `;
 
-export const RegularText = styled.div`
+export const RegularText = styled(Text)`
   font-size: ${props => props.theme.typography.regular.fontSize};
   font-family: ${props => props.theme.typography.regular.fontFamily};
-  line-height: calc(1ex / 0.32);
 `;
 
-export const SmallParagraph = styled.p`
+export const SmallParagraph = styled(Paragraph)`
   font-size: ${props => props.theme.typography.small.fontSize};
   font-family: ${props => props.theme.typography.small.fontFamily};
-  text-indent: 3%;
-  line-height: calc(1ex / 0.32);
 `;
 
-export const SmallText = styled.text`
+export const SmallText = styled(Text)`
   font-size: ${props => props.theme.typography.small.fontSize};
   font-family: ${props => props.theme.typography.small.fontFamily};
-  line-height: calc(1ex / 0.32);
 `;
 
 export const StyledUnorderedList = styled.ul`
@@ -58,4 +69,5 @@ export const Caption = styled.figcaption`
   font-size: ${props => props.theme.typography.caption.fontSize};
   font-family: ${props => props.theme.typography.caption.fontFamily};
   margin-top: ${props => props.theme.typography.caption.marginTop};
+  margin-left: 2%;
 `;

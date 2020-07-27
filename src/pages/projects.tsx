@@ -5,9 +5,9 @@ import { SEO, Layout } from "../components";
 import {
   HeaderText,
   SubtitleText,
-  RegularText,
   SmallText,
   RegularParagraph,
+  SmallParagraph,
 } from "../styled";
 import Img from "gatsby-image";
 
@@ -17,7 +17,7 @@ const Body = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: auto 12.5%;
+  margin: auto 15%;
 `;
 
 const Section = styled.div`
@@ -26,10 +26,10 @@ const Section = styled.div`
   box-shadow: -0.65vw 0.65vw 2.4vw #f0f0f0, 0.65vw -0.65vw 2.4vw #ffffff;
   font-size: ${props => props.theme.typography.small.fontSize};
   font-family: ${props => props.theme.typography.small.fontFamily};
-  margin: auto 1vw 4vw;
+  margin: 1vw auto;
   padding: 3%;
-  width: 100%;
 `;
+
 const BigSpacer = styled.div`
   margin: 2.5% auto 4%;
   flex-grow: 1;
@@ -40,9 +40,6 @@ const MediumSpacer = styled.div`
 `;
 
 // text
-const TopText = styled(RegularText)`
-  text-indent: 3%;
-`;
 
 const ExternalLink = styled.a`
   color: ${props => props.theme.colors.orange[0]};
@@ -132,19 +129,20 @@ const ProjectsPage = () => {
       <SEO title="Projects" />
       <Body>
         <HeaderText>Gallery</HeaderText>
-        <MediumSpacer />
-        <TopText>
+        <RegularParagraph>
           Here are some projects that I wanted to display in fuller detail!
           Figured that I'd rather not use this space to just repeat my resume on
           this, but rather try to make something that helps explore these
           projects with some more detail and also allow some cool pics too!
-        </TopText>
+        </RegularParagraph>
         <BigSpacer />
         <Section>
           <SubtitleText>Ampe</SubtitleText>
-          <SmallText>
-            <em>May 2020 - Present</em>
-          </SmallText>
+          <div>
+            <SmallText>
+              <em>May 2020 - Present</em>
+            </SmallText>
+          </div>
           <RowImageContainer>
             <LogoImage>
               <Img fluid={picData.ampe_main.childImageSharp.fluid} />
@@ -179,9 +177,11 @@ const ProjectsPage = () => {
         </Section>
         <Section>
           <SubtitleText>CORD-19 Dataset Analysis + Modeling</SubtitleText>
-          <SmallText>
-            <em>April 2020 - May 2020</em>
-          </SmallText>
+          <div>
+            <SmallText>
+              <em>April 2020 - May 2020</em>
+            </SmallText>
+          </div>
           <GenericImage
             fluid={picData.cord_19_clusters.childImageSharp.fluid}
           />
@@ -279,9 +279,11 @@ const ProjectsPage = () => {
           </RegularParagraph>
         </Section>
         <Section>
-          If you've hit this, the rest isn't complete yet! And as a token of
-          gratitude for your patience, here's a cute puppy gif to keep you
-          company:
+          <SmallParagraph>
+            If you've hit this, the rest isn't complete yet! And as a token of
+            gratitude for your patience, here's a cute puppy gif to keep you
+            company:
+          </SmallParagraph>
           <BigSpacer />
           <RowImageContainer>
             <iframe
@@ -290,7 +292,6 @@ const ProjectsPage = () => {
               width="384"
               height="480"
               frameBorder="0"
-              class="giphy-embed"
               allowFullScreen
             ></iframe>
           </RowImageContainer>
