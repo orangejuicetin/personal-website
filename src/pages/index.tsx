@@ -5,10 +5,9 @@ import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import KoreanFlag from "../images/assets/korean_flag.svg";
 import {
-  HeaderText,
+  SubtitleText,
   LargeText,
   RegularParagraph,
-  StyledUnorderedList,
   Caption,
   SmallText,
 } from "../styled";
@@ -69,11 +68,17 @@ const NameText = styled.text`
   font-family: ${props => props.theme.typography.header.fontFamily};
 `;
 
+const StyledUnorderedList = styled.ul`
+  font-size: 1.5vw;
+  font-family: ${props => props.theme.typography.regular.fontFamily};
+`;
+
 // pictures
 
 const PicRow = styled.div`
   display: flex;
 `;
+
 const ShadowedMainPic = styled(Img)`
   border-radius: 5%;
   box-shadow: -1vw 1vw 2vw #cfcfcf, 1vw -1vw 2vw #ffffff;
@@ -99,14 +104,6 @@ const Svg = styled.img`
   display: inline-block;
   width: 5%;
   vertical-align: text-bottom;
-`;
-// spacers
-
-const BigSpacer = styled.div`
-  margin: 5%;
-`;
-const MediumSpacer = styled.div`
-  margin: 2.5%;
 `;
 
 const IndexPage = () => {
@@ -147,18 +144,15 @@ const IndexPage = () => {
       <SEO title="Home" image={extraData.seoPic.childImageSharp.resize} />
       <Body>
         <TopLeft>
-          <div>
-            <HeaderText>
-              <div>Hello there ~ </div>
-              <br />
-              My name's <NameText>Justin</NameText>.
-            </HeaderText>
-          </div>
-          <div>
-            <SmallText>
-              (And no, I don't know what I'm looking at either unfortunately)
-            </SmallText>
-          </div>
+          <SubtitleText>
+            <div>Hello there ~ </div>
+            <br />
+            My name's <NameText>Justin</NameText>.
+          </SubtitleText>
+          <br />
+          <SmallText>
+            (And no, I don't know what I'm looking at either unfortunately)
+          </SmallText>
         </TopLeft>
         <TopRight>
           <ShadowedMainPic fluid={personalPic.childImageSharp.fluid} />
@@ -183,7 +177,7 @@ const IndexPage = () => {
                   />
                 </InlinePicLink>{" "}
               </LargeText>
-              <MediumSpacer />
+              <br />
               <LargeText>
                 And my degree's in computer science, so I beep boop bop and
                 kinda lose some sleep in the process.

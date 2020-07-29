@@ -47,3 +47,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     });
   });
 };
+
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
+  const typeDefs = `
+    type Mdx implements Node {
+      frontmatter: Frontmatter!
+    }
+    type Frontmatter {
+      featuredImage: File @fileByRelativePath
+      featuredCaption: String
+    }
+  `;
+  createTypes(typeDefs);
+};

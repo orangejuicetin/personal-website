@@ -3,11 +3,11 @@ import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import { SEO, Layout } from "../components";
 import {
-  HeaderText,
   SubtitleText,
-  SmallText,
+  LargeText,
   RegularParagraph,
   SmallParagraph,
+  SmallText,
 } from "../styled";
 import Img from "gatsby-image";
 
@@ -128,13 +128,12 @@ const ProjectsPage = () => {
     <Layout>
       <SEO title="Projects" />
       <Body>
-        <HeaderText>Gallery</HeaderText>
-        <RegularParagraph>
+        <LargeText>
           Here are some projects that I wanted to display in fuller detail!
           Figured that I'd rather not use this space to just repeat my resume on
           this, but rather try to make something that helps explore these
           projects with some more detail and also allow some cool pics too!
-        </RegularParagraph>
+        </LargeText>
         <BigSpacer />
         <Section>
           <SubtitleText>Ampe</SubtitleText>

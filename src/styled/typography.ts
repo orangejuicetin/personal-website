@@ -56,14 +56,10 @@ export const SmallText = styled(Text)`
   font-family: ${props => props.theme.typography.small.fontFamily};
 `;
 
-export const StyledUnorderedList = styled.ul`
-  font-size: ${props => props.theme.typography.regular.fontSize};
-  font-family: ${props => props.theme.typography.regular.fontFamily};
-`;
-
 export const DateText = styled.text`
   font-size: ${props => props.theme.typography.caption.fontSize};
   font-family: ${props => props.theme.typography.caption.fontFamily};
+  margin-top: 0.75vw;
 `;
 export const Caption = styled.figcaption`
   font-style: italic;

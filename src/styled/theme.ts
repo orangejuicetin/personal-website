@@ -5,7 +5,7 @@ export const theme = {
       fontFamily: "Comfortaa",
     },
     subtitle: {
-      fontSize: "2.75vw",
+      fontSize: "3vw",
       fontFamily: "Quicksand",
     },
     large: {
@@ -13,17 +13,17 @@ export const theme = {
       fontFamily: "Quicksand",
     },
     regular: {
-      fontSize: "1.3vw",
+      fontSize: "1.4vw",
       fontFamily: "Quicksand",
     },
     small: {
-      fontSize: "1.1vw",
+      fontSize: "1.25vw",
       fontFamily: "Quicksand",
     },
     caption: {
-      fontSize: "0.9vw",
+      fontSize: "1.15vw",
       fontFamily: "Quicksand",
-      marginTop: "1.25vw",
+      marginTop: "2vw",
     },
   },
 

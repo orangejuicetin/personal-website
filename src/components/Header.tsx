@@ -34,7 +34,7 @@ const SocialMediaContainer = styled.div`
 
 const MenuButton = styled.div`
   display: inline-block;
-  margin: 2vw;
+  margin: 3vw;
 `;
 
 const PersonalLogo = () => {

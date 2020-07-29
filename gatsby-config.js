@@ -8,7 +8,9 @@ module.exports = {
     twitterUsername: "orange_juicetin",
   },
   plugins: [
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-remark-images`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -23,7 +25,6 @@ module.exports = {
         path: `${__dirname}/src/content/posts`,
       },
     },
-    `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
@@ -34,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logos/orange.png`, // This path is relative to tshe root of the site.
+        icon: `src/images/logos/orange.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-styled-components`,
@@ -58,6 +59,16 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve("./src/components/DefaultPostLayout.tsx"),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 800,
+              quality: 100,
+              withWebp: true,
+            },
+          },
+        ],
       },
     },
   ],
