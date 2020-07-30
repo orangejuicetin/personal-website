@@ -1,9 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { SEO, Layout } from "../components";
+import { SEO, Layout, SubtitleText, RegularText } from "../components";
 import { useGallery } from "../hooks";
 import Img from "gatsby-image";
-import { SubtitleText, RegularText } from "../styled";
 
 const Body = styled.div`
   display: grid;

@@ -2,8 +2,14 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import { SEO, Layout } from "../components";
-import { DateText, SmallText, RegularParagraph, SubtitleText } from "../styled";
+import {
+  SEO,
+  Layout,
+  DateText,
+  SmallText,
+  RegularParagraph,
+  SubtitleText,
+} from "../components";
 
 const Body = styled.div`
   margin: auto 17.5% 10%;

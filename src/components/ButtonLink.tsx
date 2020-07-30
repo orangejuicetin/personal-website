@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const StyledLink = styled(Link)`
   text-decoration: none;
-  font-size: 1.5vw;
+  font-size: 2vw;
   font-family: ${props => props.theme.typography.header.fontFamily};
   color: ${props => props.theme.colors.gray[1]};
   -moz-transition: all 0.2s ease-in;

@@ -1,14 +1,15 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
-import { SEO, Layout } from "../components";
 import {
+  SEO,
+  Layout,
   SubtitleText,
   LargeText,
   RegularParagraph,
   SmallParagraph,
   SmallText,
-} from "../styled";
+} from "../components";
 import Img from "gatsby-image";
 
 // layout

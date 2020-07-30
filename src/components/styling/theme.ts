@@ -9,15 +9,15 @@ export const theme = {
       fontFamily: "Quicksand",
     },
     large: {
-      fontSize: "2vw",
+      fontSize: "2.5vw",
       fontFamily: "Quicksand",
     },
     regular: {
-      fontSize: "1.4vw",
+      fontSize: "1.75vw",
       fontFamily: "Quicksand",
     },
     small: {
-      fontSize: "1.25vw",
+      fontSize: "1.5vw",
       fontFamily: "Quicksand",
     },
     caption: {

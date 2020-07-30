@@ -6,7 +6,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Img from "gatsby-image";
 import { Layout } from "./Layout";
 // import all the typography and common elements to be used in the MDX pages
-import * as Style from "../styled";
+import * as Style from "./styling";
 import { SEO } from "./SEO";
 
 const shortcodes = { Link, ...Style }; // Provide common components here

@@ -1,16 +1,17 @@
 import React from "react";
 import styled from "styled-components";
-import { SEO, Layout } from "../components";
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import KoreanFlag from "../images/assets/korean_flag.svg";
 import {
+  SEO,
+  Layout,
   SubtitleText,
   LargeText,
   RegularParagraph,
   Caption,
   SmallText,
-} from "../styled";
+} from "../components";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import KoreanFlag from "../images/assets/korean_flag.svg";
 import { useGallery, useKoreaImages } from "../hooks";
 
 // page setup
@@ -179,8 +180,8 @@ const IndexPage = () => {
               </LargeText>
               <br />
               <LargeText>
-                And my degree's in computer science, so I beep boop bop and
-                kinda lose some sleep in the process.
+                And I study computer science, so I beep boop bop and kinda lose
+                some sleep in the process.
               </LargeText>
             </RightSection>
           </BottomContainer>
@@ -199,7 +200,7 @@ const IndexPage = () => {
                 </SmallText>
               </li>
               <li>
-                wish I could be traveling &nbsp;
+                wish I could be traveling
                 <span role="img" aria-label="sad">
                   😔
                 </span>
