@@ -4,6 +4,7 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { ButtonLink } from "./ButtonLink";
 import { SocialMedia } from "./SocialMedia";
+import { GRAY_1 } from "../constants";
 
 const Head = styled.header`
   display: flex;
@@ -24,7 +25,7 @@ const LogoContainer = styled.div`
 const MenuBarContainer = styled.div`
   margin-left: 3%;
   display: flex;
-  flex-grow: 4;
+  flex-grow: 2.5;
 `;
 
 const SocialMediaContainer = styled.div`

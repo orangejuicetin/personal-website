@@ -9,16 +9,11 @@ import {
   SmallText,
   RegularParagraph,
   SubtitleText,
+  CenteringDiv,
 } from "../components";
 
 const Body = styled.div`
   margin: auto 17.5% 10%;
-`;
-
-const Centering = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 `;
 
 const Section = styled.div`
@@ -71,8 +66,7 @@ const BlogPage = ({ data }) => {
     <Layout>
       <SEO title="Blog" />
       <Body>
-        <Centering>
-          <SubtitleText>Thanks for stopping by!</SubtitleText>
+        <CenteringDiv>
           <RegularParagraph>
             Below are quite literally random thoughts I've simply written down,
             either because of a vested sudden <em>~ passionate ~</em> interest
@@ -91,7 +85,7 @@ const BlogPage = ({ data }) => {
             </div>
             <br />- Justin
           </RegularParagraph>
-        </Centering>
+        </CenteringDiv>
         {posts.map(({ node: post }) => (
           <Section key={post.id}>
             {post.frontmatter.featuredImage && (

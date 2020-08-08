@@ -18,15 +18,15 @@ const Text = styled.text`
 export const HeaderText = styled(Text)`
   font-size: ${props => props.theme.typography.header.fontSize};
   font-family: ${props => props.theme.typography.header.fontFamily};
-  line-height: calc(1ex / 0.42);
-  margin: calc(1ex / 0.42) 0;
+  line-height: calc(1ex / 0.47);
+  margin: calc(1ex / 0.47) 0;
 `;
 
 export const SubtitleText = styled(Text)`
   font-size: ${props => props.theme.typography.subtitle.fontSize};
   font-family: ${props => props.theme.typography.subtitle.fontFamily};
-  line-height: calc(1ex / 0.42);
-  margin: calc(1ex / 0.42) 0;
+  line-height: calc(1ex / 0.45);
+  margin: calc(1ex / 0.45) 0;
 `;
 
 export const LargeText = styled(Text)`
@@ -61,10 +61,25 @@ export const DateText = styled.text`
   font-family: ${props => props.theme.typography.caption.fontFamily};
   margin-top: 0.75vw;
 `;
+
 export const Caption = styled.figcaption`
   font-style: italic;
   font-size: ${props => props.theme.typography.caption.fontSize};
   font-family: ${props => props.theme.typography.caption.fontFamily};
   margin-top: ${props => props.theme.typography.caption.marginTop};
   margin-left: 2%;
+`;
+
+export const CenteringDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+interface ColorProps {
+  color: string;
+}
+
+export const Coloring = styled.text<ColorProps>`
+  color: ${props => props.color};
 `;

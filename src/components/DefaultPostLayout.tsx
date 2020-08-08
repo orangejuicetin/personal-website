@@ -7,6 +7,7 @@ import Img from "gatsby-image";
 import { Layout } from "./Layout";
 // import all the typography and common elements to be used in the MDX pages
 import * as Style from "./styling";
+import { GRAY_1, GRAY_0 } from "../constants";
 import { SEO } from "./SEO";
 
 const shortcodes = { Link, ...Style }; // Provide common components here
@@ -19,9 +20,14 @@ const Page = styled.div`
 
 const Container = styled.div`
   margin: auto 15% 10%;
-  font-family: ${props => props.theme.typography.regular.fontFamily}, sans-serif;
+  font-family: '${props => props.theme.typography.regular.fontFamily}';
   font-size: ${props => props.theme.typography.regular.fontSize};
   width: 70ch;
+`;
+
+const BodyText = styled.div`
+  font-family: "EB Garamond", serif;
+  color: ${GRAY_0};
 `;
 
 const Figure = styled.figure`
@@ -34,20 +40,23 @@ const FeaturedPic = styled(Img)`
 `;
 
 const GoBack = styled(Link)`
-  text-decoration: underline;
+  position: relative;
   font-size: 1.25vw;
   font-family: ${props => props.theme.typography.regular.fontFamily}, sans-serif;
-  color: ${props => props.theme.colors.gray[1]};
-  -moz-transition: all 0.2s ease-in;
-  -o-transition: all 0.2s ease-in;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
-  &:hover {
-    color: ${props => props.theme.colors.gray[0]};
-    -moz-transition: all 0.15s ease-in;
-    -o-transition: all 0.15s ease-in;
-    -webkit-transition: all 0.15themes ease-in;
-    transition: all 0.15s ease-in;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: ${GRAY_1};
+  text-decoration: none;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  &:hover,
+  &:focus {
+    color: ${GRAY_0};
+    background-size: 100% 2px;
   }
 `;
 
@@ -72,9 +81,11 @@ export default function PageTemplate({ data: { mdx } }) {
             </Figure>
           )}
           {!mdx.frontmatter.featuredCaption && <br />}
-          <MDXProvider components={shortcodes}>
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </MDXProvider>
+          <BodyText>
+            <MDXProvider components={shortcodes}>
+              <MDXRenderer>{mdx.body}</MDXRenderer>
+            </MDXProvider>
+          </BodyText>
         </Container>
       </Page>
     </Layout>

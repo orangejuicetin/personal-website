@@ -3,13 +3,15 @@ import styled from "styled-components";
 import {
   SEO,
   Layout,
-  SubtitleText,
   LargeText,
   RegularParagraph,
   Caption,
   SmallText,
+  CenteringDiv,
+  Coloring,
 } from "../components";
-import { useStaticQuery, graphql } from "gatsby";
+import { BLUE_1, BLUE_2, ORANGE_0, ORANGE_1 } from "../constants";
+import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import KoreanFlag from "../images/assets/korean_flag.svg";
 import { useGallery, useKoreaImages } from "../hooks";
@@ -55,22 +57,24 @@ const LeftSectionPic = styled.div`
   width: 100%;
 `;
 
-const CenteringDiv = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
 // text elements
 
-const NameText = styled.text`
-  color: ${props => props.theme.colors.orange[0]};
+const Intro = styled.text`
+  font-size: 3.75vw;
   font-family: ${props => props.theme.typography.header.fontFamily};
+  line-height: calc(1ex / 0.4);
+  margin: calc(1ex / 0.4) 0;
+`;
+
+const SubIntro = styled.text`
+  font-size: 2.75vw;
+  font-family: ${props => props.theme.typography.subtitle.fontFamily};
+  line-height: calc(1ex / 0.37);
+  margin: calc(1ex / 0.37) 0;
 `;
 
 const StyledUnorderedList = styled.ul`
-  font-size: 1.5vw;
+  font-size: ${props => props.theme.typography.large.fontSize};
   font-family: ${props => props.theme.typography.regular.fontFamily};
 `;
 
@@ -99,6 +103,27 @@ const InlinePicLink = styled.a`
   display: inline-block;
   position: relative;
   top: 0.5vw;
+`;
+
+const StyledInternalLink = styled(Link)`
+  display: inline-block;
+  text-decoration: none;
+  color: ${ORANGE_0};
+  -moz-transition: all 0.215s ease-in;
+  -o-transition: all 0.215s ease-in;
+  -webkit-transition: all 0.215s ease-in;
+  transition: all 0.215s ease-in;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  &:hover {
+    -moz-transition: all 0.275s ease-in;
+    -o-transition: all 0.275s ease-in;
+    -webkit-transition: all 0.275s ease-in;
+    transition: all 0.275s ease-in;
+    background-size: 100% 2px;
+  }
 `;
 
 const Svg = styled.img`
@@ -140,16 +165,17 @@ const IndexPage = () => {
       }
     }
   `);
+
   return (
     <Layout>
       <SEO title="Home" image={extraData.seoPic.childImageSharp.resize} />
       <Body>
         <TopLeft>
-          <SubtitleText>
-            <div>Hello there ~ </div>
+          <Intro>
+            Hello there ~
             <br />
-            My name's <NameText>Justin</NameText>.
-          </SubtitleText>
+            My name's <Coloring color={ORANGE_1}>Justin</Coloring>.
+          </Intro>
           <br />
           <SmallText>
             (And no, I don't know what I'm looking at either unfortunately)
@@ -165,7 +191,7 @@ const IndexPage = () => {
               <Caption>rip sleep schedule</Caption>
             </LeftSectionPic>
             <RightSection>
-              <LargeText>
+              <SubIntro>
                 I'm currently a rising junior at Penn!&nbsp;
                 <InlinePicLink
                   href="https://www.upenn.edu/"
@@ -177,46 +203,57 @@ const IndexPage = () => {
                     alt=""
                   />
                 </InlinePicLink>{" "}
-              </LargeText>
-              <br />
-              <LargeText>
-                And I study computer science, so I beep boop bop and kinda lose
-                some sleep in the process.
-              </LargeText>
+                <br />
+                And I study <Coloring color={BLUE_2}>computer science</Coloring>
+                , so I beep boop bop and kinda lose some sleep in the process.
+              </SubIntro>
             </RightSection>
           </BottomContainer>
           <CenteringDiv>
             <LargeText>
-              But outside of scraping by and trying to stuff my tiny brain with
-              as much new material as I can before I embark unto adult life, I
-              also...
+              But outside of scraping by and trying to stuff my{" "}
+              <SmallText>smol</SmallText> brain with as much new material as I
+              can before I embark unto adult life, I also...
             </LargeText>
             <StyledUnorderedList>
-              <li>run a lot these days &nbsp;</li>
               <li>
-                read some super old books{" "}
+                <Coloring color={ORANGE_0}>run</Coloring> a lot these days
+                <span role="img" aria-label="running">
+                  🏃🏻‍♂️
+                </span>
+                &nbsp;
+              </li>
+              <li>
+                read some super <Coloring color={BLUE_1}>old</Coloring> books{" "}
                 <SmallText>
                   <em>(*insert Bible emoji here*)</em>
                 </SmallText>
               </li>
               <li>
-                wish I could be traveling
+                wish I could be <Coloring color={ORANGE_1}>traveling</Coloring>
+                &nbsp;
                 <span role="img" aria-label="sad">
                   😔
                 </span>
               </li>
-              <li>enjoy strumming my Taylor 510ce</li>
               <li>
-                and mindlessly scroll through Twitter sometimes&nbsp;
+                enjoy <Coloring color={BLUE_2}>strumming</Coloring> my Taylor
+                510ce
+              </li>
+              <li>
+                and mindlessly scroll through{" "}
+                <Coloring color={BLUE_1}>Twitter</Coloring> sometimes&nbsp;
                 <SmallText>(oops)</SmallText>
               </li>
             </StyledUnorderedList>
             <RegularParagraph>
               However, feel free to check out some of the other things I've
-              done! There's a projects page where I elaborate more on the work
-              I've done in the past (free from the constraint of a one page
-              resume thankfully), and all the links to my other profiles are all
-              up top, so click freely!
+              done! There's a&nbsp;
+              <StyledInternalLink to="/projects">projects</StyledInternalLink>
+              &nbsp;page where I elaborate more on the work I've done in the
+              past (free from the constraint of a one page resume thankfully),
+              and all the links to my other profiles are all up top, so click
+              freely!
               <div>
                 And, on the note of traveling, I really wanna visit my home
                 country of Korea&nbsp;

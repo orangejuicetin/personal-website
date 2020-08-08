@@ -1,27 +1,27 @@
 export const theme = {
   typography: {
     header: {
-      fontSize: "3.75vw",
+      fontSize: "3vw",
       fontFamily: "Comfortaa",
     },
     subtitle: {
-      fontSize: "3vw",
-      fontFamily: "Quicksand",
-    },
-    large: {
       fontSize: "2.5vw",
       fontFamily: "Quicksand",
     },
-    regular: {
-      fontSize: "1.75vw",
+    large: {
+      fontSize: "2vw",
       fontFamily: "Quicksand",
     },
-    small: {
+    regular: {
       fontSize: "1.5vw",
       fontFamily: "Quicksand",
     },
+    small: {
+      fontSize: "1.25vw",
+      fontFamily: "Quicksand",
+    },
     caption: {
-      fontSize: "1.15vw",
+      fontSize: "1.2vw",
       fontFamily: "Quicksand",
       marginTop: "2vw",
     },
@@ -30,17 +30,18 @@ export const theme = {
   colors: {
     black: "#000000",
     gray: {
-      0: "#58627a",
+      0: "#4d4d4d",
       1: "#aab1c2",
     },
     white: "#FFFFFF",
     blue: {
-      0: "#0c417c",
-      1: "#19508e",
-      2: "#6bb3f2",
+      0: "#1B595D",
+      1: "#468DA0",
+      2: "#93C1CC",
     },
     orange: {
       0: "#ffa500",
+      1: "#ffd589",
     },
   },
 };

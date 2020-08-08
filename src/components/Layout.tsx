@@ -32,7 +32,7 @@ const Footer = styled.footer`
   color: ${props => props.theme.colors.gray[1]};
 `;
 
-const StyledLink = styled.a`
+const StyledExternalLink = styled.a`
   text-decoration: none;
   color: ${props => props.theme.colors.blue[0]};
   -moz-transition: all 0.2s ease-in;
@@ -66,19 +66,19 @@ export const Layout = ({ children }) => {
       <PageContainer>{children}</PageContainer>
       <Footer>
         <div>
-          © {new Date().getFullYear()}, made with ♥️ &nbsp; by&nbsp;
-          <StyledLink
+          © {new Date().getFullYear()}, made with ♥️ by&nbsp;
+          <StyledExternalLink
             href="https://github.com/orangejuicetin"
             target="_blank"
             rel="noreferrer"
           >
             {data.site.siteMetadata.author}
-          </StyledLink>
+          </StyledExternalLink>
         </div>
         Want to contact me? Shoot me an email at&nbsp;
-        <StyledLink href="mailto:juicetin@seas.upenn.edu">
+        <StyledExternalLink href="mailto:juicetin@seas.upenn.edu">
           juicetin@seas.upenn.edu
-        </StyledLink>
+        </StyledExternalLink>
         &nbsp;~
       </Footer>
     </ThemeProvider>

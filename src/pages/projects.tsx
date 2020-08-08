@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import {
   SEO,
   Layout,
   SubtitleText,
-  LargeText,
   RegularParagraph,
   SmallParagraph,
   SmallText,
@@ -30,6 +29,11 @@ const Section = styled.div`
   margin: 1vw auto;
   padding: 3%;
 `;
+
+// const Section = () => {
+//   const [isOpen, setIsOpen] = useState(false);
+
+// };
 
 const BigSpacer = styled.div`
   margin: 2.5% auto 4%;
@@ -129,12 +133,12 @@ const ProjectsPage = () => {
     <Layout>
       <SEO title="Projects" />
       <Body>
-        <LargeText>
+        <RegularParagraph>
           Here are some projects that I wanted to display in fuller detail!
           Figured that I'd rather not use this space to just repeat my resume on
           this, but rather try to make something that helps explore these
           projects with some more detail and also allow some cool pics too!
-        </LargeText>
+        </RegularParagraph>
         <BigSpacer />
         <Section>
           <SubtitleText>Ampe</SubtitleText>
