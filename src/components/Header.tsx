@@ -41,7 +41,7 @@ const MenuButton = styled.div`
 const PersonalLogo = () => {
   const data = useStaticQuery(graphql`
     query {
-      personalLogo: file(relativePath: { eq: "logos/personal_logo.jpg" }) {
+      personalLogo: file(relativePath: { eq: "logos/personal_logo.png" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 250) {
             ...GatsbyImageSharpFluid_withWebp

@@ -26,7 +26,7 @@ const Container = styled.div`
 `;
 
 const BodyText = styled.div`
-  font-family: "EB Garamond", serif;
+  font-family: "Nanum Myeongjo", serif;
   color: ${GRAY_0};
 `;
 

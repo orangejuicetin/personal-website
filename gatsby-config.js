@@ -29,13 +29,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `orange_logo`,
-        short_name: `orange`,
+        name: `juicetin_logo`,
+        short_name: `juicetin`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logos/orange.png`, // This path is relative to the root of the site.
+        icon: `src/images/logos/personal_logo.png`, // This path is relative to the root of the site
       },
     },
     `gatsby-plugin-styled-components`,
@@ -50,7 +50,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: [`Comfortaa`, `Quicksand`, `EB Garamond`],
+        fonts: [
+          `Comfortaa`,
+          `Quicksand`,
+          `Nanum Myeongjo`,
+          `Cormorant Garamond`,
+        ],
       },
     },
     {
