@@ -15,14 +15,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
+        path: `${__dirname}/images`,
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `posts`,
-        path: `${__dirname}/src/content/posts`,
+        path: `${__dirname}/content/posts`,
       },
     },
     `gatsby-plugin-sharp`,
@@ -35,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/logos/personal_logo.png`, // This path is relative to the root of the site
+        icon: `images/logos/personal_logo.png`, // This path is relative to the root of the site
       },
     },
     `gatsby-plugin-styled-components`,
@@ -48,14 +48,16 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-plugin-google-fonts`,
+      resolve: `gatsby-plugin-web-font-loader`,
       options: {
-        fonts: [
-          `Comfortaa`,
-          `Quicksand`,
-          `Nanum Myeongjo`,
-          `Cormorant Garamond`,
-        ],
+        google: {
+          families: [
+            `Comfortaa`,
+            `Quicksand`,
+            `Nanum Myeongjo`,
+            `Cormorant Garamond`,
+          ],
+        },
       },
     },
     {

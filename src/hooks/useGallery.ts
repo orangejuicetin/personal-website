@@ -10,19 +10,29 @@ export const useGallery = () => {
           fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
+          resize(width: 1200) {
+            src
+            width
+            height
+          }
         }
       }
-      sleepy: file(relativePath: { eq: "gallery/sleepy_juicetin.png" }) {
+      sleepy: file(relativePath: { eq: "gallery/sleepy_juicetin.jpg" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 300) {
+          fluid(quality: 100, maxWidth: 600) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      christmas: file(relativePath: { eq: "gallery/christmas.JPG" }) {
+      oidd_290: file(relativePath: { eq: "gallery/oidd_290.JPG" }) {
         childImageSharp {
-          fluid(quality: 100, maxWidth: 600) {
+          fluid(quality: 100, maxWidth: 500) {
             ...GatsbyImageSharpFluid_withWebp
+          }
+          resize(width: 1200) {
+            src
+            width
+            height
           }
         }
       }

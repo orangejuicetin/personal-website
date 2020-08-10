@@ -64,7 +64,7 @@ const BlogPage = ({ data }) => {
   const { edges: posts } = data.allMdx;
   return (
     <Layout>
-      <SEO title="Blog" />
+      <SEO title="Blog" description="just some thoughts of mine" />
       <Body>
         <CenteringDiv>
           <RegularParagraph>

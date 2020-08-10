@@ -131,7 +131,10 @@ const ProjectsPage = () => {
 
   return (
     <Layout>
-      <SEO title="Projects" />
+      <SEO
+        title="Projects"
+        description="'the inner machinations of my mind are an enigma' - Patrick Star"
+      />
       <Body>
         <RegularParagraph>
           Here are some projects that I wanted to display in fuller detail!

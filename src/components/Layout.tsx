@@ -8,6 +8,7 @@ import { Header } from "./Header";
 const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
   html {
     font-family: "Avenir Next", sans-serif;  
+    font-display: swap; 
     color: ${props => props.theme.colors.gray[0]}; 
     margin: 0; 
     padding: 0; 

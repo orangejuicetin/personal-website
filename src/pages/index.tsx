@@ -13,8 +13,7 @@ import {
 import { BLUE_1, BLUE_2, ORANGE_0, ORANGE_1 } from "../constants";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
-import KoreanFlag from "../images/assets/korean_flag.svg";
-import { useGallery, useKoreaImages } from "../hooks";
+import { useGallery } from "../hooks";
 
 // page setup
 
@@ -80,10 +79,6 @@ const StyledUnorderedList = styled.ul`
 
 // pictures
 
-const PicRow = styled.div`
-  display: flex;
-`;
-
 const ShadowedMainPic = styled(Img)`
   border-radius: 5%;
   box-shadow: -1vw 1vw 2vw #cfcfcf, 1vw -1vw 2vw #ffffff;
@@ -92,10 +87,6 @@ const ShadowedMainPic = styled(Img)`
 const ShadowedGeneralPic = styled(Img)`
   border-radius: 10%;
   box-shadow: -0.5vw 0.5vw 1vw #d1d1d1, 0.5vw -0.5vw 1vw #ffffff;
-`;
-
-const Figure = styled.figure`
-  margin: 5% 2%;
 `;
 
 const InlinePicLink = styled.a`
@@ -126,34 +117,12 @@ const StyledInternalLink = styled(Link)`
   }
 `;
 
-const Svg = styled.img`
-  display: inline-block;
-  width: 5%;
-  vertical-align: text-bottom;
-`;
-
 const IndexPage = () => {
   // use hook to query all necessary data from images folder
   const { personalPic, sleepy } = useGallery();
-  const {
-    lotte,
-    lotteAlternate,
-    busanDonkatsu,
-    flowerGarden,
-    busanSunset,
-  } = useKoreaImages();
 
   const extraData = useStaticQuery(graphql`
     query {
-      seoPic: file(relativePath: { eq: "gallery/puertorico_juicetin.png" }) {
-        childImageSharp {
-          resize(width: 1200) {
-            src
-            width
-            height
-          }
-        }
-      }
       pennShield: file(
         relativePath: { eq: "logos/simplified-penn-shield.png" }
       ) {
@@ -168,7 +137,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" image={extraData.seoPic.childImageSharp.resize} />
+      <SEO title="Home" image={personalPic.childImageSharp.resize} />
       <Body>
         <TopLeft>
           <Intro>
@@ -241,7 +210,7 @@ const IndexPage = () => {
                 510ce
               </li>
               <li>
-                and mindlessly scroll through{" "}
+                and mindlessly scroll through&nbsp;
                 <Coloring color={BLUE_1}>Twitter</Coloring> sometimes&nbsp;
                 <SmallText>(oops)</SmallText>
               </li>
@@ -254,66 +223,8 @@ const IndexPage = () => {
               past (free from the constraint of a one page resume thankfully),
               and all the links to my other profiles are all up top, so click
               freely!
-              <div>
-                And, on the note of traveling, I really wanna visit my home
-                country of Korea&nbsp;
-                <Svg src={KoreanFlag} alt="korea_flag" />
-                &nbsp;if there's any chance, y'know, flying becomes normal
-                again, so in the mean time, here's some senti reminiscing for
-                you to enjoy from the last time I was able to go :')
-              </div>
             </RegularParagraph>
           </CenteringDiv>
-          <PicRow>
-            <Figure>
-              <ShadowedGeneralPic fluid={lotte.childImageSharp.fluid} />
-              <Caption>
-                Isn't this one so pretty? This was at the top of Lotte Tower,
-                and I got soooo lucky to capture these colors; if you look
-                closely enough in the direction of the sunset, you can see 남산
-                타워 (Namsan Tower), which is a super cool spot in Seoul with
-                cute locks on its fence (!!)
-              </Caption>
-            </Figure>
-            <div>
-              <Figure>
-                <ShadowedGeneralPic
-                  fluid={busanDonkatsu.childImageSharp.fluid}
-                />
-                <Caption>
-                  This was 돈까스 (donkatsu) down in Busan the same summer, and
-                  it was sooo good, especially after a long train ride from
-                  Seoul. brb gonna go cry for a bit T.T
-                </Caption>
-              </Figure>
-              <Figure>
-                <ShadowedGeneralPic
-                  fluid={lotteAlternate.childImageSharp.fluid}
-                />
-                <Caption>
-                  Also at Lotte tower, but just more pretty shades :D
-                </Caption>
-              </Figure>
-            </div>
-          </PicRow>
-          <PicRow>
-            <Figure>
-              <ShadowedGeneralPic fluid={flowerGarden.childImageSharp.fluid} />
-              <Caption>
-                A flower garden that I stumbled upon in Busan, and I just
-                thought this pic was cute ~ the banners just say "happy wish"
-                and "flower garden" haha
-              </Caption>
-            </Figure>
-            <Figure>
-              <ShadowedGeneralPic fluid={busanSunset.childImageSharp.fluid} />
-              <Caption>
-                As you can tell, I sorta have a thing for nice sunsets LOL, this
-                one was also in Busan and I thought it was so nice to gaze at
-                :')
-              </Caption>
-            </Figure>
-          </PicRow>
         </Bottom>
       </Body>
     </Layout>

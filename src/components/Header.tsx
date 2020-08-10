@@ -4,7 +4,6 @@ import { Link, useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import { ButtonLink } from "./ButtonLink";
 import { SocialMedia } from "./SocialMedia";
-import { GRAY_1 } from "../constants";
 
 const Head = styled.header`
   display: flex;
@@ -25,17 +24,17 @@ const LogoContainer = styled.div`
 const MenuBarContainer = styled.div`
   margin-left: 3%;
   display: flex;
-  flex-grow: 2.5;
+  flex-grow: 3;
 `;
 
 const SocialMediaContainer = styled.div`
   display: flex;
-  flex-grow: 1.5;
+  flex-grow: 2;
 `;
 
 const MenuButton = styled.div`
   display: inline-block;
-  margin: 3vw;
+  margin: 2.25vw;
 `;
 
 const PersonalLogo = () => {
@@ -44,7 +43,7 @@ const PersonalLogo = () => {
       personalLogo: file(relativePath: { eq: "logos/personal_logo.png" }) {
         childImageSharp {
           fluid(quality: 100, maxWidth: 250) {
-            ...GatsbyImageSharpFluid_withWebp
+            ...GatsbyImageSharpFluid_withWebp_noBase64
           }
         }
       }
@@ -59,7 +58,7 @@ const PersonalLogo = () => {
 
 export const Header = () => {
   const menuItems = {
-    // "/about": "Who Am I",
+    "/about": "More About Me",
     "/projects": "Projects",
     "/blog": "Random Thoughts",
   };

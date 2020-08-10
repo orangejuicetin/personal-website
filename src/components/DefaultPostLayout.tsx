@@ -26,7 +26,7 @@ const Container = styled.div`
 `;
 
 const BodyText = styled.div`
-  font-family: "Nanum Myeongjo", serif;
+  font-family: "Cormorant Garamond", serif;
   color: ${GRAY_0};
 `;
 
@@ -63,7 +63,14 @@ const GoBack = styled(Link)`
 export default function PageTemplate({ data: { mdx } }) {
   return (
     <Layout>
-      <SEO title={mdx.frontmatter.title} />
+      <SEO
+        title={mdx.frontmatter.title}
+        description={mdx.frontmatter.abstract}
+        image={
+          mdx.frontmatter.featuredImage &&
+          mdx.frontmatter.featuredImage.childImageSharp.resize
+        }
+      />
       <Page>
         <Container>
           <GoBack to="/blog">go back</GoBack>
@@ -100,11 +107,17 @@ export const pageQuery = graphql`
       frontmatter {
         author
         title
+        abstract
         date
         featuredImage {
           childImageSharp {
             fluid(maxWidth: 800) {
               ...GatsbyImageSharpFluid_withWebp
+            }
+            resize(width: 1200) {
+              src
+              width
+              height
             }
           }
         }

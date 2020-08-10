@@ -3,7 +3,7 @@ import styled from "styled-components";
 const Paragraph = styled.p`
   line-height: calc(1ex / 0.32);
   margin: calc(1ex / 0.32) 0;
-  width: 70ch;
+  width: 60ch;
   max-width: 100%;
   text-align: justify;
   hyphens: auto;
