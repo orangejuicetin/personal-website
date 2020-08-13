@@ -10,10 +10,10 @@ import {
   CenteringDiv,
   Coloring,
 } from "../components";
-import { BLUE_1, BLUE_2, ORANGE_0, ORANGE_1 } from "../constants";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import { useGallery } from "../hooks";
+import { theme } from "../styling/theme";
 
 // page setup
 
@@ -99,7 +99,7 @@ const InlinePicLink = styled.a`
 const StyledInternalLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
-  color: ${ORANGE_0};
+  color: ${theme.colors.orange[0]};
   -moz-transition: all 0.215s ease-in;
   -o-transition: all 0.215s ease-in;
   -webkit-transition: all 0.215s ease-in;
@@ -143,7 +143,8 @@ const IndexPage = () => {
           <Intro>
             Hello there ~
             <br />
-            My name's <Coloring color={ORANGE_1}>Justin</Coloring>.
+            My name's <Coloring color={theme.colors.orange[1]}>Justin</Coloring>
+            .
           </Intro>
           <br />
           <SmallText>
@@ -173,7 +174,10 @@ const IndexPage = () => {
                   />
                 </InlinePicLink>{" "}
                 <br />
-                And I study <Coloring color={BLUE_2}>computer science</Coloring>
+                And I study{" "}
+                <Coloring color={theme.colors.blue[2]}>
+                  computer science
+                </Coloring>
                 , so I beep boop bop and kinda lose some sleep in the process.
               </SubIntro>
             </RightSection>
@@ -186,32 +190,37 @@ const IndexPage = () => {
             </LargeText>
             <StyledUnorderedList>
               <li>
-                <Coloring color={ORANGE_0}>run</Coloring> a lot these days
+                <Coloring color={theme.colors.orange[0]}>run</Coloring> a lot
+                these days
                 <span role="img" aria-label="running">
                   🏃🏻‍♂️
                 </span>
                 &nbsp;
               </li>
               <li>
-                read some super <Coloring color={BLUE_1}>old</Coloring> books{" "}
+                read some super{" "}
+                <Coloring color={theme.colors.blue[1]}>old</Coloring> books{" "}
                 <SmallText>
                   <em>(*insert Bible emoji here*)</em>
                 </SmallText>
               </li>
               <li>
-                wish I could be <Coloring color={ORANGE_1}>traveling</Coloring>
+                wish I could be{" "}
+                <Coloring color={theme.colors.orange[1]}>traveling</Coloring>
                 &nbsp;
                 <span role="img" aria-label="sad">
                   😔
                 </span>
               </li>
               <li>
-                enjoy <Coloring color={BLUE_2}>strumming</Coloring> my Taylor
-                510ce
+                enjoy{" "}
+                <Coloring color={theme.colors.blue[2]}>strumming</Coloring> my
+                Taylor 510ce
               </li>
               <li>
                 and mindlessly scroll through&nbsp;
-                <Coloring color={BLUE_1}>Twitter</Coloring> sometimes&nbsp;
+                <Coloring color={theme.colors.blue[1]}>Twitter</Coloring>{" "}
+                sometimes&nbsp;
                 <SmallText>(oops)</SmallText>
               </li>
             </StyledUnorderedList>

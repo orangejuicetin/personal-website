@@ -6,9 +6,9 @@ import { MDXRenderer } from "gatsby-plugin-mdx";
 import Img from "gatsby-image";
 import { Layout } from "./Layout";
 // import all the typography and common elements to be used in the MDX pages
-import * as Style from "./styling";
-import { GRAY_1, GRAY_0 } from "../constants";
+import * as Style from "../styling";
 import { SEO } from "./SEO";
+import { theme } from "../styling/theme";
 
 const shortcodes = { Link, ...Style }; // Provide common components here
 
@@ -27,7 +27,7 @@ const Container = styled.div`
 
 const BodyText = styled.div`
   font-family: "Cormorant Garamond", serif;
-  color: ${GRAY_0};
+  color: ${theme.colors.gray[0]};
 `;
 
 const Figure = styled.figure`
@@ -47,7 +47,7 @@ const GoBack = styled(Link)`
   -o-transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  color: ${GRAY_1};
+  color: ${theme.colors.gray[1]};
   text-decoration: none;
   background-image: linear-gradient(currentColor, currentColor);
   background-position: 0% 100%;
@@ -55,7 +55,7 @@ const GoBack = styled(Link)`
   background-size: 0% 2px;
   &:hover,
   &:focus {
-    color: ${GRAY_0};
+    color: ${theme.colors.gray[0]};
     background-size: 100% 2px;
   }
 `;

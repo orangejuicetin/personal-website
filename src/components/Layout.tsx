@@ -2,7 +2,7 @@ import React from "react";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import PropTypes from "prop-types";
 import { useStaticQuery, graphql } from "gatsby";
-import { theme, ThemeType } from "./styling";
+import { theme, ThemeType } from "../styling";
 import { Header } from "./Header";
 
 const GlobalStyle = createGlobalStyle<{ theme: ThemeType }>`
