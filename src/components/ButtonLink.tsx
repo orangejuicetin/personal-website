@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import { theme } from "../styling/theme";
+import { theme } from "@design";
 
 const StyledLink = styled(Link)`
   text-decoration: none;

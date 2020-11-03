@@ -24,17 +24,17 @@ const LogoContainer = styled.div`
 const MenuBarContainer = styled.div`
   margin-left: 3%;
   display: flex;
-  flex-grow: 3;
+  flex-grow: 2.5;
 `;
 
 const SocialMediaContainer = styled.div`
   display: flex;
-  flex-grow: 2;
+  flex-grow: 2.5;
 `;
 
 const MenuButton = styled.div`
   display: inline-block;
-  margin: 2.25vw;
+  margin: 2vw;
 `;
 
 const PersonalLogo = () => {

@@ -5,12 +5,13 @@ import styled from "styled-components";
 import {
   SEO,
   Layout,
+} from "../components";
+import {
   DateText,
   SmallText,
   RegularParagraph,
-  SubtitleText,
   CenteringDiv,
-} from "../components";
+} from '@design'
 
 const Body = styled.div`
   margin: auto 17.5% 10%;

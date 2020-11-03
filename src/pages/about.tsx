@@ -1,17 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import { SEO, Layout } from "../components";
+import { useGallery, useKoreaImages } from "../hooks";
+import Img from "gatsby-image";
+import KoreanFlag from "../../images/assets/korean_flag.svg";
 import {
-  SEO,
-  Layout,
   SubtitleText,
   RegularParagraph,
   RegularText,
   CenteringDiv,
   Caption,
-} from "../components";
-import { useGallery, useKoreaImages } from "../hooks";
-import Img from "gatsby-image";
-import KoreanFlag from "../../images/assets/korean_flag.svg";
+} from "@design";
 
 const Body = styled.div`
   display: grid;

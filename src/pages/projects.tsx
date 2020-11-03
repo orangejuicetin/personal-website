@@ -1,15 +1,16 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
+import { SEO, Layout } from "../components";
+import Img from "gatsby-image";
 import {
-  SEO,
-  Layout,
+  theme,
   SubtitleText,
   RegularParagraph,
   SmallParagraph,
   SmallText,
-} from "../components";
-import Img from "gatsby-image";
+  StyledExternalLink,
+} from "@design";
 
 // layout
 const Body = styled.div`
@@ -30,11 +31,6 @@ const Section = styled.div`
   padding: 3%;
 `;
 
-// const Section = () => {
-//   const [isOpen, setIsOpen] = useState(false);
-
-// };
-
 const BigSpacer = styled.div`
   margin: 2.5% auto 4%;
   flex-grow: 1;
@@ -42,25 +38,6 @@ const BigSpacer = styled.div`
 const MediumSpacer = styled.div`
   margin: 1.5% auto;
   flex-grow: 1;
-`;
-
-// text
-
-const ExternalLink = styled.a`
-  color: ${props => props.theme.colors.orange[0]};
-  text-decoration: none;
-  opacity: 1;
-  -moz-transition: all 0.45s ease-in;
-  -o-transition: all 0.45s ease-in;
-  -webkit-transition: all 0.45s ease-in;
-  transition: all 0.45s ease;
-  &:hover {
-    opacity: 0.65;
-    -moz-transition: all 0.4s ease-in;
-    -o-transition: all 0.4s ease-in;
-    -webkit-transition: all 0.4s ease-in;
-    transition: all 0.4s ease;
-  }
 `;
 
 // pictures
@@ -163,21 +140,29 @@ const ProjectsPage = () => {
           </RowImageContainer>
           <MediumSpacer />
           <RegularParagraph>
-            What I worked on for summer '20! Helped
-            create a startup that aims to innovate the way that we calendar
-            social events and organize things with our friends. Built from the
-            ground up using TypeScript, and our stack is React Native, an Apollo
-            GraphQL server, and Nexus + Prisma in order to build our schema and
-            map it to our PostgreSQL database. Design system created
-            by the wonderful&nbsp;
-            <ExternalLink
+            What I worked on for summer '20! Helped create a startup that aims
+            to innovate the way that we calendar social events and organize
+            things with our friends. Built from the ground up using TypeScript,
+            and our stack is React Native, an Apollo GraphQL server, and Nexus +
+            Prisma in order to build our schema and map it to our PostgreSQL
+            database. Design system created by the wonderful&nbsp;
+            <StyledExternalLink
               href="https://andrewshen.net/"
               target="_blank"
               rel="noreferrer"
+              color={theme.colors.orange[1]}
             >
               @andrewshen
-            </ExternalLink>
-            , and you can find more info at https://ampe.co/info
+            </StyledExternalLink>
+            , and you can find more info at
+            <StyledExternalLink
+              href=" https://ampe.co/info"
+              target="_blank"
+              rel="noreferrer"
+              color={theme.colors.blue[1]}
+            >
+              https://ampe.co/info
+            </StyledExternalLink>
           </RegularParagraph>
         </Section>
         <Section>
@@ -193,13 +178,14 @@ const ProjectsPage = () => {
           <BigSpacer />
           <RegularParagraph>
             Quite pertinent to the times, my{" "}
-            <ExternalLink
+            <StyledExternalLink
               href="https://github.com/orangejuicetin/CORD-19_Analysis"
               target="_blank"
               rel="noreferrer"
+              color={theme.colors.blue[1]}
             >
               final project
-            </ExternalLink>{" "}
+            </StyledExternalLink>{" "}
             for CIS545 was based around this dataset that was amassed thanks to
             AI2, Chan Zuckerberg Initiative, NIH and more. Called the "CORD-19"
             dataset (I swear, it wasn't a typo or anything on my end), it

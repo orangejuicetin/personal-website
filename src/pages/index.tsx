@@ -1,21 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import { SEO, Layout } from "../components";
+import { useStaticQuery, graphql } from "gatsby";
+import Img from "gatsby-image";
+import { useGallery } from "../hooks";
 import {
-  SEO,
-  Layout,
   LargeText,
   RegularParagraph,
   Caption,
   SmallText,
   CenteringDiv,
   Coloring,
-  StyledExternalLink, 
-  StyledInternalLink
-} from "../components";
-import { useStaticQuery, graphql, Link } from "gatsby";
-import Img from "gatsby-image";
-import { useGallery } from "../hooks";
-import { theme } from "../styling/theme";
+  StyledExternalLink,
+  StyledInternalLink,
+  theme,
+} from "@design";
 
 // page setup
 
@@ -187,7 +186,9 @@ const IndexPage = () => {
               </li>
               <li>
                 wish I could be{" "}
-                <StyledInternalLink to="/about" color={theme.colors.orange[1]}>traveling</StyledInternalLink>
+                <StyledInternalLink to="/about" color={theme.colors.orange[1]}>
+                  traveling
+                </StyledInternalLink>
                 &nbsp;
                 <span role="img" aria-label="sad">
                   😔
@@ -215,12 +216,17 @@ const IndexPage = () => {
             <RegularParagraph>
               However, feel free to check out some of the other things I've
               done! There's a&nbsp;
-              <StyledInternalLink to="/projects" color={theme.colors.orange[0]}>projects</StyledInternalLink>
+              <StyledInternalLink to="/projects" color={theme.colors.orange[0]}>
+                projects
+              </StyledInternalLink>
               &nbsp;page where I elaborate more on the work I've done in the
               past (free from the constraint of a one page resume thankfully),
               and all the links to my other profiles are all up top, so click
-              freely! And, if you're still partial to resumes, my{" "}
-              <StyledInternalLink to="/justin_choi_resume.pdf" color={theme.colors.orange[0]}>
+              freely! And, if you're still partial to single pages, my{" "}
+              <StyledInternalLink
+                to="/justin_choi_resume.pdf"
+                color={theme.colors.orange[0]}
+              >
                 resume
               </StyledInternalLink>{" "}
               is available to peek at as well ~

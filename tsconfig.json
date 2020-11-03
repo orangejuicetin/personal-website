@@ -6,14 +6,18 @@
     "allowJs": true,
     "alwaysStrict": true,
     "allowSyntheticDefaultImports": true,
-    "jsx": "react"
+    "jsx": "react",
+    /* Module Resolution Options */
+    "baseUrl": "./src",
+    "paths": {
+      "@design": ["./styling"]
+    }
   },
-  "include": ["src/**/*"],
   "exclude": [
     "node_modules",
     ".firebaserc",
     "firebase.json",
     "firebase",
-    "gatsby-config.js"
+    "gatsby-config.js", 
   ]
 }

@@ -54,7 +54,6 @@ module.exports = {
           families: [
             `Comfortaa`,
             `Quicksand`,
-            `Nanum Myeongjo`,
             `Cormorant Garamond`,
           ],
         },
@@ -78,5 +77,6 @@ module.exports = {
         ],
       },
     },
+    `gatsby-plugin-tsconfig-paths`
   ],
 };
