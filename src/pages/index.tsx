@@ -99,7 +99,7 @@ const InlinePicLink = styled.a`
 const StyledInternalLink = styled(Link)`
   display: inline-block;
   text-decoration: none;
-  color: ${theme.colors.orange[0]};
+  color: ${theme.colors.blue[1]};
   -moz-transition: all 0.215s ease-in;
   -o-transition: all 0.215s ease-in;
   -webkit-transition: all 0.215s ease-in;
@@ -231,7 +231,7 @@ const IndexPage = () => {
               &nbsp;page where I elaborate more on the work I've done in the
               past (free from the constraint of a one page resume thankfully),
               and all the links to my other profiles are all up top, so click
-              freely!
+              freely! And, if you're still partial to resumes, my <StyledInternalLink to="/justin_choi_resume.pdf">resume</StyledInternalLink> is available to peek at as well ~
             </RegularParagraph>
           </CenteringDiv>
         </Bottom>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import styled from "styled-components";
 import {
@@ -163,14 +163,12 @@ const ProjectsPage = () => {
           </RowImageContainer>
           <MediumSpacer />
           <RegularParagraph>
-            WIP right now, but it's what I'm working on for the summer! Helping
+            What I worked on for summer '20! Helped
             create a startup that aims to innovate the way that we calendar
-            social events and organize things with our friends. Fingers crossed
-            we're gonna launch a beta by beginning of August, and as of right
-            now it's looking super promising! Currently building it from the
+            social events and organize things with our friends. Built from the
             ground up using TypeScript, and our stack is React Native, an Apollo
             GraphQL server, and Nexus + Prisma in order to build our schema and
-            map it to our PostgreSQL database. Sneak peek of our logo designed
+            map it to our PostgreSQL database. Design system created
             by the wonderful&nbsp;
             <ExternalLink
               href="https://andrewshen.net/"
@@ -179,7 +177,7 @@ const ProjectsPage = () => {
             >
               @andrewshen
             </ExternalLink>
-            !!
+            , and you can find more info at https://ampe.co/info
           </RegularParagraph>
         </Section>
         <Section>
@@ -196,7 +194,7 @@ const ProjectsPage = () => {
           <RegularParagraph>
             Quite pertinent to the times, my{" "}
             <ExternalLink
-              href="https://github.com/orangejuicetin/CIS545-Final-Project"
+              href="https://github.com/orangejuicetin/CORD-19_Analysis"
               target="_blank"
               rel="noreferrer"
             >
