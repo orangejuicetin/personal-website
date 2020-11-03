@@ -9,6 +9,8 @@ import {
   SmallText,
   CenteringDiv,
   Coloring,
+  StyledExternalLink, 
+  StyledInternalLink
 } from "../components";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import Img from "gatsby-image";
@@ -96,27 +98,6 @@ const InlinePicLink = styled.a`
   top: 0.5vw;
 `;
 
-const StyledInternalLink = styled(Link)`
-  display: inline-block;
-  text-decoration: none;
-  color: ${theme.colors.blue[1]};
-  -moz-transition: all 0.215s ease-in;
-  -o-transition: all 0.215s ease-in;
-  -webkit-transition: all 0.215s ease-in;
-  transition: all 0.215s ease-in;
-  background-image: linear-gradient(currentColor, currentColor);
-  background-position: 0% 100%;
-  background-repeat: no-repeat;
-  background-size: 0% 2px;
-  &:hover {
-    -moz-transition: all 0.275s ease-in;
-    -o-transition: all 0.275s ease-in;
-    -webkit-transition: all 0.275s ease-in;
-    transition: all 0.275s ease-in;
-    background-size: 100% 2px;
-  }
-`;
-
 const IndexPage = () => {
   // use hook to query all necessary data from images folder
   const { personalPic, sleepy } = useGallery();
@@ -143,7 +124,7 @@ const IndexPage = () => {
           <Intro>
             Hello there ~
             <br />
-            My name's <Coloring color={theme.colors.orange[1]}>Justin</Coloring>
+            My name's <Coloring color={theme.colors.orange[0]}>Justin</Coloring>
             .
           </Intro>
           <br />
@@ -206,7 +187,7 @@ const IndexPage = () => {
               </li>
               <li>
                 wish I could be{" "}
-                <Coloring color={theme.colors.orange[1]}>traveling</Coloring>
+                <StyledInternalLink to="/about" color={theme.colors.orange[1]}>traveling</StyledInternalLink>
                 &nbsp;
                 <span role="img" aria-label="sad">
                   😔
@@ -219,7 +200,14 @@ const IndexPage = () => {
               </li>
               <li>
                 and mindlessly scroll through&nbsp;
-                <Coloring color={theme.colors.blue[1]}>Twitter</Coloring>{" "}
+                <StyledExternalLink
+                  href="https://twitter.com/orange_juicetin"
+                  target="_blank"
+                  rel="noreferrer"
+                  color={theme.colors.blue[1]}
+                >
+                  Twitter
+                </StyledExternalLink>{" "}
                 sometimes&nbsp;
                 <SmallText>(oops)</SmallText>
               </li>
@@ -227,11 +215,15 @@ const IndexPage = () => {
             <RegularParagraph>
               However, feel free to check out some of the other things I've
               done! There's a&nbsp;
-              <StyledInternalLink to="/projects">projects</StyledInternalLink>
+              <StyledInternalLink to="/projects" color={theme.colors.orange[0]}>projects</StyledInternalLink>
               &nbsp;page where I elaborate more on the work I've done in the
               past (free from the constraint of a one page resume thankfully),
               and all the links to my other profiles are all up top, so click
-              freely! And, if you're still partial to resumes, my <StyledInternalLink to="/justin_choi_resume.pdf">resume</StyledInternalLink> is available to peek at as well ~
+              freely! And, if you're still partial to resumes, my{" "}
+              <StyledInternalLink to="/justin_choi_resume.pdf" color={theme.colors.orange[0]}>
+                resume
+              </StyledInternalLink>{" "}
+              is available to peek at as well ~
             </RegularParagraph>
           </CenteringDiv>
         </Bottom>

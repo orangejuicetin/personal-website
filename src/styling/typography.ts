@@ -1,5 +1,5 @@
 import styled from "styled-components";
-
+import { Link } from "gatsby";
 const Paragraph = styled.p`
   line-height: calc(1ex / 0.32);
   margin: calc(1ex / 0.32) 0;
@@ -82,4 +82,44 @@ interface ColorProps {
 
 export const Coloring = styled.text<ColorProps>`
   color: ${props => props.color};
+`;
+
+export const StyledInternalLink = styled(Link)<ColorProps>`
+  text-decoration: none;
+  color: ${props => props.color};
+  -moz-transition: all 0.215s ease-in;
+  -o-transition: all 0.215s ease-in;
+  -webkit-transition: all 0.215s ease-in;
+  transition: all 0.215s ease-in;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  &:hover {
+    -moz-transition: all 0.275s ease-in;
+    -o-transition: all 0.275s ease-in;
+    -webkit-transition: all 0.275s ease-in;
+    transition: all 0.275s ease-in;
+    background-size: 100% 2px;
+  }
+`;
+
+export const StyledExternalLink = styled.a<ColorProps>`
+  text-decoration: none;
+  color: ${props => props.color};
+  -moz-transition: all 0.215s ease-in;
+  -o-transition: all 0.215s ease-in;
+  -webkit-transition: all 0.215s ease-in;
+  transition: all 0.215s ease-in;
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  &:hover {
+    -moz-transition: all 0.275s ease-in;
+    -o-transition: all 0.275s ease-in;
+    -webkit-transition: all 0.275s ease-in;
+    transition: all 0.275s ease-in;
+    background-size: 100% 2px;
+  }
 `;
