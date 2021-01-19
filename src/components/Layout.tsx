@@ -67,7 +67,7 @@ export const Layout = ({ children }) => {
       <PageContainer>{children}</PageContainer>
       <Footer>
         <div>
-          © {new Date().getFullYear()}, made with ♥️ by&nbsp;
+          © {new Date().getFullYear()}, thrown together by&nbsp;
           <StyledExternalLink
             href="https://github.com/orangejuicetin"
             target="_blank"

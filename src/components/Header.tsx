@@ -58,9 +58,9 @@ const PersonalLogo = () => {
 
 export const Header = () => {
   const menuItems = {
-    "/about": "More About Me",
-    "/projects": "Projects",
-    "/blog": "Random Thoughts",
+    "/about": "about",
+    "/work": "work",
+    "/thoughts": "thoughts",
   };
 
   return (
