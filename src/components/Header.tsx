@@ -29,7 +29,7 @@ const MenuBarContainer = styled.div`
 
 const SocialMediaContainer = styled.div`
   display: flex;
-  flex-grow: 2.5;
+  flex-grow: 1;
 `;
 
 const MenuButton = styled.div`
@@ -58,9 +58,9 @@ const PersonalLogo = () => {
 
 export const Header = () => {
   const menuItems = {
-    "/about": "about",
     "/work": "work",
     "/thoughts": "thoughts",
+    "/life": "life",
   };
 
   return (

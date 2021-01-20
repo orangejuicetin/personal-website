@@ -117,7 +117,7 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <SEO title="Home" image={personalPic.childImageSharp.resize} />
+      <SEO title="home" image={personalPic.childImageSharp.resize} />
       <Body>
         <TopLeft>
           <Intro>
@@ -170,7 +170,7 @@ const IndexPage = () => {
             </LargeText>
             <StyledUnorderedList>
               <li>
-                <Coloring color={theme.colors.orange[0]}>run</Coloring> a lot
+                <Coloring color={theme.colors.blue[2]}>run</Coloring> a lot
                 these days
                 <span role="img" aria-label="running">
                   🏃🏻‍♂️
@@ -186,7 +186,7 @@ const IndexPage = () => {
               </li>
               <li>
                 wish I could be{" "}
-                <StyledInternalLink to="/about" color={theme.colors.orange[1]}>
+                <StyledInternalLink to="/life" color={theme.colors.blue[0]}>
                   traveling
                 </StyledInternalLink>
                 &nbsp;
@@ -216,7 +216,7 @@ const IndexPage = () => {
             <RegularParagraph>
               However, feel free to check out some of the other things I've
               done! There's a&nbsp;
-              <StyledInternalLink to="/projects" color={theme.colors.orange[0]}>
+              <StyledInternalLink to="/work" color={theme.colors.orange[0]}>
                 projects
               </StyledInternalLink>
               &nbsp;page where I elaborate more on the work I've done in the

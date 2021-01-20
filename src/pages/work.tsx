@@ -108,10 +108,7 @@ const ProjectsPage = () => {
 
   return (
     <Layout>
-      <SEO
-        title="Projects"
-        description="'the inner machinations of my mind are an enigma' - Patrick Star"
-      />
+      <SEO title="work" description="iTs tImE to bUiLd" />
       <Body>
         <RegularParagraph>
           Here are some projects that I wanted to display in fuller detail!
@@ -140,12 +137,12 @@ const ProjectsPage = () => {
           </RowImageContainer>
           <MediumSpacer />
           <RegularParagraph>
-            What I worked on for summer '20! Helped create a startup that aims
-            to innovate the way that we calendar social events and organize
-            things with our friends. Built from the ground up using TypeScript,
-            and our stack is React Native, an Apollo GraphQL server, and Nexus +
-            Prisma in order to build our schema and map it to our PostgreSQL
-            database. Design system created by the wonderful&nbsp;
+            What I worked on for summer '20! Helped found a startup that aims to
+            innovate the way that we calendar social events and organize things
+            with our friends. Built from the ground up using TypeScript, and our
+            stack is React Native, an Apollo GraphQL server, and Nexus + Prisma
+            in order to build our schema and map it to our PostgreSQL database.
+            Design system created by the wonderful&nbsp;
             <StyledExternalLink
               href="https://andrewshen.net/"
               target="_blank"
@@ -154,7 +151,7 @@ const ProjectsPage = () => {
             >
               @andrewshen
             </StyledExternalLink>
-            , and you can find more info at
+            . Find more info at&nbsp;
             <StyledExternalLink
               href=" https://ampe.co/info"
               target="_blank"

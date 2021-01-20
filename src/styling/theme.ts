@@ -35,13 +35,13 @@ export const theme = {
     },
     white: "#FFFFFF",
     blue: {
-      0: "#1B595D",
-      1: "#468DA0",
-      2: "#93C1CC",
+      0: "#5C78AB", // blue yonder
+      1: "#0B46B5", // absolute zero
+      2: "#89B3FF", // french sky blue
     },
     orange: {
-      0: "#ffa500",
-      1: "#ffd589",
+      0: "#ffa500", // orange web
+      1: "#ffd589", // deep champagne
     },
   },
 };

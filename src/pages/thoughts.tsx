@@ -2,16 +2,8 @@ import React from "react";
 import { graphql, Link } from "gatsby";
 import Img from "gatsby-image";
 import styled from "styled-components";
-import {
-  SEO,
-  Layout,
-} from "../components";
-import {
-  DateText,
-  SmallText,
-  RegularParagraph,
-  CenteringDiv,
-} from '@design'
+import { SEO, Layout } from "../components";
+import { DateText, SmallText, RegularParagraph, CenteringDiv } from "@design";
 
 const Body = styled.div`
   margin: auto 17.5% 10%;
@@ -65,26 +57,19 @@ const BlogPage = ({ data }) => {
   const { edges: posts } = data.allMdx;
   return (
     <Layout>
-      <SEO title="Blog" description="just some thoughts of mine" />
+      <SEO
+        title="thoughts"
+        description="'the inner machinations of my mind are an enigma' - Patrick Star"
+      />
       <Body>
         <CenteringDiv>
           <RegularParagraph>
-            Below are quite literally random thoughts I've simply written down,
-            either because of a vested sudden <em>~ passionate ~</em> interest
-            in the topic or just so I can consolidate them on all on a single
-            page and make sense of it all. Nothing more, nothing less. I'm quite
-            the open book, so apologies in advance if some topics suit your
-            taste buds more than others, but I'll try my best to make most of
-            the content digestable.
-            <div>
-              I've found writing to be quite therapeutic and a great way to
-              simply practice how to convey ideas concisely but clearly, so I'm
-              trying to make it more of a habit! If you ever have any thoughts,
-              questions, or comments on anything I write, feel more than free to
-              ping me through any method of contact, because I'm always down to
-              Chat™
-            </div>
-            <br />- Justin
+            Literally just random thoughts I've written down, either because of
+            a sudden, impassioned interest in the topic or just so I can
+            consolidate them on all on a single page and make sense of it all.
+            Nothing more, nothing less. I'm quite the open book, so apologies in
+            advance if some topics aren't quite up to your fancy, but I do hope
+            that most of the content is digestible.
           </RegularParagraph>
         </CenteringDiv>
         {posts.map(({ node: post }) => (

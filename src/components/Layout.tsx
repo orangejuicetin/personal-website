@@ -27,8 +27,8 @@ const PageContainer = styled.div`
 const Footer = styled.footer`
   font-family: ${props => props.theme.typography.regular.fontFamily};
   flex-shrink: 0;
-  margin-left: 2vw;
-  margin-top: auto;
+  margin: 2vw;
+  padding: 2vw;
   font-size: 1vw;
   color: ${props => props.theme.colors.gray[1]};
 `;

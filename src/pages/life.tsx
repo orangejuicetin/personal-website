@@ -23,7 +23,7 @@ const Body = styled.div`
 
 const TopLeftSide = styled.div`
   grid-area: 1 / 1 / 4 / 3;
-  margin: 7%;
+  margin: 5%;
 `;
 
 const TopRightSide = styled.div`
@@ -61,7 +61,7 @@ const Svg = styled.img`
 `;
 
 const AboutPage = () => {
-  const { oidd_290 } = useGallery();
+  // const { oidd_290 } = useGallery();
   const {
     lotte,
     lotteAlternate,
@@ -73,46 +73,38 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO
-        title="Who Am I"
-        image={oidd_290.childImageSharp.resize}
-        description="who is? justin choi?"
+        title="about"
+        // image={oidd_290.childImageSharp.resize}
+        description="what i do other than scroll through twitter"
       />
       <Body>
-        <TopLeftSide>
+        {/* <TopRightSide>
           <ShadowedMainPic fluid={oidd_290.childImageSharp.fluid} />
-        </TopLeftSide>
-        <TopRightSide>
-          <SubtitleText>wow !! hello again</SubtitleText>
+        </TopRightSide>
+        <TopLeftSide>
+          <SubtitleText>who am i?</SubtitleText>
           <br />
           <br />
           <RegularText>
-            Of course, far more in this life defines me than my school and
-            major, hence why I decided to make this website of mine; thought I
-            could add a personal touch that no resume nor LinkedIn profile could
-            really capture, and put some <em>personality™</em> into it (sorry
-            for my persistent use of the trademark symbol throughout this
-            website lmao been kinda feelin' the vibes it gives these days). My
-            hope is that this can become a "moodboard" or just a sample of what
-            life is like for me.
+            I think that question is better answered through show rather than
+            tell, hence why I decided to make this website of mine; thought I
+            could add a personal touch.
           </RegularText>
-        </TopRightSide>
+        </TopLeftSide> */}
         <Bottom>
           <CenteringDiv>
             <RegularParagraph>
-              Thus, putting to good use the oft overused phrase{" "}
-              <em>"A picture is worth a thousand words"</em>, I truly do believe
-              these pics summarize more of my day to day life than any short
-              witty description ever could. They're subject to change given the
+              I think that these pics descibe more of my life than any short
+              pithy Twitter bio ever could. They're subject to change given the
               day and my mood, but hopefully some can stay as constants and
               serve as good reminders to me on the not-so-good days :))
               <div>
-                And, on the note of memories (and lack of traveling due to COVID
-                rip), I really wanna visit my home country of Korea&nbsp;
+                On the note of memories (and the unfortunate lack of traveling
+                due to COVID ), I really wanna go back to Korea&nbsp;
                 <Svg src={KoreanFlag} alt="korea_flag" />
-                &nbsp;again – if there's any chance, y'know, flying becomes
-                normal again – so in the mean time, here's some senti
-                reminiscing for you to enjoy from the last time I was able to go
-                :')
+                &nbsp;one of these days – if there's any chance, y'know, flying
+                becomes normal again. So, in the mean time, here's some nice
+                memories for you to enjoy:
               </div>
             </RegularParagraph>
           </CenteringDiv>
