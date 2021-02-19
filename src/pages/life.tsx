@@ -73,7 +73,7 @@ const AboutPage = () => {
   return (
     <Layout>
       <SEO
-        title="about"
+        title="life"
         // image={oidd_290.childImageSharp.resize}
         description="what i do other than scroll through twitter"
       />
